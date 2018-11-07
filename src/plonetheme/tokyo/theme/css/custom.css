@@ -1,0 +1,31 @@
+/* Font Awesome Icon Font */
+@import './fonts.css';
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#content-header {
+  background-color: #007bb1;
+  padding: 1em 0;
+  margin-bottom: 48px;
+}
+
+#site-logo {
+  width: 180px;
+}
+
+#portal-navigation-handle {
+  text-align: right;
+  margin: 0;
+  color: #fff;
+}
+
+.documentFirstHeading {
+  padding: 0;
+  border-bottom: none;
+}
+
+.documentDescription {
+  margin-bottom: 20px;
+}
