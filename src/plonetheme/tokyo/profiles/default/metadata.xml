@@ -4,5 +4,6 @@
   <dependencies>
     <dependency>profile-plone.app.theming:default</dependency>
     <dependency>profile-plonetheme.barceloneta:registerless</dependency>
+    <dependency>profile-collective.sidebar:default</dependency>
   </dependencies>
 </metadata>

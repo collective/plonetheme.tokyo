@@ -15,7 +15,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="plonetheme.tokyo"
+      title="Tokyo Theme"
       directory="profiles/default"
       description="Installs the plonetheme.tokyo add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -24,7 +24,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="plonetheme.tokyo (uninstall)"
+      title="Tokyo Theme (uninstall)"
       directory="profiles/uninstall"
       description="Uninstalls the plonetheme.tokyo add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
