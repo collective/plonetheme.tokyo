@@ -15,9 +15,9 @@ body {
   width: 180px;
 }
 
-#portal-navigation-handle {
+#portaltab-burger-menu {
   text-align: right;
-  margin: 0;
+  margin: 7px 0;
   color: #fff;
 }
 
