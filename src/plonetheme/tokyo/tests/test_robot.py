@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
-from plonetheme.tokyo.testing import PLONETHEME_TOKYO_ACCEPTANCE_TESTING  # noqa
+from plonetheme.tokyo.testing import PLONETHEME_TOKYO_ACCEPTANCE_TESTING
 
 import os
 import robotsuite
