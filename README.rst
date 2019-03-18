@@ -2,8 +2,8 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://travis-ci.org/collective/plonetheme.tokyo.svg?branch=master
-    :target: https://travis-ci.org/collective/plonetheme.tokyo
+.. image:: https://travis-ci.com/collective/plonetheme.tokyo.svg?branch=master
+    :target: https://travis-ci.com/collective/plonetheme.tokyo
 
 .. image:: https://coveralls.io/repos/github/collective/plonetheme.tokyo/badge.svg?branch=master
     :target: https://coveralls.io/github/collective/plonetheme.tokyo?branch=master
