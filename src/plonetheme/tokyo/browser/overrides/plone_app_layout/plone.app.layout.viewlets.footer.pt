@@ -8,7 +8,7 @@
 				<h5 class="mb-1">Welcome to Plone</h5>
 			</li>
 			<li class="list-inline-item">
-				<a href="${context/absolute_url}" class="btn btn-outline-light">Get Started</a>
+				<a href="https://training.plone.org/5" class="btn btn-outline-light" target="_blank">Get Started</a>
 			</li>
 		</ul>
 
