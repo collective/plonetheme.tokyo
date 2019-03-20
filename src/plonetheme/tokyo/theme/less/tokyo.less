@@ -1,0 +1,71 @@
+/* Screen Sizes */
+@screen-xxxs-max: 319px;
+@screen-xxs-min: 320px;
+@screen-xxs-max: 479px;
+@screen-xs-min: 480px;
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+
+/* Defaults */
+@import './fonts.less';
+
+/* Views */
+@import './views.less';
+
+/* Overrides */
+@import './overrides.less';
+
+/* Tokyo Colors */
+@tokyo-slate: #1C2331;
+@tokyo-black: #19202A;
+@tokyo-blue: #007BFF;
+@tokyo-yellow: #FFC107;
+@tokyo-red: #F44336;
+@tokyo-white: #F9F9F9;
+@tokyo-grey: #CCCCCC;
+
+/* Variables */
+@tokyo-shadow: 0 2px 4px rgba(3,27,78,0.06);
+
+/* Plone Colors */
+@plone-blue: #007BB1;
+
+/* Vendor */
+.vendor(@property, @value) {
+     -moz-@{property}: @value;
+      -ms-@{property}: @value;
+       -o-@{property}: @value;
+  -webkit-@{property}: @value;
+          @{property}: @value;
+}
+
+/* Main-Styling */
+body {
+  background-color: @tokyo-black;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .outer-wrapper {
+    background-color: white;
+
+    main {
+      padding: 120px 0;
+    }
+  }
+
+  .documentFirstHeading {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .documentDescription {
+    margin-bottom: 20px;
+  }
+}

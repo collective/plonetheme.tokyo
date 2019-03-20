@@ -7,13 +7,26 @@
   <include package="z3c.jbot" file="meta.zcml" />
 
   <browser:jbot
-      directory="overrides"
+      directory="overrides/plone_app_contenttypes"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_app_layout"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
   <browser:resourceDirectory
       name="plonetheme.tokyo"
       directory="static"
+      />
+
+  <browser:page
+      name="listing_news"
+      for="*"
+      permission="zope2.View"
+      class=".listings.ListingNewsView"
+      template="templates/listing_news.pt"
       />
 
 </configure>

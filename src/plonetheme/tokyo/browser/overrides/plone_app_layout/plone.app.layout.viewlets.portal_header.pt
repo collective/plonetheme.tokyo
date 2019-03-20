@@ -1,0 +1,18 @@
+<tal:header xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:tal="http://xml.zope.org/namespaces/tal">
+
+  <header id="menu-header" class="active" tal:define="navroot context/@@plone_portal_state/navigation_root_url">
+    <div class="container-fluid header-wrapper">
+
+      <a class="header-logo" href="${navroot}">
+        <img src="" alt="" tal:attributes="src string:${navroot}/++resource++plonetheme.tokyo/plone_logow.svg">
+      </a>
+
+      <div class="header-icons">
+        <i id="portaltab-burger-menu" class="glyphicon glyphicon-menu-hamburger"></i>
+      </div>
+
+    </div>
+  </header>
+
+</tal:header>

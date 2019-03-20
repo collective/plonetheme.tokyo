@@ -1,5 +1,10 @@
-$(document).ready(function() {
+(function($) {
+  'use strict'; // Start of use strict
 
-      // Put your custom JavaScript in here
+  $(document).ready(function() {
 
-    });
+    // Custom JavaScript
+
+  });
+
+})(jQuery); // End of use strict

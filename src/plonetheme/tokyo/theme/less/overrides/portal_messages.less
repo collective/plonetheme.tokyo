@@ -1,0 +1,82 @@
+.alert.status > strong,
+.portalMessage > strong,
+.alert.status > dt,
+.portalMessage > dt {
+  color: @tokyo-white !important;
+}
+
+.alert.status > dd a,
+.portalMessage > dd a,
+.alert.status > a,
+.portalMessage > a {
+  color: @tokyo-white !important;
+}
+
+.alert.status > strong:before,
+.portalMessage > strong:before,
+.alert.status > dt:before,
+.portalMessage > dt:before {
+  content: none !important;
+  display: none !important;
+}
+
+.portalMessage {
+  border: none !important;
+  border-radius: 0.25rem;
+  box-shadow: @tokyo-shadow;
+  margin-bottom: 30px;
+  padding: 20px 20px 20px 120px;
+  position: relative;
+  text-shadow: none;
+
+   > strong {
+    height: 100%;
+    left: 0;
+    padding: 20px 0 20px 20px;
+    position: absolute;
+    top: 0;
+    width: 100px;
+  }
+
+  &.info {
+    background-color: @tokyo-blue;
+    border: 0;
+    color: @tokyo-white;
+
+     > strong {
+      color: @tokyo-white;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &.warning {
+    background-color: @tokyo-yellow;
+    border: 0;
+    color: @tokyo-white;
+
+     > strong {
+      color: @tokyo-white;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &.error {
+    background-color: @tokyo-red;
+    border: 0;
+    color: @tokyo-white;
+
+     > strong {
+      color: @tokyo-white;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

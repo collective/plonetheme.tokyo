@@ -1,16 +1,5 @@
 <configure
-  xmlns="http://namespaces.zope.org/zope"
-  xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
-
-  <!-- -*- extra stuff goes here -*- -->
-  <!--<genericsetup:upgradeStep
-    source="*"
-    destination="1001"
-    title="Reload GS profiles"
-    description=""
-    profile="plonetheme.tokyo:default"
-    handler=".upgrades.reload_gs_profile"
-    />-->
-
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
 </configure>
