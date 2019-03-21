@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.tokyo">
+
+<body>
+
+  <metal:content-core fill-slot="main">
+    <metal:content-core define-macro="newslisting-main">
+
+      <div class="col-md-8 col-md-offset-2">
+
+        <div class="documentFirstHeading">
+          <h1 tal:content="context/title|nothing" />
+        </div>
+
+        <tal:define tal:define="items view/get_items;
+                                Batch python:modules['Products.CMFPlone'].Batch;
+                                b_size python:16;
+                                b_start python:0;
+                                b_start request/b_start | b_start;
+                                batch python:Batch(items, b_size, int(b_start), orphan=1);">
+
+          <div id="listing">
+            <div class="list-item" tal:repeat="item batch">
+
+              <tal:define tal:define="scale_func item/@@images;
+                                      scaled_image python:getattr(item.aq_explicit, 'image', False) and scale_func.scale('image', width=320, height=180, direction='down')">
+
+                <div class="list-item-image">
+                  <img tal:replace="structure python:scaled_image.tag(css_class='list-item-image')" tal:condition="python:scaled_image" />
+                  <img src="" tal:condition="not:python:scaled_image" />
+                </div>
+
+              </tal:define>
+
+              <div class="list-item-content" tal:define="date item/Date;
+                                                         date_abbr python:here.toLocalizedTime(date);
+                                                         time python:here.toLocalizedTime(date, long_format=1)[-8:];
+                                                         creator item/Creator;
+                                                         author python:item.portal_membership.getMemberInfo(creator)">
+                <a href="${item/absolute_url}">
+                  <h3 class="list-item-headline" tal:content="item/title"></h3>
+                </a>
+                <div class="list-item-byline">
+                  <span class="byline-element">
+                    <i class="glyphicon glyphicon-calendar"></i> <span tal:content="date_abbr"></span>
+                  </span>
+                  <span class="byline-element">
+                    <i class="glyphicon glyphicon-time"></i> <span tal:content="time"></span>
+                  </span>
+                </div>
+                <div class="list-item-description" tal:content="item/description"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        </tal:define>
+      </div>
+
+    </metal:content-core>
+  </metal:content-core>
+
+</body>
+
+</html>
