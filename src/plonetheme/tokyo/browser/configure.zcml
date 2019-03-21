@@ -16,6 +16,11 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <browser:jbot
+      directory="overrides/plone_login"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
   <browser:resourceDirectory
       name="plonetheme.tokyo"
       directory="static"

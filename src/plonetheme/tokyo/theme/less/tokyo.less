@@ -29,7 +29,8 @@
 @tokyo-grey: #CCCCCC;
 
 /* Variables */
-@tokyo-shadow: 0 2px 4px rgba(3,27,78,0.06);
+@tokyo-sm-shadow: 0 2px 4px rgba(3,27,78,0.06);
+@tokyo-lg-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.1);
 
 /* Plone Colors */
 @plone-blue: #007BB1;
@@ -54,10 +55,6 @@ body {
 
   .outer-wrapper {
     background-color: white;
-
-    main {
-      padding: 120px 0;
-    }
   }
 
   .documentFirstHeading {
@@ -67,5 +64,12 @@ body {
 
   .documentDescription {
     margin-bottom: 20px;
+  }
+
+  .content-uncontained,
+  .content-contained {
+    .inner-wrapper {
+      width: 100%;
+    }
   }
 }
