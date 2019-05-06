@@ -6,6 +6,8 @@
 
   <include package="z3c.jbot" file="meta.zcml" />
 
+  <!-- Overrides -->
+
   <browser:jbot
       directory="overrides/plone_app_contenttypes"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
@@ -17,9 +19,31 @@
       />
 
   <browser:jbot
+      directory="overrides/plone_controlpanel"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
       directory="overrides/plone_login"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
+
+  <browser:jbot
+      directory="overrides/plone_prefs"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_templates"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_wysiwyg"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Resources -->
 
   <browser:resourceDirectory
       name="plonetheme.tokyo"
