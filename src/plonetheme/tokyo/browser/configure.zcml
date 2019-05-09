@@ -24,11 +24,6 @@
       />
 
   <browser:jbot
-      directory="overrides/plone_login"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
       directory="overrides/plone_prefs"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
@@ -38,8 +33,22 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <!-- Z3CForm -->
+
   <browser:jbot
-      directory="overrides/plone_wysiwyg"
+      directory="overrides/plone_app_z3cform"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Login -->
+
+  <browser:jbot
+      directory="overrides/plone_login/plone_51"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_login/plone_52"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 

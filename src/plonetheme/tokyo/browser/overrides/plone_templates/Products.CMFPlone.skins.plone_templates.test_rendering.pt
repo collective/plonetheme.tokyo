@@ -177,8 +177,8 @@
             <div class="form-text text-muted">This is a checkbox field.</div>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck1">
-              <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+              <input type="checkbox" class="custom-control-input" id="customCheckC1">
+              <label class="custom-control-label" for="customCheckC1">Check this custom checkbox</label>
             </div>
 
           </div>
@@ -192,18 +192,18 @@
             <div class="form-text text-muted">This checkbox field is just here to demonstrate an error message.</div>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck2">
-              <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+              <input type="checkbox" class="custom-control-input" id="customCheckEC1">
+              <label class="custom-control-label" for="customCheckEC1">Check this custom checkbox</label>
             </div>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck2">
-              <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+              <input type="checkbox" class="custom-control-input" id="customCheckEC2">
+              <label class="custom-control-label" for="customCheckEC2">Check this custom checkbox</label>
             </div>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck2">
-              <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+              <input type="checkbox" class="custom-control-input" id="customCheckEC3">
+              <label class="custom-control-label" for="customCheckEC3">Check this custom checkbox</label>
             </div>
 
           </div>
@@ -217,18 +217,18 @@
             <div class="form-text text-muted">This is a radio field.</div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-              <label class="custom-control-label" for="customRadio1">Check this custom radio</label>
+              <input type="radio" id="customRadioR1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadioR1">Check this custom radio</label>
             </div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio1">Check this custom radio</label>
+              <input type="radio" id="customRadioR2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioR2">Check this custom radio</label>
             </div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio1">Check this custom radio</label>
+              <input type="radio" id="customRadioR3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioR3">Check this custom radio</label>
             </div>
 
           </div>
@@ -242,18 +242,18 @@
             <div class="form-text text-muted">This radio field is just here to demonstrate an error message.</div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" checked>
-              <label class="custom-control-label" for="customRadio2">Check this custom radio</label>
+              <input type="radio" id="customRadioER1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadioER1">Check this custom radio</label>
             </div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio2">Check this custom radio</label>
+              <input type="radio" id="customRadioER2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioER2">Check this custom radio</label>
             </div>
 
             <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio2">Check this custom radio</label>
+              <input type="radio" id="customRadioER3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioER3">Check this custom radio</label>
             </div>
 
           </div>

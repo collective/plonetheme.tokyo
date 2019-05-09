@@ -12,7 +12,7 @@
     <replace css:theme-children="aside" method="raw">
       <xsl:choose>
 
-        <xsl:when test="not(//body[contains(@class, 'template-insufficient_privileges')])">
+        <xsl:when test="not(//body[contains(@class, 'template-insufficient-privileges')])">
           <xsl:variable name="headerattr">content-below</xsl:variable>
           <div class="{$headerattr}">
             <xsl:apply-templates css:select="#menu-header" />
@@ -75,15 +75,7 @@
   <replace css:theme="#content-container" method="raw">
     <xsl:choose>
 
-      <xsl:when test="not(//body[contains(@class, 'template-insufficient_privileges')])">
-
-        <!-- Portlet Support - Use {$central}
-        <xsl:variable name="central">
-          <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
-          <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
-          <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
-          <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
-        </xsl:variable> -->
+      <xsl:when test="not(//body[contains(@class, 'template-insufficient-privileges')])">
 
         <div class="container content-contained">
           <div class="col-xs-12 col-sm-12">
