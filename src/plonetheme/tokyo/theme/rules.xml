@@ -12,7 +12,10 @@
     <replace css:theme-children="aside" method="raw">
       <xsl:choose>
 
-        <xsl:when test="not(//body[contains(@class, 'template-insufficient-privileges')])">
+        <xsl:when test="not(//body[
+          contains(@class, 'template-insufficient-privileges') or
+          contains(@class, 'template-insufficient_privileges')
+          ])">
           <xsl:variable name="headerattr">content-below</xsl:variable>
           <div class="{$headerattr}">
             <xsl:apply-templates css:select="#menu-header" />
@@ -75,7 +78,10 @@
   <replace css:theme="#content-container" method="raw">
     <xsl:choose>
 
-      <xsl:when test="not(//body[contains(@class, 'template-insufficient-privileges')])">
+      <xsl:when test="not(//body[
+        contains(@class, 'template-insufficient-privileges') or
+        contains(@class, 'template-insufficient_privileges')
+        ])">
 
         <div class="container content-contained">
           <div class="col-xs-12 col-sm-12">

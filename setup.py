@@ -5,11 +5,13 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-long_description = '\n\n'.join([
-    open('README.rst').read(),
-    open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
-])
+long_description = '\n\n'.join(
+    [
+        open('README.rst').read(),
+        open('CONTRIBUTORS.rst').read(),
+        open('CHANGES.rst').read(),
+    ]
+)
 
 
 setup(
@@ -39,23 +41,19 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # -*- Extra requirements: -*-
+        'collective.sidebar',
         'plone.api>=1.8.4',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
         'z3c.jbot',
-        'collective.sidebar',
     ],
     extras_require={
         'test': [
-            'plone.app.testing',
-            # Plone KGS does not use this version, because it would break
-            # Remove if your package shall be part of coredev.
-            # plone_coredev tests as of 2016-04-01.
-            'plone.testing>=5.0.0',
             'plone.app.contenttypes',
             'plone.app.robotframework[debug]',
-        ],
+            'plone.app.testing',
+            'plone.testing>=5.0.0',
+        ]
     },
     entry_points="""
     [z3c.autoinclude.plugin]

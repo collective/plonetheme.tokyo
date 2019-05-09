@@ -6,7 +6,6 @@ if (window.jQuery) {
 }
 
 require([
-  'mockup-patterns-textareamimetypeselector',
   'mockup-patterns-relateditems',
   'mockup-patterns-querystring',
   'mockup-patterns-tinymce',
@@ -14,8 +13,6 @@ require([
   'mockup-patterns-structure',
   'mockup-patterns-structureupdater',
   'mockup-patterns-recurrence',
-  'plone-patterns-portletmanager',
-  'plone-patterns-toolbar',
 ], function() {
   'use strict';
 });
