@@ -8,7 +8,7 @@
       i18n:domain="plone">
 
 <body>
-  <metal:main fill-slot="main">
+  <metal:main fill-slot="fluid">
 
     <div id="privileges">
 

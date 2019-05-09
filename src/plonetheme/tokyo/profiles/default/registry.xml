@@ -21,4 +21,18 @@
     <value key="depends">plone</value>
   </records>
 
+  <!--
+  <records prefix="plone.bundles/plone" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+
+  <records prefix="plone.bundles/plone-legacy" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+
+  <records prefix="plone.bundles/plone-logged-in" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+  -->
+
 </registry>

@@ -45,35 +45,32 @@
 }
 
 /* Main-Styling */
-body {
+html {
   background-color: @tokyo-black;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  a {
-    text-decoration: none !important;
-  }
+  body {
+    background-color: inherit;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  .outer-wrapper {
-    background-color: white;
-  }
+    #content {
+      background-color: white;
 
-  .inner-wrapper {
-    padding: 120px 0 40px 0;
-  }
+      .content-inner {
+        padding: 120px 0;
 
-  .documentFirstHeading {
-    border-bottom: none;
-    padding: 0;
-  }
+        a {
+          text-decoration: none !important;
+        }
 
-  .documentDescription {
-    margin-bottom: 20px;
-  }
+        .documentFirstHeading {
+          border-bottom: none;
+          padding: 0;
+        }
 
-  .content-uncontained,
-  .content-contained {
-    .inner-wrapper {
-      width: 100%;
+        .documentDescription {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 }
