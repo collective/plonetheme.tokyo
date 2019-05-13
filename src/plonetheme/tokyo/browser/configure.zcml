@@ -9,6 +9,11 @@
   <!-- Overrides -->
 
   <browser:jbot
+      directory="overrides/cmfplone"
+      layer="collective.sidebar.interfaces.ICollectiveSidebarLayer"
+      />
+
+  <browser:jbot
       directory="overrides/collective_sidebar"
       layer="collective.sidebar.interfaces.ICollectiveSidebarLayer"
       />
@@ -33,22 +38,24 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <!-- Skins -->
+
   <browser:jbot
-      directory="overrides/plone_prefs"
+      directory="overrides/skins_plone_prefs"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
   <browser:jbot
-      directory="overrides/plone_templates"
+      directory="overrides/skins_plone_templates"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
+
+  <!-- Login Forms -->
 
   <browser:jbot
       directory="overrides/plone_login/plone_52"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
-
-  <!-- Override Compatibility -->
 
   <browser:jbot
       directory="overrides/plone_login/plone_51"
@@ -57,8 +64,9 @@
 
   <!-- Resources -->
 
-  <browser:resourceDirectory
+  <plone:static
       name="plonetheme.tokyo"
+      type="plone"
       directory="static"
       />
 

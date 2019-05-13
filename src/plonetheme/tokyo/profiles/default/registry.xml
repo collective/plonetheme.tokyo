@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <registry>
 
+  <!-- Tokyo Bundle -->
+
   <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo">
     <value key="js">++theme++plonetheme.tokyo/js/tokyo.js</value>
     <value key="css">
@@ -19,6 +21,17 @@
     <value key="compile">True</value>
     <value key="last_compilation">2019-02-13 11:10:00</value>
     <value key="depends">plone</value>
+  </records>
+
+  <!-- Static Resources -->
+
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-bootstrap">
+    <value key="jscompilation">++plone++plonetheme.tokyo/bootstrap.min.js</value>
+    <value key="csscompilation">++plone++plonetheme.tokyo/bootstrap.min.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">False</value>
+    <value key="last_compilation">2019-02-13 11:10:00</value>
+    <value key="depends">jquery</value>
   </records>
 
   <!--

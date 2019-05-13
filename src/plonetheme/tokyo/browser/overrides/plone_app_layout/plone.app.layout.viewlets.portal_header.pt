@@ -5,7 +5,7 @@
     <div class="container-fluid header-wrapper">
 
       <a class="header-logo" href="${navroot}">
-        <img src="" alt="" tal:attributes="src string:${navroot}/++resource++plonetheme.tokyo/plone_logow.svg">
+        <img src="" alt="" tal:attributes="src string:${navroot}/++plone++plonetheme.tokyo/plone_logow.svg">
       </a>
 
       <div class="header-icons">

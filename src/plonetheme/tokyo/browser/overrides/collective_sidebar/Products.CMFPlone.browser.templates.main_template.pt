@@ -34,10 +34,7 @@
     <metal:javascriptslot define-slot="javascript_head_slot" />
     <link tal:replace="structure provider:plone.htmlhead.links" />
     <meta name="generator" content="Plone - http://plone.com" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
   </head>
 
   <body tal:define="isRTL portal_state/is_rtl;
