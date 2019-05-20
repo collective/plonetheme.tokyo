@@ -6,13 +6,62 @@
 
   <include package="z3c.jbot" file="meta.zcml" />
 
+  <!-- Overrides -->
+
   <browser:jbot
-      directory="overrides"
+      directory="overrides/cmfplone"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
-  <browser:resourceDirectory
+  <browser:jbot
+      directory="overrides/plone_app_contenttypes"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_app_layout"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_app_z3cform"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_controlpanel"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Skins -->
+
+  <browser:jbot
+      directory="overrides/skins_plone_prefs"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/skins_plone_templates"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Login Forms -->
+
+  <browser:jbot
+      directory="overrides/plone_login/plone_52"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_login/plone_51"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Resources -->
+
+  <plone:static
       name="plonetheme.tokyo"
+      type="plone"
       directory="static"
       />
 

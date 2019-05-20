@@ -1,0 +1,21 @@
+<div class="page-footer pt-4">
+
+	<div class="container">
+
+		<!-- Call to Action -->
+		<ul class="list-unstyled list-inline text-center py-2">
+			<li class="list-inline-item">
+				<h5 class="mb-1">Welcome to Plone</h5>
+			</li>
+			<li class="list-inline-item">
+				<a href="https://training.plone.org/5" class="btn btn-outline-light" target="_blank">Get Started</a>
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="footer-copyright text-center py-3">
+		Tokyo Theme for Plone
+	</div>
+
+</div>

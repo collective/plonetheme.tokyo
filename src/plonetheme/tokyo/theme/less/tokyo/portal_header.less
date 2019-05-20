@@ -1,0 +1,59 @@
+/* Show Header */
+.headerVisible() {
+  background-color: @tokyo-blue;
+
+  .header-wrapper {
+    .header-logo {
+      visibility: visible;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Header Styling */
+#menu-header {
+  background-color: transparent;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  z-index: 45;
+
+  /* If Active - Show Header */
+  &.active {
+    .headerVisible();
+  }
+
+  /* Header Content */
+  .header-wrapper {
+    display: flex;
+    height: inherit;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    .header-logo {
+      margin-right: auto;
+      visibility: hidden;
+
+      img {
+        height: 100%;
+        opacity: 0;
+        padding: 20px;
+        width: auto;
+      }
+    }
+
+    .header-icons {
+      color: @tokyo-white;
+      cursor: pointer;
+      float: right;
+      padding: 15px;
+
+      i {
+        font-size: 26px;
+      }
+    }
+  }
+}

@@ -1,0 +1,281 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+  <metal:main fill-slot="main">
+
+    <h1 class="documentFirstHeading">Plone User Interface elements test page</h1>
+
+    <div class="documentDescription">
+      This page lists the common user interface elements that exist in Plone, and
+      shows you how they are rendered. It also tests a couple of common Internet
+      Explorer rendering bugs, so you can see if your changes have triggered any
+      bad behaviour on this front.
+    </div>
+
+    <div id="content-core">
+
+      <br>
+      <pre>Headlines</pre>
+      <hr>
+
+      <h1>Headline h1</h1>
+      <h2>Headline h2</h2>
+      <h3>Headline h3</h3>
+      <h4>Headline h4</h4>
+      <h5>Headline h5</h5>
+      <h6>Headline h6</h6>
+
+      <br>
+      <pre>Messages</pre>
+      <hr>
+
+      <div class="portalMessage info">
+        <strong>Info</strong>
+        <span tal:omit-tag="">
+          The portalMessage class, can also contain <a href="#">links</a> - used to
+          give the user temporary status messages.
+        </span>
+      </div>
+
+      <div class="portalMessage error">
+        <strong>Error</strong>
+        <span tal:omit-tag="">
+          The portalMessage 'error' class, can also contain <a href="#">links</a> - used to
+          give the user temporary status messages.
+        </span>
+      </div>
+
+      <div class="portalMessage warning">
+        <strong>Warning</strong>
+        <span tal:omit-tag="">
+          The portalMessage 'warning' class, can also contain <a href="#">links</a> - used to
+          give the user temporary status messages.
+        </span>
+      </div>
+
+      <br>
+      <pre>Example Rendering</pre>
+      <hr>
+
+      <h1 class="documentFirstHeading">Document Headline</h1>
+
+      <div class="documentDescription">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores ad cumque natus quas debitis quaerat non ullam labore porro, nisi minima nihil et voluptas! Magni, est, itaque. Consequuntur, ex!
+      </div>
+
+      <div class="documentByLine">
+        <span class="documentAuthor">
+          by <a href="http://localhost:8080/Plone/author/admin">admin</a>
+        </span>
+        <span class="documentModified">
+          &mdash;
+          <span>last modified</span>
+          May 21, 2010 10:02 AM
+        </span>
+        <span class="contentHistory">
+          &mdash;
+          <a href="http://localhost:8080/Plone/front-page/@@historyview" rel="noreferrer" target="_blank">History</a>
+        </span>
+      </div>
+
+      <p>
+        Normal document body text,
+        <strong>strong text</strong>,
+        <em>emphasised text</em>,
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo. Vestibulum vitae urna et mi volutpat luctus. Nulla auctor, lacus ut consectetuer sagittis, erat odio vulputate sapien,
+        eu placerat diam mauris id turpis. Aenean quis ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque rutrum. Sed mattis turpis sit amet ipsum viverra pharetra. Nunc facilisis, augue non
+        dapibus gravida, risus quam vulputate quam, non venenatis dui massa in leo. Maecenas scelerisque dapibus libero. Suspendisse potenti.
+        example <a rel="noreferrer" href="${context/absolute_url}">Normal internal site link</a> inside a paragraph,
+        example <a rel="noreferrer" href="http://plone.org">External link to plone.org</a>,
+        example <a rel="noreferrer" href="https://plone.org">Secure (HTTPS) link to plone.org</a>,
+        example <a rel="noreferrer" href="mailto:some@address">Mailto link</a>,
+        example <a rel="noreferrer" href="ftp://some.site">FTP link</a>,
+        example <a rel="noreferrer" href="news://some.site">NNTP (news) link</a>,
+        example <a rel="noreferrer" href="webcal://some.site">WebCal link</a>,
+        example <a rel="noreferrer" href="feed://some.site">RSS feed link</a>,
+        example <a rel="noreferrer" href="irc://some.network/#channel">IRC link</a>.
+      </p>
+
+      <br>
+      <pre>Lists</pre>
+      <hr>
+
+      <ul>
+        <li>Unordered list element 1
+          <ul>
+            <li>Unordered list subelement 1</li>
+          </ul>
+        </li>
+        <li>Unordered list element 2</li>
+        <li>Unordered list element 3</li>
+      </ul>
+
+      <ol>
+        <li>Ordered list element 1
+          <ol>
+            <li>Ordered list subelement 1</li>
+          </ol>
+        </li>
+        <li>Ordered list element 2</li>
+        <li>Ordered list element 3</li>
+      </ol>
+
+      <br>
+      <pre>Definition List</pre>
+      <hr>
+
+      <dl>
+        <dt>Definition List Term</dt>
+        <dd>Definition List Description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo.</dd>
+        <dd>Definition List Description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo.</dd>
+      </dl>
+
+      <br>
+      <pre>Forms</pre>
+      <hr>
+
+      <form>
+        <fieldset>
+
+          <legend>Legend</legend>
+
+          <div class="form-group">
+            <label>Text-Field</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This is the help for this form field. And <a href="#">links are also possible</a>.</div>
+            <input class="form-control" type="text" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit." />
+
+          </div>
+
+          <div class="form-group error">
+            <label>Text-Field + Error</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This field is just here to demonstrate an error message.</div>
+            <input class="form-control" type="text" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit." />
+
+          </div>
+
+          <div class="form-group">
+            <label>Checkbox</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This is a checkbox field.</div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheckC1">
+              <label class="custom-control-label" for="customCheckC1">Check this custom checkbox</label>
+            </div>
+
+          </div>
+
+          <div class="form-group error">
+            <label>Checkbox + Errors</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This checkbox field is just here to demonstrate an error message.</div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheckEC1">
+              <label class="custom-control-label" for="customCheckEC1">Check this custom checkbox</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheckEC2">
+              <label class="custom-control-label" for="customCheckEC2">Check this custom checkbox</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheckEC3">
+              <label class="custom-control-label" for="customCheckEC3">Check this custom checkbox</label>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Radio</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This is a radio field.</div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioR1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadioR1">Check this custom radio</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioR2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioR2">Check this custom radio</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioR3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioR3">Check this custom radio</label>
+            </div>
+
+          </div>
+
+          <div class="form-group error">
+            <label>Radio + Errors</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:attributes="title title_required"
+                  i18n:translate="label_required">(Required)</span>
+
+            <div class="form-text text-muted">This radio field is just here to demonstrate an error message.</div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioER1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadioER1">Check this custom radio</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioER2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioER2">Check this custom radio</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadioER3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioER3">Check this custom radio</label>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-secondary" type="submit" value="Context Submit" />
+            <input class="btn btn-primary" type="submit" value="Standalone Submit" />
+            <input class="btn btn-danger" type="submit" value="Destructive Submit" />
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-secondary" type="button" value="Context Button" />
+            <input class="btn btn-primary" type="button" value="Standalone Button" />
+            <input class="btn btn-danger" type="button" value="Destructive Button" />
+          </div>
+
+        </fieldset>
+      </form>
+
+    </div>
+
+  </metal:main>
+</body>
+
+</html>

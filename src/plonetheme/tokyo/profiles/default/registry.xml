@@ -1,5 +1,70 @@
 <?xml version="1.0"?>
 <registry>
-<!-- -*- extra stuff goes here -*- -->
+
+  <!-- Tokyo Legacy Bundle -->
+
+  <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo-legacy">
+    <value key="css">
+      <element>++theme++plonetheme.tokyo/less/legacy/plone_logged_in.less</element>
+    </value>
+  </records>
+
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-legacy">
+    <value key="resources">
+      <element>tokyo-legacy</element>
+    </value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-legacy-compiled.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="last_compilation">2019-02-13 11:10:00</value>
+    <value key="depends">plone-logged-in</value>
+  </records>
+
+  <!-- Tokyo Bundle -->
+
+  <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo">
+    <value key="js">++theme++plonetheme.tokyo/js/tokyo.js</value>
+    <value key="css">
+      <element>++theme++plonetheme.tokyo/less/tokyo.less</element>
+    </value>
+    <value key="deps">jquery</value>
+  </records>
+
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo">
+    <value key="resources">
+      <element>tokyo</element>
+    </value>
+    <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo-compiled.js</value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-compiled.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="last_compilation">2019-02-13 11:10:00</value>
+    <value key="depends">plone</value>
+  </records>
+
+  <!-- Static Bundles -->
+
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-bootstrap">
+    <value key="jscompilation">++plone++plonetheme.tokyo/bootstrap.min.js</value>
+    <value key="csscompilation">++plone++plonetheme.tokyo/bootstrap.min.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">False</value>
+    <value key="last_compilation">2019-02-13 11:10:00</value>
+    <value key="depends">jquery</value>
+  </records>
+
+  <!--
+  <records prefix="plone.bundles/plone" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+
+  <records prefix="plone.bundles/plone-legacy" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+
+  <records prefix="plone.bundles/plone-logged-in" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="enabled">False</value>
+  </records>
+  -->
 
 </registry>
