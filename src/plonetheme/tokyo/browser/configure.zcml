@@ -10,12 +10,7 @@
 
   <browser:jbot
       directory="overrides/cmfplone"
-      layer="collective.sidebar.interfaces.ICollectiveSidebarLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/collective_sidebar"
-      layer="collective.sidebar.interfaces.ICollectiveSidebarLayer"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
   <browser:jbot
