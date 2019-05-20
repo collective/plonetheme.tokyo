@@ -1,6 +1,25 @@
 <?xml version="1.0"?>
 <registry>
 
+  <!-- Tokyo Legacy Bundle -->
+
+  <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo-legacy">
+    <value key="css">
+      <element>++theme++plonetheme.tokyo/less/legacy/plone_logged_in.less</element>
+    </value>
+  </records>
+
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-legacy">
+    <value key="resources">
+      <element>tokyo-legacy</element>
+    </value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-legacy-compiled.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="last_compilation">2019-02-13 11:10:00</value>
+    <value key="depends">plone-logged-in</value>
+  </records>
+
   <!-- Tokyo Bundle -->
 
   <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo">
@@ -23,7 +42,7 @@
     <value key="depends">plone</value>
   </records>
 
-  <!-- Static Resources -->
+  <!-- Static Bundles -->
 
   <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-bootstrap">
     <value key="jscompilation">++plone++plonetheme.tokyo/bootstrap.min.js</value>
