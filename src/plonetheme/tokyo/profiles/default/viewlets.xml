@@ -27,6 +27,7 @@
   </order>
   <order manager="plone.portaltop" skinname="Plone Default">
     <viewlet name="plone.header" />
+    <viewlet name="plone.scripts" />
   </order>
   <order manager="plone.toolbar" skinname="Plone Default">
     <viewlet name="plone.contentviews" />
