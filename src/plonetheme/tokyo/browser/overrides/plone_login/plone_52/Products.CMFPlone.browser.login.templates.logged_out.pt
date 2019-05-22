@@ -8,27 +8,44 @@
       i18n:domain="plone">
 
 <body>
-  <metal:main fill-slot="main" tal:define="isAnon context/@@plone_portal_state/anonymous">
+  <metal:define tal:define="isAnon context/@@plone_portal_state/anonymous">
 
-    <tal:reallyloggedout condition="isAnon">
-      <div class="portalMessage info">
-        <strong i18n:translate="">Info</strong>
-        <span tal:omit-tag="" i18n:translate="">You are now logged out.</span>
-      </div>
-      <metal:login use-macro="context/login_form/macros/login" />
-    </tal:reallyloggedout>
+    <tal:condition condition="isAnon">
 
-    <tal:notloggedoutafterall tal:condition="not:isAnon">
-      <h1 class="documentFirstHeading" i18n:translate="heading_quit_to_log_out">Still logged in as a Zope user</h1>
-      <div class="documentDescription" i18n:translate="description_quit_to_log_out">
-        You are logged in via HTTP authentication (i.e. the Zope Management Interface). In order to log out, you must:
-      </div>
-      <p i18n:translate="">
-        <a i18n:name="text_logged_out_link" tal:attributes="href string:${portal_url}/@@plone-root-logout" i18n:translate="">Visit this link</a> and click 'Cancel' when prompted with an authentication prompt.
-      </p>
-    </tal:notloggedoutafterall>
+      <metal:message fill-slot="global_statusmessage">
+        <div class="portalMessage info">
+          <strong i18n:translate="">Info</strong>
+          <span tal:omit-tag="" i18n:translate="">You are now logged out.</span>
+        </div>
+      </metal:message>
 
-  </metal:main>
+      <metal:content fill-slot="content-core">
+        <metal:login use-macro="context/login_form/macros/login" />
+      </metal:content>
+
+    </tal:condition>
+
+    <tal:condition tal:condition="not:isAnon">
+
+      <metal:title fill-slot="content-title">
+        <h1 class="documentFirstHeading" i18n:translate="heading_quit_to_log_out">Still logged in as a Zope user</h1>
+      </metal:title>
+
+      <metal:description fill-slot="content-description">
+        <div class="documentDescription" i18n:translate="description_quit_to_log_out">
+          You are logged in via HTTP authentication (i.e. the Zope Management Interface). In order to log out, you must:
+        </div>
+      </metal:description>
+
+      <metal:content fill-slot="content-core">
+        <p i18n:translate="">
+          <a i18n:name="text_logged_out_link" tal:attributes="href string:${portal_url}/@@plone-root-logout" i18n:translate="">Visit this link</a> and click 'Cancel' when prompted with an authentication prompt.
+        </p>
+      </metal:content>
+
+    </tal:condition>
+
+  </metal:define>
 </body>
 
 </html>

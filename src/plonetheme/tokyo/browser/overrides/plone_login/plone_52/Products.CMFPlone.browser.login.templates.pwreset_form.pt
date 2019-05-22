@@ -1,120 +1,111 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
+
 <body>
 
-<metal:custom_title fill-slot="content-title">
-        <h1 class="documentFirstHeading"
-            i18n:translate="heading_reset_password">Set your password</h1>
-</metal:custom_title>
+  <metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading" i18n:translate="heading_reset_password">Set your password</h1>
+  </metal:title>
 
-<metal:custom_desc fill-slot="content-description">
-        <div class="documentDescription"
-           i18n:translate="description_reset_password">
-            Please fill out the form below to set your password.
+  <metal:description fill-slot="content-description">
+    <div class="documentDescription" i18n:translate="description_reset_password">
+      Please fill out the form below to set your password.
+    </div>
+  </metal:description>
+
+  <metal:content-core fill-slot="content-core" tal:define="errors view/getErrors">
+
+    <form name="pwreset_action" method="post" tal:attributes="action request/getURL">
+
+      <h2 i18n:translate="legend_new_password">New Password</h2>
+
+      <input type="hidden" name="randomstring" value="" tal:attributes="value options/randomstring|request/randomstring|nothing" />
+
+      <div class="form-group"
+           tal:define="error errors/userid|nothing;
+                       use_email_as_login python:context.portal_registry['plone.use_email_as_login']"
+           tal:condition="here/portal_password_reset/checkUser|nothing">
+
+        <tal:username tal:condition="not:use_email_as_login">
+          <label for="userid" i18n:translate="label_my_user_name_is">My user name is</label>
+        </tal:username>
+
+        <tal:email tal:condition="use_email_as_login">
+          <label for="userid" i18n:translate="label_my_email_address_is">My E-Mail address is</label>
+        </tal:email>
+
+        <input class="form-control" type="text" name="userid" id="userid" />
+
+        <div class="invalid-feedback" tal:content="error" tal:condition="error">
+          Validation error output
         </div>
-</metal:custom_desc>
 
-<metal:content-core fill-slot="content-core">
-<metal:content-core define-macro="content-core" tal:define="errors view/getErrors">
+        <tal:condition tal:condition="not:use_email_as_login">
+          <small class="form-text text-muted" i18n:translate="help_userid">
+            Enter your user name for verification.
+          </small>
+        </tal:condition>
 
-            <form class="enableAutoFocus"
-                  name="pwreset_action"
-                  method="post"
-                  tal:attributes="action request/getURL">
-                <fieldset>
-                    <legend i18n:translate="legend_new_password">New Password</legend>
-                    <input type="hidden"
-                           name="randomstring"
-                           value=""
-                           tal:attributes="value options/randomstring | request/randomstring | nothing" />
+        <tal:condition tal:condition="use_email_as_login">
+          <small class="form-text text-muted" i18n:translate="help_verify_email">
+            Enter your E-Mail address for verification.
+          </small>
+        </tal:condition>
 
-                    <div class="field"
-                         tal:define="error errors/userid | nothing;
-                                     use_email_as_login python:context.portal_registry['plone.use_email_as_login'];"
-                         tal:attributes="class python:error and 'field error' or 'field'"
-                         tal:condition="here/portal_password_reset/checkUser | nothing">
+      </div>
 
-                      <tal:username tal:condition="not:use_email_as_login">
-                        <label for="userid"
-                               i18n:translate="label_my_user_name_is">My user name is</label>
-                        <div tal:content="error">Validation error output</div>
+      <div class="form-group" tal:define="error errors/password|nothing">
 
-                        <div class="formHelp" i18n:translate="help_userid">
-                            Enter your user name for verification.
-                        </div>
-                      </tal:username>
-                      <tal:email tal:condition="use_email_as_login">
-                        <label for="userid"
-                               i18n:translate="label_my_email_address_is">My email address is</label>
-                        <div tal:content="error">Validation error output</div>
+        <label for="password" i18n:translate="label_new_password">New password</label>
 
-                        <div class="formHelp" i18n:translate="help_verify_email">
-                            Enter your email address for verification.
-                        </div>
-                      </tal:email>
+        <input class="form-control" type="password" id="password" name="password" size="10" />
 
-                        <input name="userid" id="userid" />
-                    </div>
+        <div class="invalid-feedback" tal:content="error" tal:condition="error">
+          Validation error output
+        </div>
 
-                    <div class="field"
-                         tal:define="error errors/password | nothing;"
-                         tal:attributes="class python:error and 'field error' or 'field'">
+        <small class="form-text text-muted" i18n:translate="help_new_password">
+          Enter your new password.
+        </small>
 
-                        <label for="password"
-                               i18n:translate="label_new_password">New password</label>
-                        <div tal:content="error">Validation error output</div>
+      </div>
 
-                        <div class="formHelp"
-                             i18n:translate="help_new_password">
-                            Enter your new password.
-                        </div>
+      <div class="form-group" tal:define="error errors/password|nothing">
 
-                        <input type="password"
-                               id="password"
-                               name="password"
-                               size="10" />
-                    </div>
+        <label for="password2" i18n:translate="label_confirm_password">Confirm password</label>
 
-                    <div class="field"
-                         tal:define="error errors/password | nothing;"
-                         tal:attributes="class python:error and 'field error' or 'field'">
+        <input class="form-control" type="password" id="password2" name="password2" size="10" />
 
-                        <label for="password2" i18n:translate="label_confirm_password">Confirm password</label>
-                        <div tal:content="error">Validation error output</div>
+        <div class="invalid-feedback" tal:content="error" tal:condition="error">
+          Validation error output
+        </div>
 
-                        <div class="formHelp" i18n:translate="help_confirm_password">
-                            Re-enter the password. Make sure the passwords are identical.
-                        </div>
+        <small class="form-text text-muted" i18n:translate="help_confirm_password">
+          Re-enter the password. Make sure the passwords are identical.
+        </small>
 
-                        <input type="password"
-                               id="password2"
-                               name="password2"
-                               size="10"
-                               />
-                    </div>
+      </div>
 
-                    <div>
-                        <div class="label">&nbsp;</div>
+      <div class="form-group">
 
-                        <div class="field">
-                            <input class="context"
-                                   type="submit"
-                                   value="Set my password"
-                                   i18n:attributes="value"
-                                   />
-                        </div>
-                    </div>
-                    <input type="hidden" name="form.submitted" value="1" />
-                </fieldset>
-            </form>
+        <div class="label">&nbsp;</div>
 
-</metal:content-core>
-</metal:content-core>
+        <input class="form-control" type="submit" value="Set my password" i18n:attributes="value" />
+
+      </div>
+
+      <input type="hidden" name="form.submitted" value="1" />
+
+    </form>
+
+  </metal:content-core>
 
 </body>
+
 </html>
