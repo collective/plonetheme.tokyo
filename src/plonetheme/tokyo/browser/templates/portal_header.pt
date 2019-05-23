@@ -5,7 +5,9 @@
     <div class="container-fluid header-wrapper">
 
       <a class="header-logo" href="${navroot}">
-          <img src="${python: view.logo if view.logo else navroot+'/++plone++plonetheme.tokyo/plone_logow.svg'}" alt="">
+        <img src="${python: view.logo if view.logo else navroot+'/++plone++plonetheme.tokyo/plone_logow.svg'}"
+             alt="${view/logo_title}"
+             title="${view/logo_title}">
       </a>
       <div class="header-icons">
         <i id="portaltab-burger-menu" class="glyphicon glyphicon-menu-hamburger"></i>

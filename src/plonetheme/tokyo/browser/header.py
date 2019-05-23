@@ -18,3 +18,4 @@ class PortalHeader(ViewletBase):
         self.logo = None
         if getattr(settings, 'site_logo', False):
             self.logo = utils.getSiteLogo()
+        self.logo_title = settings.site_title
