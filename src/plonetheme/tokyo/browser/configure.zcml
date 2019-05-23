@@ -73,4 +73,16 @@
       template="templates/listing_news.pt"
       />
 
+
+  <!-- Viewlets -->
+
+  <browser:viewlet
+    name="plone.header"
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+    template="templates/portal_header.pt"
+    class=".header.PortalHeader"
+    permission="zope2.View"
+    layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+    />
+
 </configure>
