@@ -40,9 +40,4 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
-  <browser:jbot
-      directory="overrides/z3c_form"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
 </configure>
