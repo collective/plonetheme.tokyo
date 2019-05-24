@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<div id="" class=""
+      tal:attributes="id view/id;
+                      class view/klass;
+                      style view/style;
+                      title view/title;
+                      lang view/lang;
+                      onclick view/onclick;
+                      ondblclick view/ondblclick;
+                      onmousedown view/onmousedown;
+                      onmouseup view/onmouseup;
+                      onmouseover view/onmouseover;
+                      onmousemove view/onmousemove;
+                      onmouseout view/onmouseout;
+                      onkeypress view/onkeypress;
+                      onkeydown view/onkeydown;
+                      onkeyup view/onkeyup">
+  <tal:block repeat="widget view/widgets">
+    <div id="" class="row"
+         tal:attributes="id string:${widget/id}-row"
+         tal:define="key_widget python:view.key_widgets[repeat['widget'].index()];"
+         tal:condition="python:widget.mode != 'hidden'">
+      <metal:block define-macro="widget-row">
+        <tal:block condition="python: key_widget is not None">
+          <div class="label" tal:condition="view/showLabel">
+            <label tal:attributes="for key_widget/id">
+              <span i18n:translate=""
+                  tal:content="key_widget/label">label</span>
+              <span class="required"
+                    tal:condition="key_widget/required">*</span>
+            </label>
+          </div>
+          <div class="widget">
+            <div class="multi-widget-display"
+                 tal:content="structure key_widget/render">
+              <input size="24" value="" type="text" />
+            </div>
+          </div>
+        </tal:block>
+        <div class="label" tal:condition="view/showLabel">
+          <label tal:attributes="for widget/id">
+            <span i18n:translate=""
+                tal:content="widget/label">label</span>
+            <span class="required"
+                  tal:condition="widget/required">*</span>
+          </label>
+        </div>
+        <div class="widget">
+          <div class="multi-widget-display"
+               tal:content="structure widget/render">
+            <input size="24" value="" type="text" />
+          </div>
+        </div>
+      </metal:block>
+    </div>
+  </tal:block>
+</div>
+</html>

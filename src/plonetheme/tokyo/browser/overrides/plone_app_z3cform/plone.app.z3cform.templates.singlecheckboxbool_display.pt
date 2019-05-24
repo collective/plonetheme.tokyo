@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       tal:omit-tag="">
+
   <span tal:attributes="id view/id;
                         class view/klass;
                         style view/style;
@@ -18,4 +19,5 @@
                         onkeyup view/onkeyup">
     <span tal:content="python:view.displayValue[0] if view.displayValue else ''" />
   </span>
+  
 </html>

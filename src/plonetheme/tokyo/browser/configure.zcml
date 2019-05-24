@@ -4,58 +4,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="plonetheme.tokyo">
 
-  <include package="z3c.jbot" file="meta.zcml" />
-
-  <!-- Overrides -->
-
-  <browser:jbot
-      directory="overrides/cmfplone"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_app_contenttypes"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_app_layout"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_app_z3cform"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_controlpanel"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <!-- Skins -->
-
-  <browser:jbot
-      directory="overrides/skins_plone_prefs"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/skins_plone_templates"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <!-- Login Forms -->
-
-  <browser:jbot
-      directory="overrides/plone_login/plone_52"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_login/plone_51"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
+  <include file="overrides.zcml" />
 
   <!-- Resources -->
 
@@ -65,6 +14,8 @@
       directory="static"
       />
 
+  <!-- Views -->
+
   <browser:page
       name="listing_news"
       for="*"
@@ -72,7 +23,6 @@
       class=".listings.ListingNewsView"
       template="templates/listing_news.pt"
       />
-
 
   <!-- Viewlets -->
 
