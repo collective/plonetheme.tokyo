@@ -7,47 +7,56 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
 
-<body>
+  <body>
 
-  <metal:title fill-slot="content-title">
+    <metal:content fill-slot="main">
 
-    <div class="jumbotron jumbotron-fluid"
-         tal:define="portal_state context/@@plone_portal_state; portal_url portal_state/portal_url">
-      <div class="container">
-        <h1 class="display-4" i18n:translate="need_more_help">Need more help?</h1>
-        <p class="lead">
-          <a tal:attributes="href string:${portal_url}/contact-info" href="contact-info" i18n:translate="contact_an_admin">Contact an admin.</a>
-          <span i18n:translate="go_to_login" tal:omit-tag="">Go to</span>
-          <a tal:attributes="href string:${portal_url}/login" i18n:translate="to_login_view" href="login">login</a>.
-        </p>
-      </div>
-    </div>
-
-  </metal:title>
-
-  <metal:content fill-slot="content-core">
-
-    <form action="."
-          method="post"
-          tal:attributes="action view/action; enctype view/enctype"
-          tal:define="subforms view/subforms">
-
-      <div class="row">
-        <div class="col-xs-6 col-sm-6"
-             tal:repeat="subform subforms"
-             tal:attributes="class python:'col-xs-12 col-sm-12' if len(subforms) == 1 else 'col-xs-6 col-sm-6'">
-
-          <tal:subform replace="structure subform/render"></tal:subform>
-
+      <div class="jumbotron jumbotron-fluid"
+           tal:define="portal_state context/@@plone_portal_state; portal_url portal_state/portal_url">
+        <div class="container">
+          <h1 class="display-4" i18n:translate="need_more_help">Need more help?</h1>
+          <p class="lead">
+            <a tal:attributes="href string:${portal_url}/contact-info" href="contact-info" i18n:translate="contact_an_admin">Contact an admin.</a>
+            <span i18n:translate="go_to_login" tal:omit-tag="">Go to</span>
+            <a tal:attributes="href string:${portal_url}/login" i18n:translate="to_login_view" href="login">login</a>.
+          </p>
         </div>
       </div>
 
-      <span tal:replace="structure context/@@authenticator/authenticator" />
+      <form action="."
+            method="post"
+            tal:attributes="action view/action; enctype view/enctype"
+            tal:define="subforms view/subforms">
 
-    </form>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6"
+               tal:repeat="subform subforms"
+               tal:attributes="class python:'col-xs-12 col-sm-12' if len(subforms) == 1 else 'col-xs-6 col-sm-6'">
 
-  </metal:content>
+            <tal:define tal:define="widgets subform/widgets/values">
+              <tal:repeat tal:repeat="widget widgets">
+                <div class="form-label-group">
+                  <input class="form-control" type="text" name="${widget/name}" placeholder="${widget/field/title}" />
+                  <small class="text-muted">${widget/field/description}</small>
+                </div>
+              </tal:repeat>
+            </tal:define>
 
-</body>
+            <tal:define tal:define="actions subform/actions/values">
+              <tal:repeat tal:repeat="action actions">
+                <input class="btn btn-primary text-uppercase context" type="submit" name="${action/name}" />
+              </tal:repeat>
+            </tal:define>
+
+          </div>
+        </div>
+
+        <span tal:replace="structure context/@@authenticator/authenticator" />
+
+      </form>
+
+    </metal:content>
+
+  </body>
 
 </html>
