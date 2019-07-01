@@ -13,13 +13,22 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <!-- Controlpanel Templates -->
+
   <browser:jbot
       directory="overrides/cmfplone/controlpanel"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <!-- Login Views -->
+
   <browser:jbot
-      directory="overrides/cmfplone/login"
+      directory="overrides/cmfplone/login/plone_510"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/cmfplone/login/plone_520"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
