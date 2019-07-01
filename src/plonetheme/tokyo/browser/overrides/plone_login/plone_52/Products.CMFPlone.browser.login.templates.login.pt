@@ -28,44 +28,44 @@
             <h5 class="card-title text-center">Sign In</h5>
 
             <form class="form-signin pat-formautofocus" action="." method="post"
+                  tal:define="auth nocall:context/acl_users/credentials_cookie_auth|context/cookie_authentication|nothing;
+                              ac_name auth/name_cookie|string:__ac_name;
+                              ac_password auth/pw_cookie|string:__ac_password;
+                              login_name python:request.get('login_name', request.get(ac_name, ''));
+                              widgets view/widgets"
                   tal:attributes="action view/action; enctype view/enctype">
 
-              <tal:widgets repeat="widget view/widgets/values">
-                <tal:block tal:define="hidden python:widget.mode == 'hidden'">
+              <div class="form-label-group" tal:define="field python:widgets.get(ac_name, '');
+                                                        error field/error|nothing">
 
-                  <div tal:condition="not:hidden">
-                    <div class="form-label-group"
-                         tal:define="error widget/error"
-                         tal:attributes="class python:'field' + (error and ' error' or '')">
+                <input class="form-control ${python:'is-invalid' if error else ''}"
+                       type="text" size="15" placeholder="Username or E-Mail" autofocus
+                       i18n:attributes="placeholder username_password"
+                       tal:attributes="name ac_name; id ac_name; value login_name;" />
 
-                      <label for="" tal:attributes="for widget/id" tal:condition="not:hidden">
-                        <span i18n:translate="" tal:content="widget/label">label</span>
-                        <span class="required horizontal" title="Required" tal:condition="python:widget.required and not hidden" i18n:attributes="title title_required;">&nbsp;</span>
-                      </label>
+              </div>
 
-                      <input type="text" tal:replace="structure widget/render" />
+              <div class="form-label-group" tal:define="field python:widgets.get(ac_password, '');
+                                                        error field/error|nothing">
 
-                      <div class="form-text text-muted"
-                           tal:define="description widget/field/description"
-                           i18n:translate=""
-                           tal:content="description"
-                           tal:condition="description"></div>
+                <input class="form-control ${python:'is-invalid' if error else ''}"
+                       type="password" size="15" placeholder="Password"
+                       i18n:attributes="placeholder password"
+                       tal:attributes="name ac_password; id ac_password;" />
 
-                      <div tal:condition="error" tal:content="structure error/render">Error</div>
-
-                    </div>
-                  </div>
-
-                  <input type="hidden" tal:condition="hidden" tal:replace="structure widget/render" />
-
-                </tal:block>
-              </tal:widgets>
+              </div>
 
               <span tal:replace="structure context/@@authenticator/authenticator" />
 
-              <tal:actions tal:repeat="action view/actions/values|nothing">
-                <input type="submit" tal:replace="structure action/render" />
-              </tal:actions>
+              <tal:repeat tal:repeat="widget widgets/values">
+                <tal:define tal:define="hidden python:widget.mode == 'hidden'">
+                  <input type="hidden" tal:condition="hidden" tal:replace="structure widget/render" />
+                </tal:define>
+              </tal:repeat>
+
+              <input class="btn btn-primary btn-block text-uppercase context"
+                     type="submit" name="buttons.login" value="Continue"
+                     i18n:attributes="value label_log_in;" />
 
             </form>
 
@@ -78,12 +78,14 @@
 
             <div>
               <strong i18n:translate="trouble_logging_in" tal:omit-tag="">Trouble logging in?</strong>
-              <a href="@@login-help" tal:attributes="href string:${portal_url}/@@login-help" i18n:translate="footer_login_link_get_help">Get help</a>.
+              <a href="@@login-help" tal:attributes="href string:${portal_url}/@@login-help"
+                 i18n:translate="footer_login_link_get_help">Get help</a>.
             </div>
 
             <div tal:condition="python:view.self_registration_enabled()">
               <strong i18n:translate="need_an_account" tal:omit-tag="">Need an account?</strong>
-              <a href="@@register" tal:attributes="href string:${portal_url}/@@register" class="emph" i18n:translate="footer_login_link_signup">Sign up here</a>.
+              <a href="@@register" tal:attributes="href string:${portal_url}/@@register" class="emph"
+                 i18n:translate="footer_login_link_signup">Sign up here</a>.
             </div>
 
           </div>

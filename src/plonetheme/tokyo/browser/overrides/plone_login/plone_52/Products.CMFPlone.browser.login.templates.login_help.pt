@@ -7,17 +7,24 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
 
-<body>
-  <metal:main fill-slot="main">
-    <metal:main-macro define-macro="main">
+  <body>
 
-      <h1 class="documentFirstHeading" tal:condition="view/label|nothing">
-        <span tal:replace="view/label"></span>
-      </h1>
+    <metal:content fill-slot="main">
 
-      <p class="documentDescription" tal:condition="view/description|nothing" tal:content="structure view/description"></p>
+      <div class="jumbotron jumbotron-fluid"
+           tal:define="portal_state context/@@plone_portal_state; portal_url portal_state/portal_url">
+        <div class="container">
+          <h1 class="display-4" i18n:translate="need_more_help">Need more help?</h1>
+          <p class="lead">
+            <a tal:attributes="href string:${portal_url}/contact-info" href="contact-info" i18n:translate="contact_an_admin">Contact an admin.</a>
+            <span i18n:translate="go_to_login" tal:omit-tag="">Go to</span>
+            <a tal:attributes="href string:${portal_url}/login" i18n:translate="to_login_view" href="login">login</a>.
+          </p>
+        </div>
+      </div>
 
-      <form action="." method="post"
+      <form action="."
+            method="post"
             tal:attributes="action view/action; enctype view/enctype"
             tal:define="subforms view/subforms">
 
@@ -26,7 +33,20 @@
                tal:repeat="subform subforms"
                tal:attributes="class python:'col-xs-12 col-sm-12' if len(subforms) == 1 else 'col-xs-6 col-sm-6'">
 
-            <tal:subform replace="structure subform/render"></tal:subform>
+            <tal:define tal:define="widgets subform/widgets/values">
+              <tal:repeat tal:repeat="widget widgets">
+                <div class="form-label-group">
+                  <input class="form-control" type="text" name="${widget/name}" placeholder="${widget/field/title}" />
+                  <small class="text-muted">${widget/field/description}</small>
+                </div>
+              </tal:repeat>
+            </tal:define>
+
+            <tal:define tal:define="actions subform/actions/values">
+              <tal:repeat tal:repeat="action actions">
+                <input class="btn btn-primary text-uppercase context" type="submit" name="${action/name}" />
+              </tal:repeat>
+            </tal:define>
 
           </div>
         </div>
@@ -35,22 +55,8 @@
 
       </form>
 
-      <div tal:define="portal_state context/@@plone_portal_state; portal_url portal_state/portal_url">
+    </metal:content>
 
-        <div>
-          <span i18n:translate="need_more_help" tal:omit-tag="">Need more help?</span>
-          <a tal:attributes="href string:${portal_url}/contact-info" href="contact-info" i18n:translate="contact_an_admin">Contact an admin.</a>
-        </div>
-
-        <div>
-          <span i18n:translate="go_to_login" tal:omit-tag="">Go to</span>
-          <a tal:attributes="href string:${portal_url}/login" i18n:translate="to_login_view" href="login">login</a>.
-        </div>
-
-      </div>
-
-    </metal:main-macro>
-  </metal:main>
-</body>
+  </body>
 
 </html>
