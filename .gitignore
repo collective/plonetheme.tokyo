@@ -34,6 +34,7 @@ test.plone_addon/
 var/
 share/
 .idea/
+.vscode/
 
 # Files
 
