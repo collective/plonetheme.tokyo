@@ -131,9 +131,11 @@
 
                 <h3 tal:content="product/title" i18n:translate="">Add-on Name</h3>
 
-                <span class="badge badge-warning" tal:condition="not:product/uninstall_profile">
-                  This product cannot be uninstalled!
-                </span>
+                <div class="mb-3">
+                  <span class="badge badge-warning" tal:condition="not:product/uninstall_profile">
+                    This product cannot be uninstalled!
+                  </span>
+                </div>
 
                 <p class="discreet">
                   <span tal:condition="product/description" i18n:translate="" tal:content="product/description">
@@ -176,9 +178,11 @@
 
                 <h3 tal:content="product/title" i18n:translate="">Add-on Name</h3>
 
-                <span class="badge badge-warning" tal:condition="not:product/uninstall_profile">
-                  This product cannot be uninstalled!
-                </span>
+                <div class="mb-3">
+                  <span class="badge badge-warning" tal:condition="not:product/uninstall_profile">
+                    This product cannot be uninstalled!
+                  </span>
+                </div>
 
                 <p class="discreet">
                   <span tal:condition="product/description"
