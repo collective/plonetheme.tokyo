@@ -7,8 +7,8 @@ Changelog
 
 Added:
 
-- Initial release.
-  [santonelli]
+- Update Login-Views for Plone 5.1 and 5.2.
+  [Netroxen]
 
 Changed:
 
