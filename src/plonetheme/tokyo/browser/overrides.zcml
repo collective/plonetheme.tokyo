@@ -49,4 +49,9 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <browser:jbot
+      directory="overrides/plone_app_content"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
 </configure>
