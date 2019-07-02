@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+  <body>
+
+    <metal:main fill-slot="main">
+
+      <h1 class="documentFirstHeading" i18n:translate="heading_select_default_view">
+        Select default view
+      </h1>
+
+      <div class="documentDescription" i18n:translate="description_select_default_view">
+        Please select which template should be used as the default view of the
+        folder.
+      </div>
+
+      <form name="default_view_form" action="." method="post" tal:attributes="action view/action_url">
+
+        <input type="hidden" name="form.submitted" value="1" />
+
+        <tal:define tal:define="selectedLayout view/selectedLayout">
+
+          <div class="form-group">
+            <tal:item repeat="layout view/vocab">
+              <tal:define define="value python:layout[0]; display python:layout[1]">
+
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" id="" name="templateId"
+                         tal:attributes="value value; id value; disabled python:value==selectedLayout">
+                  <label class="custom-control-label" for="" tal:attributes="for value">
+                    <span tal:content="display" i18n:translate="">Layout Name</span>
+                    <span class="discreet"
+                          tal:condition="python:value==selectedLayout"
+                          i18n:translate="label_current">
+                      (current)
+                    </span>
+                  </label>
+                </div>
+
+              </tal:define>
+            </tal:item>
+          </div>
+
+          <p tal:condition="view/canSelectDefaultPage">
+
+            <tal:selected condition="python:selectedLayout != ''">
+
+              <span i18n:translate="label_or">or</span>
+
+              <a title="Select an item to be used as default view in this folder" href="#" class="selected"
+                 tal:attributes="href string:${context/absolute_url}/select_default_page"
+                 i18n:attributes="title title_select_default_page"
+                 i18n:translate="label_choose_content_item">
+                Choose a content item&hellip;
+              </a>
+
+            </tal:selected>
+
+            <tal:selected condition="python:selectedLayout == ''">
+
+              <span i18n:translate="label_or">or</span>
+
+              <a title="Change the item used as default view in this folder" href="#" class="selected"
+                 tal:attributes="href string:${context/absolute_url}/select_default_page"
+                 i18n:attributes="title title_change_default_view_item"
+                 i18n:translate="label_select_content_item">
+                Select a content item&hellip;
+              </a>
+
+            </tal:selected>
+
+          </p>
+
+        </tal:define>
+
+        <div class="formControls">
+
+          <input class="btn btn-primary"
+                 type="submit"
+                 name="form.button.Save"
+                 value="Save"
+                 i18n:attributes="value label_save" />
+
+          <input class="btn btn-danger"
+                 type="submit"
+                 name="form.button.Cancel"
+                 value="Cancel"
+                 i18n:attributes="value label_cancel" />
+
+        </div>
+
+      </form>
+
+    </metal:main>
+
+  </body>
+
+</html>
