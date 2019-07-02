@@ -1,0 +1,52 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plonetheme.tokyo">
+
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <!-- Overrides for Products.CMFPlone -->
+
+  <browser:jbot
+      directory="overrides/cmfplone"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Controlpanel Templates -->
+
+  <browser:jbot
+      directory="overrides/cmfplone/controlpanel"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- Login Views -->
+
+  <browser:jbot
+      directory="overrides/cmfplone/login/plone_510"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/cmfplone/login/plone_520"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <!-- External Overrides -->
+
+  <browser:jbot
+      directory="overrides/plone_app_contenttypes"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_app_layout"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
+      directory="overrides/plone_app_z3cform"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+</configure>
