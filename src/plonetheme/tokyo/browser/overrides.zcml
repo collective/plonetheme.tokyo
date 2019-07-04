@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="plonetheme.tokyo">
 
   <include package="z3c.jbot" file="meta.zcml" />
@@ -51,7 +52,16 @@
 
   <browser:jbot
       directory="overrides/plone_app_z3cform"
+      layer="z3c.form.interfaces.IFormLayer"
+      />
+
+  <!-- Widgets -->
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget="z3c.form.interfaces.IOrderedSelectWidget"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      template="templates/widgets/orderedselect_input.pt"
       />
 
 </configure>
