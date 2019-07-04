@@ -1,22 +1,43 @@
 <div metal:define-macro="widget-wrapper"
      i18n:domain="plone"
-     tal:define="widget nocall:context;
-                 widget_name widget/name;
-                 hidden python:widget.mode == 'hidden';
-                 error widget/error;
-                 error_class python:error and 'error' or '';
-                 empty_values python:(None, '', [], ('', '', '', '00', '00', ''), ('', '', ''));
-                 empty_class python:(widget.value in empty_values) and 'empty' or '';
-                 wrapper_css_class  widget/wrapper_css_class|nothing"
+     tal:define="widget nocall:context; widget_name widget/name;
+                 data widget/json_data;
+                 data_type data/type;
+                 was_submitted python:len(request.form) > 1;
+                 hidden python:data['mode'] == 'hidden'; is_opt python:data_type in ['check', 'radio'];
+                 error widget/error; error_class python:('is-invalid' if error else 'is-valid') if was_submitted else '';
+                 field_class python:'form-control' if not is_opt else 'custom-control-input'"
      data-pat-inlinevalidation='{"type":"z3c.form"}'
-     tal:attributes="class string:form-group pat-inlinevalidation ${widget_name} ${error_class} ${empty_class}; data-fieldname widget_name">
+     tal:attributes="class string:form-group pat-inlinevalidation ${widget_name}; data-fieldname widget_name">
 
-  <label for="" tal:attributes="for widget/id" tal:condition="python:not hidden and widget.label">
-    <span i18n:translate="" tal:replace="widget/label"></span>
-    <span class="required" tal:condition="python:widget.required and widget.mode == 'input'">&#42;</span>
-  </label>
+  <?python widget.addClass(' '.join([field_class, error_class])) ?>
 
-  <input type="text" tal:replace="structure widget/render" metal:define-slot="widget" />
+  <tal:condition tal:condition="not:is_opt">
+    <label for=""
+           tal:attributes="for widget/id"
+           tal:condition="python:not hidden and widget.label"
+           tal:content="widget/label"
+           i18n:translate="">
+    </label>
+    <input type="text" tal:replace="structure widget/render" metal:define-slot="widget" />
+  </tal:condition>
+
+  <tal:condition tal:condition="is_opt">
+    <tal:define tal:define="options data/options">
+      <tal:repeat tal:repeat="opt options">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="${widget/klass}"
+                 id="${opt/id}" name="${opt/name}" value="${opt/value}"
+                 tal:attributes="checked opt/checked">
+          <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
+            <div>${opt/label}</div>
+            <small class="text-muted" tal:condition="desc">${desc}</small>
+          </label>
+          <input type="hidden" name="${widget/name}-empty-marker" value="1">
+        </div>
+      </tal:repeat>
+    </tal:define>
+  </tal:condition>
 
   <tal:condition tal:condition="error">
     <div class="invalid-feedback" tal:content="structure error/render|nothing"></div>
