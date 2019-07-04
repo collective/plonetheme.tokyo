@@ -29,9 +29,9 @@
           <input type="checkbox" class="${widget/klass}"
                  id="${opt/id}" name="${opt/name}" value="${opt/value}"
                  tal:attributes="checked opt/checked">
-          <label class="custom-control-label" for="${opt/id}">
+          <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
             <div>${opt/label}</div>
-            <small class="text-muted">${opt/description}</small>
+            <small class="text-muted" tal:condition="desc">${desc}</small>
           </label>
           <input type="hidden" name="${widget/name}-empty-marker" value="1">
         </div>
