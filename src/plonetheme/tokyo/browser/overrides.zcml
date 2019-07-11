@@ -64,4 +64,12 @@
       template="templates/widgets/orderedselect_input.pt"
       />
 
+  <z3c:widgetTemplate
+      mode="input"
+      widget="plone.formwidget.namedfile.interfaces.INamedImageWidget"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      template="templates/widgets/image_input.pt"
+      />
+
+
 </configure>

@@ -1,0 +1,132 @@
+<span i18n:domain="plonetheme.tokyo"
+      tal:attributes="id view/id;
+                      class view/klass;
+                      style view/style;
+                      title view/title;
+                      lang view/lang;
+                      onclick view/onclick;
+                      ondblclick view/ondblclick;
+                      onmousedown view/onmousedown;
+                      onmouseup view/onmouseup;
+                      onmouseover view/onmouseover;
+                      onmousemove view/onmousemove;
+                      onmouseout view/onmouseout;
+                      onkeypress view/onkeypress;
+                      onkeydown view/onkeydown;
+                      onkeyup view/onkeyup;
+                      onfocus view/onfocus;
+                      onblur view/onblur;
+                      onchange view/onchange;
+                      readonly view/readonly;
+                      accesskey view/accesskey;
+                      onselect view/onselect;"
+      tal:define="download_url view/download_url;
+                  exists python: view.value is not None;
+                  action view/action;
+                  allow_nochange view/allow_nochange;
+                  doc_type view/file_content_type;
+                  icon view/file_icon;
+                  filename view/filename"
+      tal:omit-tag="">
+
+  <div class="form-row">
+    <div class="col-md-3 mb-3">
+      <tal:cond tal:condition="python:exists and download_url and action=='nochange'">
+
+        <a tal:attributes="href download_url">
+          <div class="img-thumbnail d-flex align-items-center justify-content-center" style="height: 200px;" title="Download - ${filename}" i18n:attributes="title download_filename">
+            <div id="img-background-${view/id}" class="rounded"
+                 style="width: 100%; height: 100%; background-image: url(${view/context/absolute_url}); background-repeat: no-repeat; background-position: center; background-size: cover"></div>
+            <small class="discreet position-absolute p-2 bg-dark text-white rounded">
+              <tal:doc_type condition="doc_type">
+                <span tal:replace="doc_type"></span>,
+              </tal:doc_type>
+              <span tal:define="sizekb view/file_size" tal:replace="sizekb"></span>
+            </small>
+          </div>
+        </a>
+
+      </tal:cond>
+    </div>
+    <div class="col-md-9">
+      <div class="input-group mb-3">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" i18n:translate="">Upload</span>
+        </div>
+
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" onchange="readURL(this, '#img-background-${view/id}');"
+                 tal:attributes="id string:${view/id}-input;
+                                 name view/name;
+                                 size view/size;
+                                 disabled view/disabled;
+                                 maxlength view/maxlength;">
+          <label class="custom-file-label" for="${string:${view/id}-input}" i18n:translate="">Choose file</label>
+        </div>
+
+      </div>
+
+      <tal:cond tal:condition="allow_nochange">
+
+        <div class="custom-control custom-radio mb-3">
+          <input class="custom-control-input" type="radio" value="nochange"
+                 tal:attributes="name string:${view/name}.action;
+                                 id string:${view/id}-nochange;
+                                 onclick string:document.getElementById('${view/id}-input').disabled=true;
+                                 checked python:'checked' if action == 'nochange' else None" />
+          <label class="custom-control-label" tal:attributes="for string:${view/id}-nochange" i18n:translate="image_keep">Keep existing image</label>
+        </div>
+
+        <tal:cond condition="not:view/field/required">
+          <div class="custom-control custom-radio mb-3">
+            <input class="custom-control-input" type="radio" value="remove"
+                   tal:attributes="name string:${view/name}.action;
+                                   id string:${view/id}-remove;
+                                   onclick string:document.getElementById('${view/id} -input').disabled=true;
+                                   checked python:'checked' if action == 'remove' else  None" />
+            <label class="custom-control-label" tal:attributes="for string:${view/id}-remove" i18n:translate="image_remove">Remove existing image</label>
+          </div>
+        </tal:cond>
+
+        <div class="custom-control custom-radio">
+          <input class="custom-control-input" type="radio" value="replace"
+                 tal:attributes="name string:${view/name}.action;
+                                 id string:${view/id}-replace;
+                                 onclick string:document.getElementById('${view/id}-input').disabled=false;
+                                 checked python:'checked' if action == 'replace' else None" />
+          <label class="custom-control-label" tal:attributes="for string:${view/id}-replace" i18n:translate="image_replace">Replace with new image</label>
+        </div>
+
+      </tal:cond>
+
+    </div>
+  </div>
+
+  <script tal:condition="python:allow_nochange and action != 'replace'" type="text/javascript"
+          tal:content="string:document.getElementById('${view/id}-input').disabled=true;">
+  </script>
+
+  <script type="text/javascript">
+    function readURL(input, name) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $(name)
+            .attr('style', 'background-image: url(' + e.target.result + '); background-repeat: no-repeat; background-position: center; background-size: cover')
+            .width('100%')
+            .height('100%');
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+  </script>
+
+  <tal:if tal:define="up_id view/file_upload_id" tal:condition="up_id">
+    <input type="hidden" name="${view/name}.file_upload_id" value="${up_id}" />
+  </tal:if>
+
+</span>
