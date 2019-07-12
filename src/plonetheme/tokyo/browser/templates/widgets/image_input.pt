@@ -133,7 +133,7 @@
 
   </script>
 
-  <tal:if tal:define="up_id view/file_upload_id" tal:condition="up_id">
+  <tal:if tal:define="up_id view/file_upload_id|nothing" tal:condition="up_id">
     <input type="hidden" name="${view/name}.file_upload_id" value="${up_id}" />
   </tal:if>
 
