@@ -55,10 +55,6 @@
     <div class="${python:'col-md-9' if exists else 'col-md-12'}">
       <div class="input-group mb-3">
 
-        <div class="input-group-prepend">
-          <span class="input-group-text" i18n:translate="">Upload</span>
-        </div>
-
         <div class="custom-file">
           <input type="file" class="custom-file-input" onchange="setImageFields(this, '#img-background-${view/id}', '#label-text-${view/id}');"
                  tal:attributes="id string:${view/id}-input;
