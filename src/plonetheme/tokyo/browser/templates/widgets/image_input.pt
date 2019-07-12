@@ -23,7 +23,7 @@
       tal:define="download_url view/download_url;
                   field_name view/context/field/__name__;
                   exists python: view.value is not None;
-                  scales view/context/@@images;
+                  scales view/context/@@images|nothing;
                   action view/action;
                   allow_nochange view/allow_nochange;
                   doc_type view/file_content_type;
@@ -33,7 +33,7 @@
 
   <div class="form-row">
 
-    <div class="col-md-3 mb-3" tal:omit-tag="not:exists">
+    <div class="col-md-3 mb-3" tal:omit-tag="not:download_url">
       <tal:cond tal:condition="python:exists and download_url and action=='nochange'">
 
         <a tal:attributes="href download_url">
@@ -66,7 +66,12 @@
                                  size view/size;
                                  disabled view/disabled;
                                  maxlength view/maxlength;">
-          <label id="label-text-${view/id}" class="custom-file-label" for="${string:${view/id}-input}" i18n:translate="">Choose file</label>
+          <label id="label-text-${view/id}" class="custom-file-label" for="${string:${view/id}-input}">
+            <tal:define tal:define="filename view/value/filename|nothing">
+              <span i18n:translate="" tal:condition="not:filename">Choose file</span>
+              <span tal:content="filename" tal:condition="filename"></span>
+            </tal:define>
+          </label>
         </div>
 
       </div>
