@@ -36,3 +36,12 @@
 
   </tal:block>
 </tal:scripts>
+
+<script>
+  define = undefined;
+  require = undefined;
+
+</script>
+
+<link rel="stylesheet" href="++plone++plonetheme.tokyo/bootstrap.min.css">
+<script type="text/javascript" src="++plone++plonetheme.tokyo/bootstrap.min.js"></script>

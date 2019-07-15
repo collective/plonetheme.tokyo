@@ -34,6 +34,7 @@ src/collective.sidebar/
 test.plone_addon/
 var/
 share/
+src/collective.sidebar/
 .idea/
 .vscode/
 
