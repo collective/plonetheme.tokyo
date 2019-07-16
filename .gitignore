@@ -30,6 +30,7 @@ include/
 lib/
 local/
 parts/
+src/collective.sidebar/
 test.plone_addon/
 var/
 share/
