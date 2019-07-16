@@ -24,13 +24,6 @@
       template="templates/listing_news.pt"
       />
 
-  <browser:page
-      name="bs4"
-      for="*"
-      permission="zope2.View"
-      template="templates/bs4.pt"
-      />
-
   <!-- Viewlets -->
 
   <browser:viewlet
