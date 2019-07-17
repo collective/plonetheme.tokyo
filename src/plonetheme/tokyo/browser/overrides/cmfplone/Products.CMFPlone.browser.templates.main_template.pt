@@ -1,129 +1,129 @@
 <metal:page define-macro="master">
 
-  <tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
 
-  <html xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:tal="http://xml.zope.org/namespaces/tal"
-        xmlns:metal="http://xml.zope.org/namespaces/metal"
-        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-        tal:define="portal_state python:context.restrictedTraverse('@@plone_portal_state');
-                    context_state python:context.restrictedTraverse('@@plone_context_state');
-                    plone_view python:context.restrictedTraverse('@@plone');
-                    plone_layout python:context.restrictedTraverse('@@plone_layout');
-                    lang python:portal_state.language();
-                    view nocall:view | nocall: plone_view;
-                    dummy python: plone_layout.mark_view(view);
-                    portal_url python:portal_state.portal_url();
-                    checkPermission python:context.restrictedTraverse('portal_membership').checkPermission;
-                    site_properties python:context.restrictedTraverse('portal_properties').site_properties;
-                    ajax_include_head python:request.get('ajax_include_head', False);
-                    ajax_load python:False;"
-        i18n:domain="plone"
-        tal:attributes="lang lang;">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:define="portal_state python:context.restrictedTraverse('@@plone_portal_state');
+                  context_state python:context.restrictedTraverse('@@plone_context_state');
+                  plone_view python:context.restrictedTraverse('@@plone');
+                  plone_layout python:context.restrictedTraverse('@@plone_layout');
+                  lang python:portal_state.language();
+                  view nocall:view | nocall: plone_view;
+                  dummy python: plone_layout.mark_view(view);
+                  portal_url python:portal_state.portal_url();
+                  checkPermission python:context.restrictedTraverse('portal_membership').checkPermission;
+                  site_properties python:context.restrictedTraverse('portal_properties').site_properties;
+                  ajax_include_head python:request.get('ajax_include_head', False);
+                  ajax_load python:False;"
+      i18n:domain="plone"
+      tal:attributes="lang lang;">
 
-    <metal:cache tal:replace="structure provider:plone.httpheaders" />
+  <metal:cache tal:replace="structure provider:plone.httpheaders" />
 
-    <head>
+  <head>
 
-      <metal:topslot define-slot="top_slot" />
+    <metal:topslot define-slot="top_slot" />
 
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="generator" content="Plone - http://plone.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Plone - http://plone.com" />
 
-      <!-- Head Slot -->
-      <div tal:replace="structure provider:plone.htmlhead" />
-      <metal:headslot define-slot="head_slot" />
+    <!-- Head Slot -->
+    <div tal:replace="structure provider:plone.htmlhead" />
+    <metal:headslot define-slot="head_slot" />
 
-      <!-- Style Slot -->
-      <link tal:replace="structure provider:plone.htmlhead.links" />
-      <metal:styleslot define-slot="style_slot" />
+    <!-- Style Slot -->
+    <link tal:replace="structure provider:plone.htmlhead.links" />
+    <metal:styleslot define-slot="style_slot" />
 
-      <!-- Script Slot -->
-      <div tal:replace="structure provider:plone.scripts" />
-      <metal:scriptslot define-slot="script_slot" />
+    <!-- Script Slot -->
+    <div tal:replace="structure provider:plone.scripts" />
+    <metal:scriptslot define-slot="script_slot" />
 
-    </head>
+  </head>
 
-    <body tal:define="isRTL portal_state/is_rtl;
-                      sl python:plone_layout.have_portlets('plone.leftcolumn', view);
-                      sr python:plone_layout.have_portlets('plone.rightcolumn', view);
-                      body_class python:plone_layout.bodyClass(template, view);
-                      keen_body_class string:kt-quick-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent"
-          tal:attributes="class python:body_class + keen_body_class;
-                          dir python:isRTL and 'rtl' or 'ltr';
-                          python:plone_view.patterns_settings()"
-          id="visual-portal-wrapper">
+  <body tal:define="isRTL portal_state/is_rtl;
+                    sl python:plone_layout.have_portlets('plone.leftcolumn', view);
+                    sr python:plone_layout.have_portlets('plone.rightcolumn', view);
+                    body_class python:plone_layout.bodyClass(template, view);
+                    keen_body_class string:kt-quick-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent"
+        tal:attributes="class python:body_class + keen_body_class;
+                        dir python:isRTL and 'rtl' or 'ltr';
+                        python:plone_view.patterns_settings()"
+        id="visual-portal-wrapper">
 
-      <header id="portal-top" i18n:domain="plone">
-        <div tal:replace="structure provider:plone.portaltop" />
-        <div id="portal-mainnavigation" tal:content="structure provider:plone.mainnavigation"></div>
-      </header>
+    <header id="portal-top" i18n:domain="plone">
+      <div tal:replace="structure provider:plone.portaltop" />
+      <div id="portal-mainnavigation" tal:content="structure provider:plone.mainnavigation"></div>
+    </header>
 
-      <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
+    <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
 
-      <metal:block define-slot="content">
-        <metal:define metal:define-macro="content">
-          <metal:slot define-slot="body">
-            <div id="content">
+    <metal:block define-slot="content">
+      <metal:define metal:define-macro="content">
+        <metal:slot define-slot="body">
+          <div id="content">
 
-              <tal:comment tal:replace="nothing">
-                For Full-Width Content
-              </tal:comment>
+            <tal:comment tal:replace="nothing">
+              For Full-Width Content
+            </tal:comment>
 
-              <metal:fluid define-slot="fluid">
+            <metal:fluid define-slot="fluid">
 
-                <div class="content-inner container">
+              <div class="content-inner container">
 
-                  <tal:comment tal:replace="nothing">
-                    For Main Page-Content
-                  </tal:comment>
+                <tal:comment tal:replace="nothing">
+                  For Main Page-Content
+                </tal:comment>
 
-                  <aside id="global_statusmessage">
-                    <tal:message tal:content="structure provider:plone.globalstatusmessage" />
-                    <metal:messageslot metal:define-slot="global_statusmessage" />
-                  </aside>
+                <aside id="global_statusmessage">
+                  <tal:message tal:content="structure provider:plone.globalstatusmessage" />
+                  <metal:messageslot metal:define-slot="global_statusmessage" />
+                </aside>
 
-                  <metal:main define-slot="main">
+                <metal:main define-slot="main">
 
-                    <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
+                  <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
 
-                    <metal:title define-slot="content-title">
-                      <h1 tal:replace="structure context/@@title|nothing" />
-                    </metal:title>
+                  <metal:title define-slot="content-title">
+                    <h1 tal:replace="structure context/@@title|nothing" />
+                  </metal:title>
 
-                    <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
+                  <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
 
-                    <metal:description define-slot="content-description">
-                      <p tal:replace="structure context/@@description|nothing" />
-                    </metal:description>
+                  <metal:description define-slot="content-description">
+                    <p tal:replace="structure context/@@description|nothing" />
+                  </metal:description>
 
-                    <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
+                  <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
 
-                    <div id="content-core">
-                      <metal:text define-slot="content-core" tal:content="nothing"></metal:text>
-                    </div>
+                  <div id="content-core">
+                    <metal:text define-slot="content-core" tal:content="nothing"></metal:text>
+                  </div>
 
-                    <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+                  <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
 
-                  </metal:main>
+                </metal:main>
 
-                </div>
+              </div>
 
-              </metal:fluid>
+            </metal:fluid>
 
-            </div>
-          </metal:slot>
-        </metal:define>
-      </metal:block>
+          </div>
+        </metal:slot>
+      </metal:define>
+    </metal:block>
 
-      <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" />
+    <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" />
 
-      <footer id="portal-footer-wrapper" i18n:domain="plone">
-        <div tal:replace="structure provider:plone.portalfooter" />
-      </footer>
+    <footer id="portal-footer-wrapper" i18n:domain="plone">
+      <div tal:replace="structure provider:plone.portalfooter" />
+    </footer>
 
-    </body>
+  </body>
 
-  </html>
+</html>
 
 </metal:page>
