@@ -36,3 +36,21 @@
 
   </tal:block>
 </tal:scripts>
+
+<script>
+  var _old_define = define;
+  var _old_require = require;
+  define = undefined;
+  require = undefined;
+
+</script>
+
+<script type="text/javascript" src="++plone++plonetheme.tokyo/moment.min.js"></script>
+<script type="text/javascript" src="++plone++plonetheme.tokyo/popper.min.js"></script>
+<script type="text/javascript" src="++plone++plonetheme.tokyo/bootstrap.min.js"></script>
+
+<script>
+  define = _old_define;
+  require = _old_require;
+
+</script>

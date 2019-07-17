@@ -25,16 +25,23 @@
 
   <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <div tal:replace="structure provider:plone.htmlhead" />
     <metal:topslot define-slot="top_slot" />
-    <metal:headslot define-slot="head_slot" />
-    <metal:styleslot define-slot="style_slot" />
-    <div tal:replace="structure provider:plone.scripts" />
-    <metal:javascriptslot define-slot="javascript_head_slot" />
-    <link tal:replace="structure provider:plone.htmlhead.links" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator" content="Plone - http://plone.com" />
-    
+
+    <!-- Head Slot -->
+    <div tal:replace="structure provider:plone.htmlhead" />
+    <metal:headslot define-slot="head_slot" />
+
+    <!-- Style Slot -->
+    <link tal:replace="structure provider:plone.htmlhead.links" />
+    <metal:styleslot define-slot="style_slot" />
+
+    <!-- Script Slot -->
+    <div tal:replace="structure provider:plone.scripts" />
+    <metal:scriptslot define-slot="script_slot" />
+
   </head>
 
   <body tal:define="isRTL portal_state/is_rtl;
@@ -80,13 +87,13 @@
                   <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
 
                   <metal:title define-slot="content-title">
-                    <h1 tal:replace="structure context/@@title" />
+                    <h1 tal:replace="structure context/@@title|nothing" />
                   </metal:title>
 
                   <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
 
                   <metal:description define-slot="content-description">
-                    <p tal:replace="structure context/@@description" />
+                    <p tal:replace="structure context/@@description|nothing" />
                   </metal:description>
 
                   <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />

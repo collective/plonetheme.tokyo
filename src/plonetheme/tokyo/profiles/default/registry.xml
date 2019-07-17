@@ -42,29 +42,4 @@
     <value key="depends">plone</value>
   </records>
 
-  <!-- Static Bundles -->
-
-  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-bootstrap">
-    <value key="jscompilation">++plone++plonetheme.tokyo/bootstrap.min.js</value>
-    <value key="csscompilation">++plone++plonetheme.tokyo/bootstrap.min.css</value>
-    <value key="enabled">True</value>
-    <value key="compile">False</value>
-    <value key="last_compilation">2019-02-13 11:10:00</value>
-    <value key="depends">jquery</value>
-  </records>
-
-  <!--
-  <records prefix="plone.bundles/plone" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">False</value>
-  </records>
-
-  <records prefix="plone.bundles/plone-legacy" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">False</value>
-  </records>
-
-  <records prefix="plone.bundles/plone-logged-in" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">False</value>
-  </records>
-  -->
-
 </registry>
