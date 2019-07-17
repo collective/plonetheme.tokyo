@@ -12,49 +12,55 @@
 
   <?python widget.addClass(' '.join([field_class, error_class])) ?>
 
-  <tal:condition tal:condition="not:is_opt">
-    <label for=""
-           class="d-block"
-           tal:attributes="for widget/id"
-           tal:condition="python:not hidden and widget.label"
-           tal:content="widget/label"
-           i18n:translate="">
-    </label>
-    <input type="text" tal:replace="structure widget/render" metal:define-slot="widget" />
-  </tal:condition>
+  <tal:define tal:define="description python:getattr(widget, 'description', widget.field.description)">
+    <tal:condition tal:condition="not:is_opt">
 
-  <tal:condition tal:condition="is_opt">
-    <tal:define tal:define="options data/options">
-      <tal:repeat tal:repeat="opt options">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="${widget/klass}"
-                 id="${opt/id}" name="${opt/name}" value="${opt/value}"
-                 tal:attributes="checked opt/checked">
-          <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
-            <div>${opt/label}</div>
-            <small class="text-muted" tal:condition="desc">${desc}</small>
-          </label>
-          <input type="hidden" name="${widget/name}-empty-marker" value="1">
-        </div>
-      </tal:repeat>
-    </tal:define>
-  </tal:condition>
+      <label for=""
+             class="d-block"
+             tal:attributes="for widget/id"
+             tal:condition="python:not hidden and widget.label"
+             tal:content="widget/label"
+             i18n:translate="">
+      </label>
 
-  <tal:condition tal:condition="error">
-    <div class="invalid-feedback" tal:content="structure error/render|nothing"></div>
-  </tal:condition>
+      <input type="text" tal:replace="structure widget/render" metal:define-slot="widget" />
 
-  <tal:define i18n:domain="plonetheme.tokyo">
-    <tal:condition tal:condition="not:error">
-      <div class="valid-feedback" i18n:translate="">Looks good!</div>
+      <small class="form-text text-muted"
+             tal:content="structure description"
+             tal:condition="python:description and not hidden">
+      </small>
+
     </tal:condition>
-  </tal:define>
 
-  <small class="form-text text-muted"
-         tal:define="description python: getattr(widget, 'description', widget.field.description)"
-         i18n:translate=""
-         tal:content="structure description"
-         tal:condition="python:description and not hidden">
-  </small>
+    <tal:condition tal:condition="is_opt">
+      <tal:define tal:define="options data/options">
+        <tal:repeat tal:repeat="opt options">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="${widget/klass}"
+                   id="${opt/id}" name="${opt/name}" value="${opt/value}"
+                   tal:attributes="checked opt/checked">
+            <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
+              <div>${opt/label}</div>
+              <small class="text-muted"
+                     tal:condition="python:description and not hidden"
+                     tal:content="structure description">
+              </small>
+            </label>
+            <input type="hidden" name="${widget/name}-empty-marker" value="1">
+          </div>
+        </tal:repeat>
+      </tal:define>
+    </tal:condition>
+
+    <tal:condition tal:condition="error">
+      <div class="invalid-feedback" tal:content="structure error/render|nothing"></div>
+    </tal:condition>
+
+    <tal:define i18n:domain="plonetheme.tokyo">
+      <tal:condition tal:condition="not:error">
+        <div class="valid-feedback" i18n:translate="">Looks good!</div>
+      </tal:condition>
+    </tal:define>
+  </tal:define>
 
 </div>
