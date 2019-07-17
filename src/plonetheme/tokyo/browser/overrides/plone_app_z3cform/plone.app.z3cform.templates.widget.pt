@@ -13,6 +13,7 @@
   <?python widget.addClass(' '.join([field_class, error_class])) ?>
 
   <tal:define tal:define="description python:getattr(widget, 'description', widget.field.description)">
+
     <tal:condition tal:condition="not:is_opt">
 
       <label for=""
@@ -22,6 +23,20 @@
              tal:content="widget/label"
              i18n:translate="">
       </label>
+
+      <tal:define tal:define="pattern widget/pattern|nothing" tal:condition="pattern">
+
+        <tal:condition tal:condition="python:widget.pattern == 'pickadate'">
+          <?python
+            widget.pattern_options = {
+              'classWrapperName': 'pattern-pickadate-wrapper d-flex',
+              'classDateName': 'pattern-pickadate-date form-control',
+              'classTimeName': 'pattern-pickadate-time form-control',
+            }
+          ?>
+        </tal:condition>
+
+      </tal:define>
 
       <input type="text" tal:replace="structure widget/render" metal:define-slot="widget" />
 
@@ -61,6 +76,7 @@
         <div class="valid-feedback" i18n:translate="">Looks good!</div>
       </tal:condition>
     </tal:define>
+
   </tal:define>
 
 </div>
