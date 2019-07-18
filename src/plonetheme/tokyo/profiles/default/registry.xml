@@ -14,7 +14,7 @@
       <element>tokyo-legacy</element>
     </value>
     <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-legacy-compiled.css</value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="compile">True</value>
     <value key="last_compilation">2019-02-13 11:10:00</value>
     <value key="depends">plone-logged-in</value>
