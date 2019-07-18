@@ -24,6 +24,14 @@
       template="templates/listing_news.pt"
       />
 
+  <browser:page
+      for="*"
+      name="main_template"
+      class=".main_template.MainTemplate"
+      permission="zope.Public"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
   <!-- Viewlets -->
 
   <browser:viewlet
