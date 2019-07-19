@@ -40,19 +40,19 @@
 @tokyo-grey: #CCCCCC;
 
 /* Variables */
-@tokyo-sm-shadow: 0 2px 4px rgba(3,27,78,0.06);
-@tokyo-lg-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.1);
+@tokyo-sm-shadow: 0 2px 4px rgba(3, 27, 78, 0.06);
+@tokyo-lg-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
 /* Plone Colors */
 @plone-blue: #007BB1;
 
 /* Vendor */
 .vendor(@property, @value) {
-     -moz-@{property}: @value;
-      -ms-@{property}: @value;
-       -o-@{property}: @value;
+  -moz-@{property}: @value;
+  -ms-@{property}: @value;
+  -o-@{property}: @value;
   -webkit-@{property}: @value;
-          @{property}: @value;
+  @{property}: @value;
 }
 
 /* Main-Styling */
@@ -82,6 +82,10 @@ html {
           margin-bottom: 20px;
         }
       }
+    }
+
+    #viewlet-below-content {
+      background-color: white;
     }
   }
 }
