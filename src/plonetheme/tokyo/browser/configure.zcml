@@ -1,8 +1,9 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="plonetheme.tokyo">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plonetheme.tokyo">
 
   <include file="overrides.zcml" />
 
@@ -31,6 +32,16 @@
       permission="zope.Public"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
+
+    <browser:pages
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class="plone.app.dexterity.browser.folder_listing.FolderView"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      permission="zope2.View">
+    <browser:page name="folder_listing" template="templates/folder_listing.pt"/>
+    <browser:page name="folder_summary_view" template="templates/folder_summary.pt"/>
+    <browser:page name="folder_tabular_view" template="templates/folder_tabular.pt"/>
+  </browser:pages>
 
   <!-- Viewlets -->
 
