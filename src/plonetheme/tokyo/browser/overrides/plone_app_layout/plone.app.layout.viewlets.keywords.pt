@@ -1,0 +1,28 @@
+<section i18n:domain="plonetheme.siguv"
+         id="category"
+         class="p-3"
+         tal:define="categories context/Subject|nothing;
+                     url_quote nocall:modules/Products.PythonScripts.standard/url_quote"
+         tal:condition="categories">
+
+  <div class="container">
+    <div class="col-md-12">
+      <div class="row">
+
+        <div class="text-muted d-inline-block mr-2">
+          <span translate="">Tags</span>:
+        </div>
+
+        <tal:repeat tal:repeat="category categories">
+          <a href="#" rel="nofollow" class="badge badge-secondary p-2 mr-2 mb-2"
+             tal:define="quotedCat python:url_quote(category)"
+             tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/@@search?Subject%3Alist=${quotedCat}">
+            <span tal:content="category"></span>
+          </a>
+        </tal:repeat>
+
+      </div>
+    </div>
+  </div>
+
+</section>

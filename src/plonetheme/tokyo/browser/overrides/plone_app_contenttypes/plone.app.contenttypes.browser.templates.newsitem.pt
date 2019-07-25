@@ -25,13 +25,15 @@
 
         </div>
 
-        <div class="col-md-4">
+        <tal:define tal:define="image context/@@images/image; scales context/@@images" tal:condition="exists:image">
+          <div class="col-md-4">
 
-          <figure class="newsitem-image" tal:condition="exists:context/@@images/image">
-            <img tal:define="scales context/@@images" tal:replace="structure python: scales.tag('image', width=600, height=400, direction='down')" />
-          </figure>
+            <figure class="newsitem-image" tal:define="img python:scales.scale('image', width=600, height=400, direction='down')">
+              <img class="img-fluid img-thumbnail" src="${img/url}" width="${img/width}" height="${img/height}">
+            </figure>
 
-        </div>
+          </div>
+        </tal:define>
 
       </div>
     </div>
