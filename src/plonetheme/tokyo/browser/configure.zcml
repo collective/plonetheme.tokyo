@@ -35,12 +35,12 @@
 
     <browser:pages
       for="plone.dexterity.interfaces.IDexterityContainer"
-      class="plone.app.dexterity.browser.folder_listing.FolderView"
+      class="plone.app.contenttypes.browser.folder.FolderView"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       permission="zope2.View">
-    <browser:page name="folder_listing" template="templates/folder_listing.pt"/>
-    <browser:page name="folder_summary_view" template="templates/folder_summary.pt"/>
-    <browser:page name="folder_tabular_view" template="templates/folder_tabular.pt"/>
+    <browser:page name="listing_view" template="templates/folder_listing.pt" menu="plone_displayviews" title="Standard view"/>
+    <browser:page name="summary_view" template="templates/folder_summary.pt"  menu="plone_displayviews" title="Summary view"/>
+    <browser:page name="tabular_view" template="templates/folder_tabular.pt" menu="plone_displayviews" title="Tabular view"/>
   </browser:pages>
 
   <!-- Viewlets -->
