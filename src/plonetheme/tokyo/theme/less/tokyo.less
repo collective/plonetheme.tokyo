@@ -64,6 +64,19 @@ html {
     background-color: inherit;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+    label {
+      &.required:after {
+        color: @tokyo-red;
+        content: "•";
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 2rem;
+        line-height: 0;
+        margin-left: 3px;
+        position: relative;
+        top: 7px;
+      }
+    }
+
     #content {
       background-color: white;
 
