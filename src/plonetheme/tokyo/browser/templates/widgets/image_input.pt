@@ -21,7 +21,7 @@
                       accesskey view/accesskey;
                       onselect view/onselect;"
       tal:define="download_url view/download_url;
-                  field_name view/context/field/__name__;
+                  field_name view/context/field/__name__|nothing;
                   exists python: view.value is not None;
                   scales view/context/@@images|nothing;
                   action view/action;
@@ -33,23 +33,29 @@
 
   <div class="form-row">
 
-    <div class="col-md-3 mb-3" tal:omit-tag="not:download_url">
-      <tal:cond tal:condition="python:exists and download_url and action=='nochange'">
+    <div class="col-md-3 mb-3" tal:condition="python:exists and download_url and action=='nochange'">
 
-        <a tal:attributes="href download_url">
-          <div class="img-thumbnail d-flex align-items-center justify-content-center" style="height: 200px;" title="Download - ${filename}" i18n:attributes="title download_filename">
-            <div id="img-background-${view/id}" class="rounded"
-                 style="width: 100%; height: 100%; background-image: url(${python:scales.scale(field_name).url}); background-repeat: no-repeat; background-position: center; background-size: cover"></div>
-            <small class="discreet position-absolute p-2 bg-dark text-white rounded">
-              <tal:doc_type condition="doc_type">
-                <span tal:replace="doc_type"></span>,
-              </tal:doc_type>
-              <span tal:define="sizekb view/file_size" tal:replace="sizekb"></span>
-            </small>
-          </div>
-        </a>
+      <a tal:attributes="href download_url">
+        <div class="img-thumbnail d-flex align-items-center justify-content-center" style="height: 200px;" title="Download - ${filename}" i18n:attributes="title download_filename">
 
-      </tal:cond>
+          <div id="img-background-${view/id}" class="rounded"
+               style="width: 100%; height: 100%; background-image: url(${python:scales.scale(field_name).url}); background-repeat: no-repeat; background-position: center; background-size: cover"
+               tal:condition="scales"></div>
+
+          <div id="img-background-${view/id}" class="rounded"
+               style="width: 100%; height: 100%; background-image: url(${download_url}); background-repeat: no-repeat; background-position: center; background-size: cover"
+               tal:condition="not:scales"></div>
+
+          <small class="discreet position-absolute p-2 bg-dark text-white rounded">
+            <tal:doc_type condition="doc_type">
+              <span tal:replace="doc_type"></span>,
+            </tal:doc_type>
+            <span tal:define="sizekb view/file_size" tal:replace="sizekb"></span>
+          </small>
+
+        </div>
+      </a>
+
     </div>
 
     <div class="${python:'col-md-9' if exists else 'col-md-12'}">
