@@ -46,6 +46,11 @@
       />
 
   <browser:jbot
+      directory="overrides/plone_app_discussion"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
       directory="overrides/plone_app_layout"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
