@@ -41,6 +41,11 @@
       />
 
   <browser:jbot
+      directory="overrides/plone_app_contentrules"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
+  <browser:jbot
       directory="overrides/plone_app_contenttypes"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
@@ -52,7 +57,7 @@
 
   <browser:jbot
       directory="overrides/plone_app_z3cform"
-      layer="z3c.form.interfaces.IFormLayer"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
   <!-- Widgets -->
@@ -69,6 +74,13 @@
       widget="plone.formwidget.namedfile.interfaces.INamedImageWidget"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       template="templates/widgets/image_input.pt"
+      />
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget="plone.formwidget.namedfile.interfaces.INamedFileWidget"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      template="templates/widgets/file_input.pt"
       />
 
 
