@@ -16,7 +16,7 @@ long_description = '\n\n'.join(
 
 setup(
     name='plonetheme.tokyo',
-    version='1.0.0a1.dev0',
+    version='0.1.0.dev0',
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
