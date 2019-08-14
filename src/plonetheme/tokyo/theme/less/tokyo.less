@@ -28,13 +28,14 @@
 @import 'tokyo/plone_controlpanel.less';
 @import 'tokyo/plone_widgets.less';
 
-/* Bootstrap */
+/* Bootstrap Overrides */
 @import 'tokyo/bootstrap_elements.less';
+@import 'tokyo/overrides';
 
 /* Tokyo Colors */
 @tokyo-slate: #1C2331;
 @tokyo-black: #19202A;
-@tokyo-blue: #007BFF;
+@tokyo-blue: @plone-blue;
 @tokyo-yellow: #FFC107;
 @tokyo-red: #F44336;
 @tokyo-white: #F9F9F9;
@@ -45,7 +46,7 @@
 @tokyo-lg-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
 /* Plone Colors */
-@plone-blue: #007BB1;
+@plone-blue: #0083be;
 
 /* Vendor */
 .vendor(@property, @value) {
@@ -81,9 +82,10 @@ html {
       background-color: white;
 
       .content-inner {
-        padding: 120px 0;
+        padding: 120px 30px 30px 30px;
 
         a {
+          color: @tokyo-blue;
           text-decoration: none !important;
         }
 
@@ -102,4 +104,28 @@ html {
       background-color: white;
     }
   }
+
+  #menu-header {
+
+    .header-wrapper {
+      display: block;
+      padding: 0 30px;
+
+      .header-logo img {
+        height: 50px;
+        width: auto;
+        padding: 0;
+        margin: 15px 0 0 0;
+      }
+
+      .header-icons {
+        padding: 0;
+        text-align: right;
+        margin-top: 15px;
+      }
+
+
+    }
+  }
+
 }

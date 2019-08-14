@@ -1,0 +1,202 @@
+// Links
+
+html {
+  a {
+    color: @tokyo-blue;
+    text-decoration: none;
+
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+
+    &:hover {
+      color: rgb(0, 88, 175);
+    }
+  }
+}
+
+// Badges
+
+.badge {
+  &.badge-primary {
+    background-color: @tokyo-blue;
+  }
+
+  &.badge-danger {
+    background-color: @tokyo-red;
+  }
+
+  &.badge-success {
+    background-color: green;
+  }
+
+  &.badge-warning {
+    background-color: @tokyo-yellow;
+  }
+
+  &.badge-info {
+    background-color: turquoise;
+  }
+}
+
+// Buttons
+
+.btn {
+  &.btn-primary {
+    background-color: @tokyo-blue;
+    border-color: @tokyo-blue;
+  }
+
+  &.btn-outline-primary {
+    border-color: @tokyo-blue;
+    color: @tokyo-blue;
+  }
+
+  &.btn-danger {
+    background-color: @tokyo-red;
+    border-color: @tokyo-red;
+  }
+
+  &.btn-outline-danger {
+    border-color: @tokyo-red;
+    color: @tokyo-red;
+  }
+
+  &.btn-success {
+    background-color: green;
+    border-color: green;
+  }
+
+  &.btn-outline-success {
+    border-color: green;
+    color: green;
+  }
+
+  &.btn-warning {
+    background-color: @tokyo-yellow;
+    border-color: @tokyo-yellow;
+  }
+
+  &.btn-outline-warning {
+    border-color: @tokyo-yellow;
+    color: @tokyo-yellow;
+  }
+
+  &.btn-info {
+    background-color: turquoise;
+    border-color: turquoise;
+  }
+
+  &.btn-outline-info {
+    border-color: turquoise;
+    color: turquoise;
+  }
+}
+
+// Alerts
+
+.alert {
+  &.alert-primary {
+    background-color: rgba(0, 73, 148, 0.125);
+    border-color: @tokyo-blue;
+  }
+
+  &.alert-danger {
+    background-color: rgba(214, 14, 21, 0.125);
+    border-color: @tokyo-red;
+  }
+
+  &.alert-success {
+    background-color: rgba(81, 174, 49, 0.125);
+    border-color: green;
+  }
+
+  &.alert-warning {
+    background-color: rgba(255, 204, 0, 0.125);
+    border-color: @tokyo-yellow;
+  }
+
+  &.alert-info {
+    background-color: rgba(0, 140, 142, 0.125);
+    border-color: turquoise;
+  }
+}
+
+// Input
+
+.form-control:focus {
+  border-color: @tokyo-blue;
+  box-shadow: 0 0 0 0.2rem rgba(0, 73, 148, 0.125);
+}
+
+// Custom Radio / Checkboxes
+
+.custom-control-input:checked~.custom-control-label::before {
+  background-color: @tokyo-blue;
+  border-color: @tokyo-blue;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 73, 148, 0.125);
+}
+
+// Backgrounds
+
+.bg-primary {
+  background-color: @tokyo-blue;
+}
+
+.bg-danger {
+  background-color: @tokyo-red;
+}
+
+.bg-success {
+  background-color: green;
+}
+
+.bg-warning {
+  background-color: @tokyo-yellow;
+}
+
+.bg-info {
+  background-color: turquoise;
+}
+
+// Text
+
+.text-primary {
+  color: @tokyo-blue;
+}
+
+.text-danger {
+  color: @tokyo-red;
+}
+
+.text-success {
+  color: green;
+}
+
+.text-warning {
+  color: @tokyo-yellow;
+}
+
+.text-info {
+  color: turquoise;
+}
+
+// Plone Portal Messages
+
+.portalMessage {
+  &.info {
+    background-color: @tokyo-blue;
+  }
+
+  &.warning {
+    background-color: @tokyo-yellow;
+  }
+
+  &.error {
+    background-color: @tokyo-red;
+  }
+}
