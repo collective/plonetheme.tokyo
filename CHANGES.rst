@@ -7,6 +7,9 @@ Changelog
 
 Added:
 
+- Add Event Listing and View. #19
+  [santonelli]
+
 - Updated password reset & recovery views with Bootstrap 4 markup.
   [Netroxen]
 
