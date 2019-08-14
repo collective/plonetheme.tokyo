@@ -12,12 +12,13 @@
 
   <?python widget.addClass(' '.join([field_class, error_class])) ?>
 
-  <tal:define tal:define="description python:getattr(widget, 'description', widget.field.description)">
+  <tal:define tal:define="description python:getattr(widget, 'description', widget.field.description);
+                          required python:getattr(widget, 'required', widget.field.required)">
 
     <tal:condition tal:condition="not:is_opt">
 
       <label for=""
-             class="d-block"
+             class="d-block ${python:'required' if required else ''}"
              tal:attributes="for widget/id"
              tal:condition="python:not hidden and widget.label"
              tal:content="widget/label"

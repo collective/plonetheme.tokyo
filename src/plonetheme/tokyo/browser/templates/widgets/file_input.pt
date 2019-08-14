@@ -1,0 +1,124 @@
+<div i18n:domain="plone"
+     tal:attributes="id view/id;
+                     title view/title;
+                     lang view/lang;
+                     onclick view/onclick;
+                     ondblclick view/ondblclick;
+                     onmousedown view/onmousedown;
+                     onmouseup view/onmouseup;
+                     onmouseover view/onmouseover;
+                     onmousemove view/onmousemove;
+                     onmouseout view/onmouseout;
+                     onkeypress view/onkeypress;
+                     onkeydown view/onkeydown;
+                     onkeyup view/onkeyup;
+                     onfocus view/onfocus;
+                     onblur view/onblur;
+                     onchange view/onchange;
+                     readonly view/readonly;
+                     accesskey view/accesskey;
+                     onselect view/onselect"
+     tal:define="download_url view/download_url;
+                 exists python: view.value is not None;
+                 action view/action;
+                 allow_nochange view/allow_nochange;
+                 doc_type view/file_content_type;
+                 icon view/file_icon;
+                 filename view/filename">
+
+  <tal:if tal:define="up_id view/file_upload_id" tal:condition="up_id">
+    <input type="hidden" name="${view/name}.file_upload_id" value="${up_id}" />
+  </tal:if>
+
+  <div class="mb-3" tal:condition="python:exists and download_url and action=='nochange'">
+
+    <img tal:condition="icon" src="" alt=""
+         tal:attributes="src icon; alt doc_type; title filename" />
+
+    <a tal:content="filename"
+       tal:attributes="href download_url">Filename</a>
+
+    <span class="text-muted">
+      &mdash;
+      <tal:doc_type condition="doc_type">
+        <span tal:replace="doc_type"
+              i18n:translate="">
+          ContentType
+        </span>,
+      </tal:doc_type>
+      <span tal:define="sizekb view/file_size" tal:replace="sizekb"
+            i18n:translate="">
+        100
+      </span>
+    </span>
+
+  </div>
+
+  <div class="file-options mb-3" tal:condition="allow_nochange">
+
+    <div class="custom-control custom-radio mb-3">
+      <input class="custom-control-input" type="radio" value="nochange"
+             tal:attributes="name string:${view/name}.action;
+                               id string:${view/id}-nochange;
+                               onclick string:document.getElementById('${view/id}-input').disabled=true;
+                               checked python:'checked' if action == 'nochange' else None" />
+      <label class="custom-control-label" tal:attributes="for string:${view/id}-nochange" i18n:translate="file_keep">
+        Keep existing file
+      </label>
+    </div>
+
+    <tal:cond condition="not:view/field/required">
+      <div class="custom-control custom-radio mb-3">
+        <input class="custom-control-input" type="radio" value="remove"
+               tal:attributes="name string:${view/name}.action;
+                               id string:${view/id}-remove;
+                               onclick string:document.getElementById('${view/id}-input').disabled=true;
+                               checked python:'checked' if action == 'nochange' else None" />
+        <label class="custom-control-label" tal:attributes="for string:${view/id}-remove" i18n:translate="file_remove">
+          Remove existing file
+        </label>
+      </div>
+    </tal:cond>
+
+    <div class="custom-control custom-radio">
+      <input class="custom-control-input" type="radio" value="replace"
+             tal:attributes="name string:${view/name}.action;
+                                     id string:${view/id}-replace;
+                                     onclick string:document.getElementById('${view/id}-input').disabled=false;
+                                     checked python:'checked' if action == 'replace' else None" />
+      <label class="custom-control-label" tal:attributes="for string:${view/id}-replace" i18n:translate="file_replace">Replace with new file</label>
+    </div>
+
+  </div>
+
+  <tal:omit tal:omit-tag="not:allow_nochange">
+
+    <div class="custom-file">
+      <input type="file" class="custom-file-input"
+             onchange="setFileFieldText(this, '#label-text-${view/id}');"
+             tal:attributes="id string:${view/id}-input;
+                             name view/name;
+                             disabled view/disabled" />
+      <label id="label-text-${view/id}" class="custom-file-label">
+        Choose file
+      </label>
+    </div>
+
+    <script tal:condition="python:allow_nochange and action != 'replace'"
+            tal:content="string:document.getElementById('${view/id}-input').disabled=true"
+            type="text/javascript">
+    </script>
+
+    <script type="text/javascript">
+      function setFileFieldText(input, label) {
+        if (input.files && input.files[0]) {
+          var name = input.files[0].name;
+          $(label).text(name);
+        }
+      }
+
+    </script>
+
+  </tal:omit>
+
+</div>

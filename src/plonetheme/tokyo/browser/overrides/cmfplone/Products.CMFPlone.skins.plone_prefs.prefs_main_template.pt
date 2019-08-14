@@ -1,0 +1,17 @@
+<metal:define metal:define-macro="master">
+  <metal:block metal:use-macro="context/@@main_template/macros/master">
+
+    <metal:fill metal:fill-slot="top_slot">
+      <tal:define tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel')" />
+    </metal:fill>
+
+    <metal:fill metal:fill-slot="main">
+      <metal:define metal:define-slot="prefs_configlet_wrapper">
+        <metal:define metal:define-slot="prefs_configlet_content">
+          <metal:define metal:define-slot="prefs_configlet_main"></metal:define>
+        </metal:define>
+      </metal:define>
+    </metal:fill>
+
+  </metal:block>
+</metal:define>
