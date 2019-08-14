@@ -65,6 +65,11 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <browser:jbot
+      directory="overrides/plone_batching"
+      layer="z3c.form.interfaces.IFormLayer"
+      />
+
   <!-- Widgets -->
 
   <z3c:widgetTemplate
