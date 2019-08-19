@@ -25,7 +25,7 @@
 
         </div>
 
-        <tal:define tal:define="image context/@@images/image; scales context/@@images" tal:condition="exists:image">
+        <tal:define tal:define="image context/@@images/image|nothing; scales context/@@images" tal:condition="image">
           <div class="col-md-4">
 
             <figure class="newsitem-image" tal:define="img python:scales.scale('image', width=600, height=400, direction='down')">
