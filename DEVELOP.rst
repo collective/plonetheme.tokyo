@@ -1,5 +1,6 @@
-Using the development buildout
-------------------------------
+Development Buildout Usage
+==========================
+
 
 Create a virtualenv in the package::
 
