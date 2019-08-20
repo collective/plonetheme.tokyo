@@ -5,7 +5,10 @@ Changelog
 0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Fixed:
+
+- Fixed KeyError in @@prefs_install_products_form.
+  [sarn0ld]
 
 
 0.1.0 (2019-08-14)
