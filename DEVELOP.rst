@@ -4,7 +4,7 @@ Development Buildout Usage
 
 Create a virtualenv in the package::
 
-    $ virtualenv --clear .
+    $ python3.7 -m venv --clear .
 
 Install requirements with pip::
 
