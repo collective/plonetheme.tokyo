@@ -19,8 +19,8 @@ before_install:
 install:
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
-  - bin/buildout -c development.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
-  - bin/buildout -c development.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True
+  - bin/buildout -c develop.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
+  - bin/buildout -c develop.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
   - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C bin
   - export PATH=$(pwd)/bin:$PATH
