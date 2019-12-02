@@ -19,14 +19,14 @@
       <tal:repeat repeat="data batch">
       <div class="row mb-4">
 
-        <div class="col-md-2">
-          <div class="p-3 text-center border" tal:define="startf python:view.date_speller(data.start)" style="max-width: 8rem;">
+        <div class="col-4 col-sm-3 col-md-2">
+          <div class="p-2 text-center border" tal:define="startf python:view.date_speller(data.start)" style="max-width: 8rem;">
             <p class="h3 p-1 bg-secondary text-white rounded" tal:content="string:${startf/day}">15</p>
             <p tal:content="string:${startf/month_name}">Oct.</p>
           </div>
         </div>
 
-        <div class="col-md-10">
+        <div class="col-8 col-sm-9 col-md-10">
           <!--<span tal:content="data/start/isoformat">Start</span> - <span tal:content="data/end/isoformat">End</span>-->
           <h5 class="mt-0">
             <a href="${data/url}" class="stretched-link">${data/title}</a>
