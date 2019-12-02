@@ -9,75 +9,48 @@
 <body>
   <metal:main fill-slot="main">
 
-    <tal:def tal:define="header view/header_string; mode request/mode|string:future">
+    <header tal:define="header view/header_string">
+      <h1 class="documentFirstHeading"><span tal:replace="header/main" tal:condition="header/main"/></h1>
+      <!--<p class="lead" tal:content="context/description">Lorem ipsum dolor sit amet</p>-->
+    </header>
 
-      <header>
-        <h1 tal:content="context/title">Title</h1>
-        <p class="lead" tal:content="context/description">Lorem ipsum dolor sit amet</p>
-      </header>
+    <section class="mt-4" tal:define="batch view/events; toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
-      <h2 tal:content="header/sub" tal:condition="header/sub" />
+      <tal:repeat repeat="data batch">
+      <div class="row mb-4">
 
-      <tal:def tal:define="show_filter view/show_filter">
+        <div class="col-4 col-sm-3 col-md-2">
+          <div class="p-2 text-center border" tal:define="startf python:view.date_speller(data.start)" style="max-width: 8rem;">
+            <p class="h3 p-1 bg-secondary text-white rounded" tal:content="string:${startf/day}">15</p>
+            <p tal:content="string:${startf/month_name}">Oct.</p>
+          </div>
+        </div>
 
-        <tal:cond tal:condition="show_filter">
+        <div class="col-8 col-sm-9 col-md-10">
+          <!--<span tal:content="data/start/isoformat">Start</span> - <span tal:content="data/end/isoformat">End</span>-->
+          <h5 class="mt-0">
+            <a href="${data/url}" class="stretched-link">${data/title}</a>
+            <small class="text-muted"><tal:date tal:replace="structure python:view.formatted_date(data)"/></small>
+          </h5>
+          <p tal:condition="data/description" tal:content="data/description">Event description</p>
+        </div>
 
-          <tal:cond tal:condition="python:mode=='past'">
-            <a class="btn btn-primary mr-2" href="" tal:attributes="href view/mode_future_url" i18n:translate="mode_future_link">Upcoming Events</a>
-          </tal:cond>
+      </div>
+      </tal:repeat>
 
-          <tal:cond tal:condition="python:mode=='future'">
-            <a class="btn btn-primary mr-2" href="" tal:attributes="href view/mode_past_url" i18n:translate="mode_past_link">Past Events</a>
-          </tal:cond>
+    </section>
 
-        </tal:cond>
+    <section tal:define="mode request/mode|string:future">
+      <tal:cond tal:condition="python:mode=='past'">
+        <a class="btn btn-primary" href="" tal:attributes="href view/mode_future_url" i18n:translate="mode_future_link">Upcoming Events</a>
+      </tal:cond>
 
-        <a class="btn btn-primary"
-           href=""
-           tal:attributes="href view/ical_url"
-           title="Download this event in iCal format"
-           i18n:attributes="title title_add_to_ical"
-           i18n:translate="label_add_to_ical">
-          Download as iCal
-        </a>
+      <tal:cond tal:condition="python:mode=='future'">
+        <a class="btn btn-primary" href="" tal:attributes="href view/mode_past_url" i18n:translate="mode_past_link">Past Events</a>
+      </tal:cond>
+    </section>
 
-      </tal:def>
-
-    </tal:def>
-
-    <div class="pt-3 pb-3">
-      <tal:def tal:define="batch view/events; toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-
-        <section>
-          <tal:repeat repeat="data batch">
-            <article itemscope itemtype="http://data-vocabulary.org/Event"
-                     tal:define="startf python:view.date_speller(data.start)">
-
-              <ul class="d-none">
-                <li itemprop="startDate" tal:content="data/start/isoformat"></li>
-                <li itemprop="endDate" tal:content="data/end/isoformat"></li>
-              </ul>
-
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-title mb-2">
-                    <a href="" itemprop="url" tal:attributes="href data/url">
-                      <span itemprop="summary" tal:content="data/title"></span>
-                    </a>
-                  </div>
-                  <div class="card-subtitle mb-2 text-muted" tal:content="structure python:view.formatted_date(data)"></div>
-                  <p class="card-text" itemprop="description" tal:condition="data/description" tal:content="data/description" />
-                </div>
-              </div>
-
-            </article>
-          </tal:repeat>
-        </section>
-
-        <div metal:use-macro="context/batch_macros/macros/navigation" />
-
-      </tal:def>
-    </div>
+    <div metal:use-macro="context/batch_macros/macros/navigation" />
 
   </metal:main>
 </body>
