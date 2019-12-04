@@ -5,7 +5,10 @@ Changelog
 0.3.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Fixed:
+
+- Restore barceloneta after the theme has been uninstalled (Refs. #32)
+  [ale-rt]
 
 
 0.2.1 (2019-08-20)
