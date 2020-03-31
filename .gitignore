@@ -46,7 +46,6 @@ lib64
 log.html
 output.xml
 pip-selfcheck.json
-package-lock.json
 report.html
 
 # Excludes
@@ -62,5 +61,5 @@ report.html
 
 Gruntfile.js
 node_modules/
-package.json
+src/plonetheme/tokyo/theme/node_modules/
 temp_resources

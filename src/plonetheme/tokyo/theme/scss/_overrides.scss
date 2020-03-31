@@ -1,0 +1,26 @@
+// Overrides for other packages
+
+#portal-navigation {
+  z-index: 1050 !important;
+}
+
+#portal-navigation-cover {
+  z-index: 1050 !important;
+}
+
+#portaltab-burger-menu {
+  font-size: 24px !important;
+  margin-top: 5px !important;
+}
+
+// Temporary fixes until markup has been updated
+
+.documentByLine {
+  margin-bottom: 1rem;
+}
+
+.documentDescription {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}

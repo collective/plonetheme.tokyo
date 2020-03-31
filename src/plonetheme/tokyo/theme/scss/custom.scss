@@ -1,0 +1,40 @@
+// Bootstrap Variable Overrides
+
+$enable-rounded: false;
+
+$blue: #0083be;
+
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+
+
+// Option A: Include all of Bootstrap
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Option B: Include parts of Bootstrap
+
+// Required
+// @import "node_modules/bootstrap/scss/functions";
+// @import "node_modules/bootstrap/scss/variables";
+// @import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+// @import "node_modules/bootstrap/scss/reboot";
+// @import "node_modules/bootstrap/scss/type";
+// @import "node_modules/bootstrap/scss/images";
+// @import "node_modules/bootstrap/scss/code";
+// @import "node_modules/bootstrap/scss/grid";
+
+// Import Tokyo Plone Theme Styles
+
+@import "controlpanel";
+@import "errors";
+@import "events";
+@import "fonts";
+@import "footer";
+@import "header";
+@import "messages";
+@import "news";
+@import "overrides";
+@import "tokyo";
+@import "widgets";

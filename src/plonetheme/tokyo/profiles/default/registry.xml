@@ -25,7 +25,7 @@
   <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo">
     <value key="js">++theme++plonetheme.tokyo/js/tokyo.js</value>
     <value key="css">
-      <element>++theme++plonetheme.tokyo/less/tokyo.less</element>
+      <element>++theme++plonetheme.tokyo/css/custom.css</element>
     </value>
     <value key="deps">jquery</value>
   </records>
@@ -35,7 +35,7 @@
       <element>tokyo</element>
     </value>
     <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo-compiled.js</value>
-    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-compiled.css</value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/css/custom.min.css</value>
     <value key="enabled">True</value>
     <value key="compile">True</value>
     <value key="last_compilation">2019-12-04 17:00:00</value>

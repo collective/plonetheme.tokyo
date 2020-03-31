@@ -1,0 +1,39 @@
+/* Light */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('../fonts/open_sans/OpenSans-Light.ttf') format('truetype');
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/open_sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+/* Semi Bold */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url('../fonts/open_sans/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('../fonts/open_sans/OpenSans-Bold.ttf') format('truetype');
+}
+
+/* Extra Bold */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url('../fonts/open_sans/OpenSans-ExtraBold.ttf') format('truetype');
+}

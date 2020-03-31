@@ -1,0 +1,16 @@
+.page-footer {
+  background-color: $gray-900;
+  color: $light;
+
+  a {
+    color: $light;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .footer-copyright {
+    background-color: $black;
+  }
+}

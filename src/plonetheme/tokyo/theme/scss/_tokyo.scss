@@ -1,0 +1,25 @@
+/* Main-Styling */
+html {
+  background-color: $black;
+
+  body {
+    background-color: $black;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    #viewlet-above-content {
+      background-color: $white;
+      padding-top: 120px;
+    }
+
+    #content {
+      background-color: $white;
+      padding-bottom: 30px;
+    }
+
+    #viewlet-below-content {
+      background-color: $white;
+    }
+
+  }
+
+}

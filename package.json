@@ -1,0 +1,42 @@
+{
+  "name": "plonetheme.tokyo",
+  "version": "0.4.0",
+  "description": "An add-on for Plone",
+  "main": "index.js",
+  "author": "Stefan Antonelli",
+  "license": "MIT",
+  "homepage": "https://icons.getbootstrap.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collective/plonetheme.tokyo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/collective/plonetheme.tokyo/issues"
+  },
+  "keywords": [
+    "plone",
+    "theme"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "bootstrap-icons": "^1.0.0-alpha3"
+  },
+  "scripts": {
+    "css": "npm-run-all css-compile-main css-prefix-main css-minify-main",
+    "css-lint": "stylelint \"src/plonetheme/tokyo/theme/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/plonetheme/tokyo/theme/scss/ -o src/plonetheme/tokyo/theme/css/",
+    "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output src/plonetheme/tokyo/theme/css/custom.min.css src/plonetheme/tokyo/theme/css/custom.css",
+    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"src/plonetheme/tokyo/theme/css/*.css\" \"!src/plonetheme/tokyo/theme/css/*.min.css\"",
+    "lint": "npm-run-all --parallel css-lint",
+    "dist": "npm-run-all --parallel css",
+    "watch": "nodemon --watch src/plonetheme/tokyo/theme/scss/ --ext src/plonetheme/tokyo/theme/scss --exec \"npm run css\""
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.13.0",
+    "nodemon": "^1.19.4",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3",
+    "stylelint": "^9.10.1"
+  }
+}

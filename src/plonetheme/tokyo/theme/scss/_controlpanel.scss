@@ -1,0 +1,87 @@
+.portletSiteSetup {
+  margin: 0 -15px 20px -15px;
+
+  .portletHeader {
+    color: $black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
+  .portletContent {
+    .configlets {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 30px;
+
+        .inner-configlet {
+          background-color: $white;
+          border: 1px solid $primary;
+          border-radius: 0.25rem;
+          font-weight: 600;
+          height: 100%;
+          text-align: center;
+          transition: all 80ms ease-in-out;
+          width: 100%;
+          word-break: break-word;
+
+          &:hover {
+            background-color: $primary;
+            border: 1px solid transparent;
+            box-shadow: $box-shadow-sm;
+
+            a {
+              color: $light !important;
+            }
+          }
+
+          a {
+            display: block;
+            height: 100%;
+            padding: 70px 10px 20px 10px;
+            position: relative;
+
+            span {
+              background-color: rgba(255,255,255,0.15);
+              display: block;
+              height: 60px;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100%;
+
+              &:before {
+                font-size: 32px;
+                line-height: 60px;
+                margin: 0;
+                width: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.addon-status-icon {
+  font-size: 60px;
+  line-height: 0;
+
+  i {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .portletSiteSetup {
+    .portletHeader {
+      text-align: center;
+    }
+  }
+}
