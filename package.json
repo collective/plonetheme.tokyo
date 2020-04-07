@@ -25,7 +25,7 @@
     "css": "npm-run-all css-compile-main css-prefix-main css-minify-main",
     "css-lint": "stylelint \"src/plonetheme/tokyo/theme/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/plonetheme/tokyo/theme/scss/ -o src/plonetheme/tokyo/theme/css/",
-    "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output src/plonetheme/tokyo/theme/css/custom.min.css src/plonetheme/tokyo/theme/css/custom.css",
+    "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output src/plonetheme/tokyo/theme/css/tokyo.min.css src/plonetheme/tokyo/theme/css/tokyo.css",
     "css-prefix-main": "postcss --config build/postcss.config.js --replace \"src/plonetheme/tokyo/theme/css/*.css\" \"!src/plonetheme/tokyo/theme/css/*.min.css\"",
     "lint": "npm-run-all --parallel css-lint",
     "dist": "npm-run-all --parallel css",

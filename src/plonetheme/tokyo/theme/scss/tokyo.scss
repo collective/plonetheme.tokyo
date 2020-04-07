@@ -27,6 +27,7 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 
 // Import Tokyo Plone Theme Styles
 
+@import "base";
 @import "controlpanel";
 @import "errors";
 @import "events";
@@ -36,5 +37,4 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 @import "messages";
 @import "news";
 @import "overrides";
-@import "tokyo";
 @import "widgets";
