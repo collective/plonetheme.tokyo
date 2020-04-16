@@ -29,7 +29,7 @@
     "css-prefix-main": "postcss --config build/postcss.config.js --replace \"src/plonetheme/tokyo/theme/css/*.css\" \"!src/plonetheme/tokyo/theme/css/*.min.css\"",
     "lint": "npm-run-all --parallel css-lint",
     "dist": "npm-run-all --parallel css",
-    "watch": "nodemon --watch src/plonetheme/tokyo/theme/scss/ --ext src/plonetheme/tokyo/theme/scss --exec \"npm run css\""
+    "watch": "nodemon --watch src/plonetheme/tokyo/theme/scss/ --ext scss --exec \"npm run css\""
   },
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
