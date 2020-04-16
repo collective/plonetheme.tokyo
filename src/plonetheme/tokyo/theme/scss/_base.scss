@@ -1,24 +1,25 @@
-/* Main-Styling */
+// Basic Styling
+
 html {
-  background-color: $black;
 
   body {
-    background-color: $black;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-    #viewlet-above-content {
-      background-color: $white;
-      padding-top: 120px;
-    }
+    // See _header.scss for specific styling
+    #portal-header {}
 
-    #content {
-      background-color: $white;
-      padding-bottom: 30px;
-    }
+    #portal-content {
 
-    #viewlet-below-content {
-      background-color: $white;
-    }
+      padding: 3rem 0;
+
+      #viewlet-above-content {}
+
+      #content {}
+
+      #viewlet-below-content {}
+      }
+
+    // See _footer.scss for specific styling
+    #portal-footer {}
 
   }
 

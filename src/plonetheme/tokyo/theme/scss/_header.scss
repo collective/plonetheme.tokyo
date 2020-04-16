@@ -1,10 +1,20 @@
-/* Header Styling */
+// Header Styling
+
 #portal-header {
 
-  .header-brand {
-    img {
-      width: 180px;
-      height: auto;
+  height: 78px;
+
+  .navbar {
+    padding: 1rem 0;
+
+    .navbar-brand {
+      padding: 0;
+
+      img {
+        width: auto;
+        height: 46px;
+      }
+
     }
   }
 }

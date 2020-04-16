@@ -1,16 +1,13 @@
-.page-footer {
-  background-color: $gray-900;
-  color: $light;
+// Footer Styling
 
-  a {
+#portal-footer {
+
+  .page-footer {
+    background-color: $gray-900;
     color: $light;
 
-    &:hover {
-      color: $white;
+    .footer-copyright {
+      background-color: $black;
     }
-  }
-
-  .footer-copyright {
-    background-color: $black;
   }
 }
