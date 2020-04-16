@@ -23,15 +23,6 @@
       />
 
   <genericsetup:registerProfile
-      name="registerless"
-      title="Tokyo Theme"
-      directory="profiles/registerless"
-      description="Registerless profile for the plonetheme.tokyo add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.install"
-      />
-
-  <genericsetup:registerProfile
       name="uninstall"
       title="Tokyo Theme (uninstall)"
       directory="profiles/uninstall"

@@ -10,7 +10,6 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         profiles = [
-            'plonetheme.tokyo:registerless',
             'plonetheme.tokyo:uninstall',
             ]
         return profiles
