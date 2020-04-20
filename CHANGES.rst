@@ -5,7 +5,32 @@ Changelog
 0.4.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Added:
+
+- Nothing added yet
+  [santonelli]
+
+Changed:
+
+- Cleanup, remove paddings, add wrapper in main template
+  [santonelli]
+
+- Rename resources
+  [santonelli]
+
+- Removed CSS overrides for Bootstrap styling
+  [santonelli]
+
+- Update config for npm / yarn
+  [santonelli]
+
+- Convert Less to Sass
+  [santonelli]
+
+Fixed:
+
+- Remove custom error message to fix redirection tool
+  [santonelli]
 
 
 0.3.0 (2019-12-06)

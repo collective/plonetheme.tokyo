@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="++plone++plonetheme.tokyo/bootstrap.min.css">
-
 <tal:styles repeat="style view/styles">
   <tal:block define="condcomment style/conditionalcomment">
 

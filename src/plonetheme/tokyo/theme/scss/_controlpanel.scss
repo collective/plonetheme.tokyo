@@ -2,7 +2,7 @@
   margin: 0 -15px 20px -15px;
 
   .portletHeader {
-    color: @tokyo-black;
+    color: $black;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -19,8 +19,8 @@
         margin-bottom: 30px;
 
         .inner-configlet {
-          background-color: @tokyo-white;
-          border: 1px solid @tokyo-blue;
+          background-color: $white;
+          border: 1px solid $primary;
           border-radius: 0.25rem;
           font-weight: 600;
           height: 100%;
@@ -30,12 +30,12 @@
           word-break: break-word;
 
           &:hover {
-            background-color: @tokyo-blue;
+            background-color: $primary;
             border: 1px solid transparent;
-            box-shadow: @tokyo-sm-shadow;
+            box-shadow: $box-shadow-sm;
 
             a {
-              color: @tokyo-white !important;
+              color: $light !important;
             }
           }
 
@@ -68,7 +68,17 @@
   }
 }
 
-@media (max-width: @screen-xs-max) {
+.addon-status-icon {
+  font-size: 60px;
+  line-height: 0;
+
+  i {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@include media-breakpoint-down(xs) {
   .portletSiteSetup {
     .portletHeader {
       text-align: center;

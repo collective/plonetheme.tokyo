@@ -1,6 +1,6 @@
 #not-found,
 #privileges {
-  background-color: @tokyo-blue;
+  background-color: $primary;
 
   .inner-content-wrapper {
     align-items: center;
@@ -23,20 +23,20 @@
       }
 
       .inner-title {
-        color: @tokyo-white;
+        color: $light;
         font-size: 18px;
         margin-bottom: 15px;
       }
 
       .inner-text {
-        color: @tokyo-white;
+        color: $light;
 
         a {
-          color: @tokyo-slate;
+          color: $gray-900;
         }
 
         pre {
-          background-color: @tokyo-white;
+          background-color: $light;
           border-radius: 0.25em;
           font-size: 12px;
           padding: 15px;
@@ -46,7 +46,7 @@
       }
 
       .inner-list {
-        color: @tokyo-white;
+        color: $light;
         font-size: 14px;
         list-style: none;
         margin: 0;
@@ -57,7 +57,7 @@
           margin-bottom: 10px;
 
           a {
-            color: @tokyo-slate;
+            color: $gray-900;
           }
         }
       }

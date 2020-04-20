@@ -5,7 +5,7 @@
 
   <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo-legacy">
     <value key="css">
-      <element>++theme++plonetheme.tokyo/less/legacy/plone_logged_in.less</element>
+      <element>++theme++plonetheme.tokyo/less/plone_logged_in.less</element>
     </value>
   </records>
 
@@ -22,24 +22,12 @@
 
   <!-- Tokyo Bundle -->
 
-  <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo">
-    <value key="js">++theme++plonetheme.tokyo/js/tokyo.js</value>
-    <value key="css">
-      <element>++theme++plonetheme.tokyo/less/tokyo.less</element>
-    </value>
-    <value key="deps">jquery</value>
-  </records>
-
   <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo">
-    <value key="resources">
-      <element>tokyo</element>
-    </value>
-    <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo-compiled.js</value>
-    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-compiled.css</value>
+    <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo.min.js</value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/css/tokyo.min.css</value>
     <value key="enabled">True</value>
-    <value key="compile">True</value>
-    <value key="last_compilation">2019-12-04 17:00:00</value>
-    <value key="depends">plone</value>
+    <value key="compile">False</value>
+    <value key="last_compilation">2020-04-20 12:00:00</value>
   </records>
 
 </registry>

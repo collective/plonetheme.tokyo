@@ -25,8 +25,7 @@
       .list-item-headline {
         color: #303030;
         margin: 0 0 15px 0;
-
-        .vendor(transition, all 150ms ease-in-out);
+        transition: all 150ms ease-in-out;
 
         &:hover {
           color: #CCCCCC;
@@ -54,7 +53,7 @@
   }
 }
 
-@media (max-width: @screen-xs-max) {
+@include media-breakpoint-down(xs) {
   #list-items {
     .list-item {
       .list-item-image {

@@ -1,2 +1,0 @@
-!function(){"use strict";jQuery(document).ready(function(){})}(),define("/Users/stefan/Development/plonetheme.tokyo.py3/src/plonetheme/tokyo/theme/js/tokyo.js",function(){});
-//# sourceMappingURL=tokyo-compiled.js.map

@@ -19,7 +19,7 @@
       directory="profiles/default"
       description="Installs the plonetheme.tokyo add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
+      post_handler=".setuphandlers.install"
       />
 
   <genericsetup:registerProfile

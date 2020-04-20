@@ -9,10 +9,13 @@ from zope.interface import implementer
 class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
-        return ['plonetheme.tokyo:uninstall']
+        profiles = [
+            'plonetheme.tokyo:uninstall',
+            ]
+        return profiles
 
 
-def post_install(context):
+def install(context):
     """
     Post install script:
     Do something at the end of the installation of this package.
