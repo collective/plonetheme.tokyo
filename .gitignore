@@ -3,9 +3,7 @@
 .*.cfg
 .coverage
 *.egg
-*.EGG
 *.egg-info
-*.EGG-INFO
 *.log
 *.map
 *.mo
@@ -30,11 +28,9 @@ include/
 lib/
 local/
 parts/
-src/collective.sidebar/
-test.plone_addon/
+src/*
 var/
 share/
-src/collective.sidebar/
 .idea/
 .vscode/
 
@@ -56,6 +52,7 @@ report.html
 !.gitignore
 !.gitkeep
 !.travis.yml
+!src/plonetheme
 
 # Node & Grunt
 
