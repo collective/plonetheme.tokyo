@@ -9,7 +9,7 @@
 
 <body>
   <metal:content-core fill-slot="main">
-    <div class="container">
+
       <div class="row">
 
         <div class="col-md-8">
@@ -36,7 +36,7 @@
         </tal:define>
 
       </div>
-    </div>
+
   </metal:content-core>
 </body>
 
