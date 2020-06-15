@@ -1,6 +1,6 @@
 <div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo view/logo; logo_title view/logo_title">
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar fixed-top navbar-dark bg-primary">
 
     <div class="container">
 
