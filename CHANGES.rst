@@ -5,7 +5,10 @@ Changelog
 0.5.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Added:
+
+- Added Bootstrap icons
+  [santonelli]
 
 
 0.4.0 (2020-04-20)

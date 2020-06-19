@@ -1,0 +1,17 @@
+#! /usr/bin/env python
+
+import os
+
+ICONS_DIR = '${:packagepath}/theme/icons/bootstrap'
+ICONS_SCSS_FILE = '${:packagepath}/theme/scss/_icons_bootstrap.scss'
+
+output = ''
+scss = '.bi-%(icon)s::before {background-image: url("++theme++plonetheme.tokyo/icons/bootstrap/%(icon)s.svg");}\n'
+
+for item in os.listdir(ICONS_DIR):
+    if item.endswith('.svg'):
+        icon = item[:-4]
+        output = output + scss % { 'icon': icon }
+
+with open(ICONS_SCSS_FILE, 'w') as f:
+    f.write(output)

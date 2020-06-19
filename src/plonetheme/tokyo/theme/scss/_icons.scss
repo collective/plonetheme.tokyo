@@ -1,0 +1,11 @@
+.bi::before {
+    display: inline-block;
+    content: "";
+    background-image: url("++theme++plonetheme.tokyo/icons/bootstrap/chevron-right.svg");
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  @import "icons_bootstrap";
