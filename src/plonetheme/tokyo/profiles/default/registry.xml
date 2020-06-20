@@ -30,4 +30,10 @@
     <value key="last_compilation">2020-04-20 12:00:00</value>
   </records>
 
+  <!-- Icon Font -->
+
+  <record name="collective.sidebar.icon_font">
+    <value>Bootstrap</value>
+  </record>
+
 </registry>
