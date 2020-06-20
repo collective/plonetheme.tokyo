@@ -7,7 +7,12 @@ Changelog
 
 Added:
 
-- Added Bootstrap icons
+- Added Bootstrap icons and make them available via bi-icon classes.
+  [santonelli]
+
+Changed:
+
+- Bump version of collective.sidebar to 1.4.0
   [santonelli]
 
 
