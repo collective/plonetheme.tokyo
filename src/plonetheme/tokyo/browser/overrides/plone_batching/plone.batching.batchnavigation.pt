@@ -8,7 +8,13 @@
         <a class="page-link" tabindex="-1"
            tal:attributes="href python:view.make_link(batch.previouspage);
                            aria-disabled python:'true' if not has_previous else None">
-          <span tal:attributes="data-pages batch/pagesize|nothing" i18n:translate="">Previous</span>
+          <span tal:attributes="data-pages batch/pagesize|nothing">
+            <svg viewBox="118.687 114.053 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+              <g style="" transform="matrix(-1, 0, 0, -1, 409.562164, 390.553284)">
+                <path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"></path>
+              </g>
+            </svg>					
+          </span>
         </a>
       </li>
 
@@ -39,7 +45,15 @@
         <a class="page-link"
            tal:attributes="href python:view.make_link(batch.nextpage);
                            aria-disabled python:'true' if not has_next else None">
-          <span tal:attributes="data-pages batch/next_item_count|nothing" i18n:translate="">Next</span>
+          <span tal:attributes="data-pages batch/next_item_count|nothing">
+
+            <svg viewBox="0 0 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+              <g style="" transform="matrix(1, 0, 0, 1, -275.274994, -258.549988)">
+                <path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"></path>
+              </g>
+            </svg>
+
+          </span>
         </a>
       </li>
 
