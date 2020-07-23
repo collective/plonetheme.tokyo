@@ -12,6 +12,9 @@ Added:
 
 Changed:
 
+- Update Bootstrap icons to Alpha 5
+  [santonelli]
+
 - Bump version of collective.sidebar to 1.4.0
   [santonelli]
 
