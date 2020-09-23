@@ -1,0 +1,125 @@
+<div class="document-byline" i18n:domain="plone" tal:condition="view/show">
+
+  <div class="d-flex flex-row flex-wrap">
+
+    <div class="byline-section document-author" tal:define="creator_short_form view/creator; creator_long_form string:?author=${creator_short_form}; creator_is_openid python:'/' in creator_short_form; creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];" tal:condition="creator_short_form">
+      <span class="byline-label" i18n:translate="label_document_created_by">Created by</span>
+      <a class="byline-value" href="#" tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}" tal:content="view/authorname" tal:omit-tag="python:view.author() is None">Roland Barthes</a>
+    </div>
+
+    <!-- this is not working for me -->
+    <div class="byline-section document-published" tal:define="published view/pub_date" tal:condition="published">
+      <span i18n:translate="label_document_published">published</span>
+      <span class="byline-value pat-moment" data-pat-moment="format:relative;" tal:content="published">Published</span>
+    </div>
+
+    <div class="byline-section document-modified" tal:define="modified context/ModificationDate" tal:condition="modified">
+      <span class="byline-label" i18n:translate="label_document_last_modified">Last modified</span>
+      <span class="byline-value pat-moment" data-pat-moment="format:relative;" tal:content="modified">Modified</span>
+    </div>
+
+    <!-- this is not working for me -->
+    <div class="byline-section document-expired" tal:condition="view/isExpired">
+      <span class="byline-label" i18n:translate="label_document_expiration">Expiration</span>
+      <span class="byline-value" i18n:translate="time_expired">expired</span>
+    </div>
+
+    <div class="byline-section document-contributors" tal:define="contributors context/Contributors" tal:condition="contributors">
+      <span class="byline-label" i18n:translate="label_document_contributors">Contributors</span>
+      <span class="byline-value" tal:omit-tag="" tal:content="python: ', '.join(contributors)">Mary</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<section id="section-byline" class="my-5" i18n:domain="plone" tal:condition="view/show">
+
+  <header class="section-heading h5" i18n:translate="section_byline_heading">
+    Byline with definition list
+  </header>
+
+  <dl>
+    <tal:value tal:define="creator_short_form view/creator; creator_long_form string:?author=${creator_short_form}; creator_is_openid python:'/' in creator_short_form; creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];" tal:condition="creator_short_form">
+    <dt i18n:translate="label_document_created_by">Created by</dt>
+    <dd><a class="byline-value" href="#" tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}" tal:content="view/authorname" tal:omit-tag="python:view.author() is None">Roland Barthes</a></dd>
+    </tal:value>
+    <tal:value tal:define="modified context/ModificationDate" tal:condition="modified">
+    <dt i18n:translate="label_document_last_modified">Last modified</dt>
+    <dd class="pat-moment" data-pat-moment="format:relative;" tal:content="modified">Modified</dd>
+    </tal:value>
+  </dl>
+</section>
+
+<section id="section-byline-alternative" class="my-5" i18n:domain="plone" tal:condition="view/show">
+
+  <header class="section-heading h5" i18n:translate="section_byline_heading">
+    Byline with definition list inside a card
+  </header>
+
+  <div class="card-deck">
+
+    <div class="card">
+      <div class="card-body">
+        <dl tal:define="creator_short_form view/creator; creator_long_form string:?author=${creator_short_form}; creator_is_openid python:'/' in creator_short_form; creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];" tal:condition="creator_short_form">
+          <dt i18n:translate="label_document_created_by">Created by</dt>
+          <dd><a href="" tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}" tal:content="view/authorname" tal:omit-tag="python:view.author() is None">Roland Barthes</a></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <dl tal:define="modified context/ModificationDate" tal:condition="modified">
+          <dt i18n:translate="label_document_last_modified">Last modified</dt>
+          <dd class="pat-moment" data-pat-moment="format:relative;" tal:content="modified">Modified</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <dl tal:define="contributors context/Contributors" tal:condition="contributors">
+          <dt i18n:translate="label_document_last_modified">Contributors</dt>
+          <dd tal:content="python: ', '.join(contributors)">Mary</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="section-byline-alternative" class="my-5" i18n:domain="plone" tal:condition="view/show">
+
+  <header class="section-heading h5" i18n:translate="section_byline_heading">
+    Byline with cards only
+  </header>
+
+  <div class="card-deck">
+
+    <div class="card" tal:define="creator_short_form view/creator; creator_long_form string:?author=${creator_short_form}; creator_is_openid python:'/' in creator_short_form; creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];" tal:condition="creator_short_form">
+      <div class="card-body">
+        <strong class="card-title" i18n:translate="label_document_created_by">Created by</strong>
+        <p class="card-text"><a class="byline-value" href="#" tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}" tal:content="view/authorname" tal:omit-tag="python:view.author() is None">Roland Barthes</a></p>
+      </div>
+    </div>
+
+    <div class="card" tal:define="modified context/ModificationDate" tal:condition="modified">
+      <div class="card-body">
+        <strong class="card-title" i18n:translate="label_document_last_modified">Last modified</strong>
+        <p class="card-text pat-moment" data-pat-moment="format:relative;" tal:content="modified">Modified</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="section-copyright" class="my-5" i18n:domain="plone" tal:define="rights context/Rights" tal:condition="rights">  
+  <header class="section-heading h5" i18n:translate="section_related_heading">
+    Rights
+  </header>
+  <div tal:content="rights">Copyleft NiceCorp Inc.</div>
+</section>
