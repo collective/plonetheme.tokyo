@@ -6,11 +6,11 @@
     :target: https://travis-ci.com/collective/plonetheme.tokyo
 
 
-===================================
-Plonetheme Tokyo (plonetheme.tokyo)
-===================================
+========================================
+Tokyo Theme for Plone (plonetheme.tokyo)
+========================================
 
-Plonetheme Tokyo implements Bootstrap 4 into Plone, with an emphasis on keeping things as close to "default" as possible.
+Tokyo Theme for Plone implements Bootstrap 4 into Plone, with an emphasis on keeping things as close to "default" as possible.
 
 .. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_login.png
     :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_login.png
@@ -38,6 +38,12 @@ Documentation
 -------------
 
 Full documentation for end users can be found in the "docs" folder.
+
+
+Credits
+-------
+
+This theme is developed and maintained by `operun Digital Solutions <https://www.operun.de>`_.
 
 
 Translations
