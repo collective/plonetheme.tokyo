@@ -6,6 +6,35 @@
     background-size: 1rem 1rem;
     width: 1rem;
     height: 1rem;
-  }
+}
   
-  @import "icons_bootstrap";
+@import "icons_bootstrap";
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-xs {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.icon-lg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-2x {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-3x {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-inline {
+  margin-right: 0.25rem;
+}
