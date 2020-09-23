@@ -28,17 +28,22 @@
 
       </header>
 
-      <section class="text-center mb-3" id="section-image" tal:define="image context/@@images/image|nothing; scales context/@@images" tal:condition="image">
-        <figure class="figure" tal:define="img python:scales.scale('image', width=800, height=800, direction='thumbnail')">
-          <img class="figure-img img-fluid" src="${img/url}" width="${img/width}" height="${img/height}">
-          <figcaption class="figure-caption" tal:condition="context/image_caption" tal:content="context/image_caption">Image caption</figcaption>
-        </figure>
-      </section>
-
       <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
 
-      <section id="section-text" tal:define="text context/text" tal:condition="text">
-        <div id="parent-fieldname-text" tal:content="structure python:context.text.output_relative_to(view.context)" />
+      <section id="section-details" tal:define="content_type context/file/contentType|nothing; portal_url context/@@plone_portal_state/portal_url;">
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col item-detail">
+              <img class="icon icon-lg" src="${portal_url}/++theme++plonetheme.tokyo/icons/bootstrap/download.svg" alt="Download" />
+              <dt i18n:translate="file_download_label">Download</dt>
+              <dd><a class="stretched-link" href="string:${context/absolute_url}/@@download/file/${context/file/filename}" tal:content="context/file/filename">Filename</a></dd>
+            </div>
+
+          </div>
+        </div>
+
       </section>
 
       <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />

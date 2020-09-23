@@ -22,8 +22,8 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that IPlonethemeTokyoLayer is registered."""
-        from plonetheme.tokyo.interfaces import IPlonethemeTokyoLayer
         from plone.browserlayer import utils
+        from plonetheme.tokyo.interfaces import IPlonethemeTokyoLayer
         self.assertIn(IPlonethemeTokyoLayer, utils.registered_layers())
 
     def testCurrentTheme(self):
@@ -50,8 +50,8 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """ Test that IPlonethemeTokyoLayer is removed."""
-        from plonetheme.tokyo.interfaces import IPlonethemeTokyoLayer
         from plone.browserlayer import utils
+        from plonetheme.tokyo.interfaces import IPlonethemeTokyoLayer
         self.assertNotIn(IPlonethemeTokyoLayer, utils.registered_layers())
 
     def testCurrentTheme(self):

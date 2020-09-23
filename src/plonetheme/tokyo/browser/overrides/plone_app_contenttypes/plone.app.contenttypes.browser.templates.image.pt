@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.tokyo">
+
+<body>
+<metal:main fill-slot="main">
+
+  <div class="row">
+
+    <div class="col-12">
+
+      <header>
+
+        <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:content="context/title">Title</h1>
+
+        <p class="lead" tal:content="context/description" tal:condition="context/description">
+          Description
+        </p>
+
+        <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
+
+      </header>
+
+      <section class="text-center mb-3" id="section-image" tal:define="image context/@@images/image|nothing; scales context/@@images" tal:condition="image">
+        <figure class="figure" tal:define="img python:scales.scale('image', width=800, height=800, direction='thumbnail')">
+          <img class="figure-img img-fluid" src="${img/url}" width="${img/width}" height="${img/height}">
+        </figure>
+      </section>
+
+      <section id="section-details" tal:define="content_type context/file/contentType|nothing; portal_url context/@@plone_portal_state/portal_url; size context/image/getSize;">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-4 item-detail">
+              <img class="icon icon-lg" src="${portal_url}/++theme++plonetheme.tokyo/icons/bootstrap/image.svg" alt="Kind" />
+              <dt i18n:translate="image_kind_label">Image type</dt>
+              <dd>Lorem Ipsum</dd>
+            </div>
+
+            <div class="col-md-4 item-detail">
+              <img class="icon icon-lg" src="${portal_url}/++theme++plonetheme.tokyo/icons/bootstrap/aspect-ratio.svg" alt="Dimension" />
+              <dt i18n:translate="image_dimension_label">Dimension</dt>
+              <dd>800x600px</dd>
+            </div>
+
+            <div class="col-md-4 item-detail">
+              <img class="icon icon-lg" src="${portal_url}/++theme++plonetheme.tokyo/icons/bootstrap/arrows-fullscreen.svg" alt="Fullscreen" />
+              <dt i18n:translate="image_fullscreen_label">Fullscreen</dt>
+              <dd><a class="stretched-link" href="${context/@@plone_context_state/object_url}/image_view_fullscreen" i18n:translate="label_click_to_view_full_image">Click to view full-size image&hellip;</a></dd>
+            </div>
+
+            <div class="col-md-4 item-detail">
+              <img class="icon icon-lg" src="${portal_url}/++theme++plonetheme.tokyo/icons/bootstrap/download.svg" alt="Download" />
+              <dt i18n:translate="image_size_label">File size</dt>
+              <dd><tal:span tal:replace="python:size/1024"> KB</dd>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
+
+      <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+
+    </div>
+
+  </div>
+
+</metal:main>
+</body>
+</html>
+

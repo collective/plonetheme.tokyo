@@ -24,11 +24,6 @@
   <!-- Login Views -->
 
   <browser:jbot
-      directory="overrides/cmfplone/login/plone_510"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
       directory="overrides/cmfplone/login/plone_520"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
@@ -52,11 +47,6 @@
 
   <browser:jbot
       directory="overrides/plone_app_discussion"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:jbot
-      directory="overrides/plone_app_event"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
