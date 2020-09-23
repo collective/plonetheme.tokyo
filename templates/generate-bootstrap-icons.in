@@ -5,6 +5,10 @@ import os
 ICONS_DIR = '${:packagepath}/theme/icons/bootstrap'
 ICONS_SCSS_FILE = '${:packagepath}/theme/scss/_icons_bootstrap.scss'
 
+# remove existing icons and copy over all icons
+os.system('rm -rf src/plonetheme/tokyo/theme/icons/bootstrap/*')
+os.system('cp node_modules/bootstrap-icons/icons/* src/plonetheme/tokyo/theme/icons/bootstrap/')
+
 output = ''
 scss = '.bi-%(icon)s::before {background-image: url("++theme++plonetheme.tokyo/icons/bootstrap/%(icon)s.svg");}\n'
 
