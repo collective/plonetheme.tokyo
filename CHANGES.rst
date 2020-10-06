@@ -11,6 +11,7 @@ Added:
   [santonelli]
 
 - Added templates for Plone's default content types.
+  [santonelli]
 
 Changed:
 
