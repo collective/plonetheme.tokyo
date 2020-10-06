@@ -1,4 +1,4 @@
-<section id="section-category" class="mb-3" i18n:domain="plonetheme.siguv" tal:define="categories context/Subject|nothing; url_quote nocall:modules/Products.PythonScripts.standard/url_quote" tal:condition="categories">
+<section id="section-category" class="mb-3" i18n:domain="plonetheme.tokyo" tal:define="categories context/Subject|nothing; url_quote nocall:modules/Products.PythonScripts.standard/url_quote" tal:condition="categories">
 
   <div class="container">
     <div class="row">

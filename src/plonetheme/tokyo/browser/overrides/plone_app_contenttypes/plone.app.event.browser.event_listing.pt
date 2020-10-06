@@ -4,13 +4,13 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="plonetheme.siguv">
+      i18n:domain="plonetheme.tokyo">
 
 <body>
   <metal:main fill-slot="main">
 
     <header tal:define="header view/header_string">
-      <h1 class="documentFirstHeading"><span tal:replace="header/main" tal:condition="header/main"/></h1>
+      <h1><span tal:replace="header/main" tal:condition="header/main"/></h1>
       <!--<p class="lead" tal:content="context/description">Lorem ipsum dolor sit amet</p>-->
     </header>
 
