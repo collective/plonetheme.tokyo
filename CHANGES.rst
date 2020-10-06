@@ -10,12 +10,20 @@ Added:
 - Added Bootstrap icons and make them available via bi-icon classes.
   [santonelli]
 
+- Added templates for Plone's default content types.
+
 Changed:
 
-- Update Bootstrap icons to Alpha 5
+- Changed container structure in main template.
   [santonelli]
 
-- Bump version of collective.sidebar to 1.4.0
+- Changed pagination to use arrows instead of text.
+  [santonelli]
+
+- Update Bootstrap icons to 1.0.0.
+  [santonelli]
+
+- Bump version of collective.sidebar to 1.4.0.
   [santonelli]
 
 
