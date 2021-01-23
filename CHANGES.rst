@@ -10,6 +10,9 @@ Added:
 - Re-added version pins for development packages.
   [santonelli]
 
+- Add required marker via CSS.
+  [santonelli]
+
 Fixed:
 
 - Update markup from p.a.z3cform. Fix checkbox/radio field widget.

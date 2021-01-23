@@ -1,0 +1,9 @@
+.pat-autotoc.autotabs .autotoc-nav {
+    margin-bottom: 1em !important;
+}
+
+label.required:after {
+    content: '•';
+    color: $danger;
+    margin-left: 3px;
+}
