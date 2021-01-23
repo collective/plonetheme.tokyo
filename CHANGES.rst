@@ -13,6 +13,11 @@ Added:
 - Add required marker via CSS.
   [santonelli]
 
+Changed:
+
+- Cleanup search result page.
+  [santonelli]
+
 Fixed:
 
 - Update markup from p.a.z3cform. Fix checkbox/radio field widget.

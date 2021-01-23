@@ -1,0 +1,41 @@
+// Search related styling
+
+#searchform {
+
+  .actionMenu {
+    display: none;
+  }
+
+  .input-group {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  #search-results-bar {
+    margin-bottom: 1em;
+  }
+
+  #searchResultsSort {
+    margin-bottom: 1em;
+    #sorting-options {
+      a {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  #search-results {
+
+    ol.searchResults {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+    }
+
+  }
+
+}
