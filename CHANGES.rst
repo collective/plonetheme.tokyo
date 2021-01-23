@@ -5,7 +5,10 @@ Changelog
 0.6.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Added:
+
+- Re-added version pins for development packages.
+  [santonelli]
 
 
 0.5.0 (2020-10-06)
