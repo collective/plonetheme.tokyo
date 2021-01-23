@@ -80,7 +80,7 @@
 
         <tal:radio tal:condition="python:data_type=='radio'">
         <tal:repeat tal:repeat="opt options">
-          <div class="custom-control">
+          <div class="custom-control custom-radio">
             <input type="radio" class="${widget/klass}" id="${opt/id}" name="${opt/name}" value="${opt/value}" tal:attributes="checked opt/checked">
             <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
               <div>${opt/label}</div>
