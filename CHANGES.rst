@@ -10,6 +10,11 @@ Added:
 - Re-added version pins for development packages.
   [santonelli]
 
+Fixed:
+
+- Update markup from p.a.z3cform. Fix checkbox/radio field widget.
+  [santonelli]
+
 
 0.5.0 (2020-10-06)
 ------------------

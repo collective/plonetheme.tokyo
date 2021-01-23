@@ -5,13 +5,14 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
+<body>
 
-<metal:content-title fill-slot="content-title">
-  <h1 class="documentFirstHeading" tal:content="view/label|nothing" />
-</metal:content-title>
+    <metal:main fill-slot="main">
+        <metal:main-macro define-macro="main">
+            <h1 class="documentFirstHeading" tal:content="view/label">Title</h1>
+            <div id="content-core" tal:content="structure view/contents" />
+        </metal:main-macro>
+    </metal:main>
 
-<metal:content-core fill-slot="content-core">
-  <tal:block tal:replace="structure view/contents" />
-</metal:content-core>
-
+</body>
 </html>
