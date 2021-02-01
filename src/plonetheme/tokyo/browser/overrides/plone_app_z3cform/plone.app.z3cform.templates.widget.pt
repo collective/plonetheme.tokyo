@@ -10,7 +10,7 @@
                  is_radio python:data_type == 'radio';
                  error widget/error;
                  error_class python:('is-invalid' if error else 'is-valid') if was_submitted else '';
-                 field_class python:'form-control' if not is_opt else 'custom-control-input'"
+                 field_class python:'form-control' if not is_opt else 'form-check-input'"
      data-pat-inlinevalidation='{"type":"z3c.form"}'
      tal:attributes="class string:form-group pat-inlinevalidation ${widget_name}; data-fieldname widget_name">
 
@@ -66,9 +66,9 @@
 
         <tal:checkbox tal:condition="python:data_type=='check'">
         <tal:repeat tal:repeat="opt options">
-          <div class="custom-control">
+          <div class="form-check">
             <input type="checkbox" class="${widget/klass}" id="${opt/id}" name="${opt/name}" value="${opt/value}" tal:attributes="checked opt/checked">
-            <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
+            <label class="form-check-label" for="${opt/id}" tal:define="desc opt/description|nothing">
               <div>${opt/label}</div>
               <small class="text-muted" tal:condition="python:description and not hidden" tal:content="structure description">
               </small>
@@ -80,9 +80,9 @@
 
         <tal:radio tal:condition="python:data_type=='radio'">
         <tal:repeat tal:repeat="opt options">
-          <div class="custom-control custom-radio">
+          <div class="form-check">
             <input type="radio" class="${widget/klass}" id="${opt/id}" name="${opt/name}" value="${opt/value}" tal:attributes="checked opt/checked">
-            <label class="custom-control-label" for="${opt/id}" tal:define="desc opt/description|nothing">
+            <label class="form-check-label" for="${opt/id}" tal:define="desc opt/description|nothing">
               <div>${opt/label}</div>
               <small class="text-muted" tal:condition="python:description and not hidden" tal:content="structure description">
               </small>

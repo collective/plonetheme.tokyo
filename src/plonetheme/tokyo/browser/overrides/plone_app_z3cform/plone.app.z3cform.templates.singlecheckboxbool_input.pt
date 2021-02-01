@@ -9,9 +9,9 @@
   <tal:repeat tal:repeat="item items">
 
     <div tal:attributes="id python:single_checkbox and view.id or None">
-      <div class="custom-control custom-checkbox mb-3">
+      <div class="form-check mb-3">
 
-        <input type="checkbox" class="custom-control-input" checked="checked"
+        <input type="checkbox" class="form-check-input" checked="checked"
                tal:condition="item/checked"
                tal:attributes="id item/id;
                                name item/name;
@@ -38,7 +38,7 @@
                                accesskey view/accesskey;
                                onselect view/onselect" />
 
-        <input type="checkbox" class="custom-control-input"
+        <input type="checkbox" class="form-check-input"
                tal:condition="not:item/checked"
                tal:attributes="id item/id;
                                name item/name;
