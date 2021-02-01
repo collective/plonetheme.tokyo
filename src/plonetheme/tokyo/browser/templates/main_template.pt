@@ -58,10 +58,12 @@
       <div id="portal-mainnavigation" tal:content="structure provider:plone.mainnavigation"></div>
     </header>
 
+    <!-- Body Slot for everything between Header and Footer -->
     <metal:body define-slot="body">
 
     <section id="content">
 
+      <!-- Content Slot inside Section Content -->
       <metal:content define-slot="content">
 
       <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
@@ -70,6 +72,7 @@
 
         <div id="viewlet-statusmessage" tal:content="structure provider:plone.globalstatusmessage" />
 
+        <!-- Main Slot inside Bootstrap Container -->
         <metal:main define-slot="main">
 
         <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
