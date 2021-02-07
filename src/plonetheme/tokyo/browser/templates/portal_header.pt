@@ -1,11 +1,11 @@
-<div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo view/logo; logo_title view/logo_title">
+<div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo_url view/logo_url; logo_title view/logo_title">
 
   <nav class="navbar fixed-top navbar-dark bg-primary">
 
     <div class="container">
 
       <a class="navbar-brand" href="${navroot}">
-        <img src="${python:logo if logo else navroot + '/++plone++plonetheme.tokyo/plone_logow.svg'}" alt="${logo_title}" title="${logo_title}">
+        <img src="${logo_url}" alt="${logo_title}" title="${logo_title}">
       </a>
 
       <div id="burger-menu" class="navbar-menu ml-auto text-white">

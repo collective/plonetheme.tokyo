@@ -18,6 +18,9 @@ Changed:
 - Cleanup search result page.
   [santonelli]
 
+- Move logo viewlet logic to viewlet code.
+  [santonelli]
+
 Fixed:
 
 - Update markup from p.a.z3cform. Fix checkbox/radio field widget.
