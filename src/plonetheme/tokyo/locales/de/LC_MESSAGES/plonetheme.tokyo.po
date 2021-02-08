@@ -16,7 +16,7 @@ msgstr ""
 
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:78
 msgid "Choose file"
-msgstr "Datein auswählen"
+msgstr "Datei auswählen"
 
 #: plonetheme/tokyo/configure.zcml:23
 msgid "Installs the plonetheme.tokyo add-on."
