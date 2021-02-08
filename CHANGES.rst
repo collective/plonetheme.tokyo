@@ -24,6 +24,9 @@ Changed:
 - Move logo viewlet logic to viewlet code.
   [santonelli]
 
+- Update buildout to Plone 5.2.3
+  [santonelli]
+
 Fixed:
 
 - Update markup from p.a.z3cform. Fix checkbox/radio field widget.
