@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,121 +12,121 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: plonetheme.tokyo\n"
+"Domain: DOMAIN\n"
 
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:78
 msgid "Choose file"
-msgstr ""
+msgstr "Datein auswählen"
 
 #: plonetheme/tokyo/configure.zcml:23
 msgid "Installs the plonetheme.tokyo add-on."
-msgstr ""
+msgstr "Installiert das plonetheme.tokyo Add-on."
 
 #: plonetheme/tokyo/configure.zcml:23
 msgid "Tokyo Theme"
-msgstr ""
+msgstr "Tokyo Theme"
 
 #: plonetheme/tokyo/configure.zcml:32
 msgid "Tokyo Theme (uninstall)"
-msgstr ""
+msgstr "Tokyo Theme (uninstall)"
 
 #: plonetheme/tokyo/configure.zcml:32
 msgid "Uninstalls the plonetheme.tokyo add-on."
-msgstr ""
+msgstr "Deinstalliert das plonetheme.tokyo Add-on."
 
 #. Default: "Choose file"
 #: plonetheme/tokyo/browser/templates/widgets/file_input.pt:100
 msgid "choose_file"
-msgstr ""
+msgstr "Datei auswählen"
 
 #. Default: "Download - ${filename}"
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:40
 msgid "download_filename"
-msgstr ""
+msgstr "Download - ${filename}"
 
 #. Default: "Browse"
 #: plonetheme/tokyo/browser/templates/widgets/file_input.pt:100
 msgid "file_browse"
-msgstr ""
+msgstr "Durchsuchen"
 
 #. Default: "Download"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.file.pt:46
 msgid "file_download_label"
-msgstr ""
+msgstr "Download"
 
 #. Default: "Keep existing file"
 #: plonetheme/tokyo/browser/templates/widgets/file_input.pt:63
 msgid "file_keep"
-msgstr ""
+msgstr "Datei beibehalten"
 
 #. Default: "Remove existing file"
 #: plonetheme/tokyo/browser/templates/widgets/file_input.pt:75
 msgid "file_remove"
-msgstr ""
+msgstr "Datei entfernen"
 
 #. Default: "Replace with new file"
 #: plonetheme/tokyo/browser/templates/widgets/file_input.pt:87
 msgid "file_replace"
-msgstr ""
+msgstr "Datei ersetzen"
 
 #. Default: "Dimension"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.image.pt:64
 msgid "image_dimension_label"
-msgstr ""
+msgstr "Größe"
 
 #. Default: "Fullscreen"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.image.pt:78
 msgid "image_fullscreen_label"
-msgstr ""
+msgstr "Fullscreen"
 
 #. Default: "Keep existing image"
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:94
 msgid "image_keep"
-msgstr ""
+msgstr "Bild behalten"
 
 #. Default: "Type"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.file.pt:75
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.image.pt:49
 msgid "image_kind_label"
-msgstr ""
+msgstr "Typ"
 
 #. Default: "Remove existing image"
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:104
 msgid "image_remove"
-msgstr ""
+msgstr "Bild entfernen"
 
 #. Default: "Replace with new image"
 #: plonetheme/tokyo/browser/templates/widgets/image_input.pt:114
 msgid "image_replace"
-msgstr ""
+msgstr "Bild ersetzen"
 
 #. Default: "File size"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.file.pt:61
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.image.pt:93
 msgid "image_size_label"
-msgstr ""
+msgstr "Dateigröße"
 
 #. Default: "View"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.image.pt:79
 msgid "label_click_to_view_full_image"
-msgstr ""
+msgstr "Anzeigen"
 
 #. Default: "Adresse"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.contenttypes.browser.templates.link.pt:45
 msgid "link_address_label"
-msgstr ""
+msgstr "Adresse"
 
 #. Default: "Upcoming Events"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.event.browser.event_listing.pt:45
 msgid "mode_future_link"
-msgstr ""
+msgstr "Künftige Veranstaltungen"
 
 #. Default: "Past Events"
 #: plonetheme/tokyo/browser/overrides/plone_app_contenttypes/plone.app.event.browser.event_listing.pt:49
 msgid "mode_past_link"
-msgstr ""
+msgstr "Frühere Veranstaltungen"
 
 #. Default: "Keywords"
 #: plonetheme/tokyo/browser/overrides/plone_app_layout/plone.app.layout.viewlets.keywords.pt:8
 msgid "section_keywords_heading"
-msgstr ""
+msgstr "Keywords"

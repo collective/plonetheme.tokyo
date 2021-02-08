@@ -39,12 +39,12 @@
 
           <hr class="my-4">
 
-          <p tal:define="ptime view/processTime|nothing">
+          <div tal:define="ptime view/processTime|nothing">
             <h3 class="mb-4" i18n:translate="heading_zope_server">Zope Server</h3>
             <tal:condition tal:condition="ptime">
-              - <span tal:replace="ptime" />
+              - <span tal:replace="ptime"></span>
             </tal:condition>
-          </p>
+          </div>
 
           <input type="submit"
                  id="form.buttons.shutdown"

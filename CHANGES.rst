@@ -13,6 +13,9 @@ Added:
 - Add required marker via CSS.
   [santonelli]
 
+- Add translations to fix file upload translations.
+  [santonelli]
+
 Changed:
 
 - Cleanup search result page.

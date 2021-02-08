@@ -65,7 +65,7 @@
         </div>
         <div class="card-body text-center">
           <strong i18n:translate="contact_phone">Contact Phone</strong>
-          <p><a href="tel:${data/contact_phone}" title="" i18n:attributes="title contact_phone" tal:content="data/contact_phone">Contact Phone</a></p>
+          <p><a href="tel:${data/contact_phone}" title="Contact Phone" i18n:attributes="title contact_phone" tal:content="data/contact_phone">Contact Phone</a></p>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<div i18n:domain="plone"
+<div i18n:domain="plonetheme.tokyo"
      tal:attributes="id view/id;
                      title view/title;
                      lang view/lang;
@@ -32,11 +32,9 @@
 
   <div class="mb-3" tal:condition="python:exists and download_url and action=='nochange'">
 
-    <img tal:condition="icon" src="" alt=""
-         tal:attributes="src icon; alt doc_type; title filename" />
+    <img tal:condition="icon" src="" alt="" tal:attributes="src icon; alt doc_type; title filename" />
 
-    <a tal:content="filename"
-       tal:attributes="href download_url">Filename</a>
+    <a tal:content="filename" tal:attributes="href download_url">Filename</a>
 
     <span class="text-muted">
       &mdash;
@@ -99,7 +97,7 @@
              tal:attributes="id string:${view/id}-input;
                              name view/name;
                              disabled view/disabled" />
-      <label id="label-text-${view/id}" class="custom-file-label">
+      <label id="label-text-${view/id}" class="custom-file-label" data-browse="Browse" i18n:translate="choose_file" i18n:attributes="data-browse file_browse">
         Choose file
       </label>
     </div>
