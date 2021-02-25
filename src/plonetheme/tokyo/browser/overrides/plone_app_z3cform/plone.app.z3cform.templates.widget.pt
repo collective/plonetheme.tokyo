@@ -1,6 +1,8 @@
 <div metal:define-macro="widget-wrapper"
      i18n:domain="plone"
-     tal:define="widget nocall:context; widget_name widget/name;
+     tal:define="widget nocall:context;
+                 widget_id widget/id;
+                 widget_name widget/name;
                  data widget/json_data;
                  data_type data/type;
                  was_submitted python:len(request.form) > 1;
@@ -12,7 +14,10 @@
                  error_class python:('is-invalid' if error else 'is-valid') if was_submitted else '';
                  field_class python:'form-control' if not is_opt else 'form-check-input'"
      data-pat-inlinevalidation='{"type":"z3c.form"}'
-     tal:attributes="class string:form-group pat-inlinevalidation ${widget_name}; data-fieldname widget_name">
+     tal:attributes="id widget_id;
+                     class string:form-group pat-inlinevalidation;
+                     data-fieldname widget_name;
+                     ">
 
   <?python widget.addClass(' '.join([field_class, error_class])) ?>
 
