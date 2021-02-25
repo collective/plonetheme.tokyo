@@ -7,3 +7,10 @@ label.required:after {
     color: $danger;
     margin-left: 3px;
 }
+
+.portaltype-collection {
+    #form-widgets-ICollection-sort_on,
+    #form-widgets-ICollection-sort_reversed {
+        display: none;
+    }
+}
