@@ -7,7 +7,7 @@
 
 <div class="form-inline">
   <div class="form-group d-block mr-2">
-    <select id="from" name="from" class="" multiple="" size="5" style="height:180px;width:200px"
+    <select id="from" name="from" class="" multiple="" size="5"
             tal:attributes="id string:${view/id}-from;
                             name string:${view/name}.from;
                             class view/klass;
@@ -49,7 +49,7 @@
   </div>
 
   <div class="form-group d-block mr-2">
-    <select id="to" name="to" class="" multiple="" size="5" style="height:180px;width:200px"
+    <select id="to" name="to" class="" multiple="" size="5"
             tal:attributes="id string:${view/id}-to;
                             name string:${view/name}.to;
                             class view/klass;
