@@ -14,7 +14,7 @@
                  error_class python:('is-invalid' if error else 'is-valid') if was_submitted else '';
                  field_class python:'form-control' if not is_opt else 'form-check-input'"
      data-pat-inlinevalidation='{"type":"z3c.form"}'
-     tal:attributes="id widget_id;
+     tal:attributes="id string:formfield-${widget/id};
                      class string:form-group pat-inlinevalidation;
                      data-fieldname widget_name;
                      ">
@@ -26,12 +26,8 @@
 
     <tal:condition tal:condition="not:is_opt">
 
-      <label for=""
-             class="d-block ${python:'required' if required else ''}"
-             tal:attributes="for widget/id"
-             tal:condition="python:not hidden and widget.label"
-             tal:content="widget/label"
-             i18n:translate="">
+      <label for="${widget/id}" class="d-block ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
+        ${widget/label}
       </label>
 
       <tal:define tal:define="pattern widget/pattern|nothing" tal:condition="pattern">
@@ -59,12 +55,8 @@
 
     <tal:condition tal:condition="is_opt">
 
-      <label for=""
-             class="d-block ${python:'required' if required else ''}"
-             tal:attributes="for widget/id"
-             tal:condition="python:not hidden and widget.label"
-             tal:content="widget/label"
-             i18n:translate="">
+      <label for="${widget/id}" class="d-block ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
+        ${widget/label}
       </label>
 
       <small class="form-text text-muted mb-2" tal:condition="python:description and not hidden" tal:content="structure description">Description</small>
@@ -73,7 +65,7 @@
 
         <tal:checkbox tal:condition="python:data_type=='check'">
         <tal:repeat tal:repeat="opt options">
-          <div class="form-check">
+          <div class="form-check option" id="${widget/id}">
             <input type="checkbox" class="${widget/klass}" id="${opt/id}" name="${opt/name}" value="${opt/value}" tal:attributes="checked opt/checked">
             <label class="form-check-label" for="${opt/id}" tal:define="desc opt/description|nothing">
               <div>${opt/label}</div>
