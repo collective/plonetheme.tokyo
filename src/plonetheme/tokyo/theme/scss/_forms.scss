@@ -7,3 +7,60 @@ label.required:after {
     color: $danger;
     margin-left: 3px;
 }
+
+.pat-structure {
+    font-size: 1rem;    
+
+    .btn {
+        font-size: 14px;
+        margin-right: 0.5em;
+    }
+    
+    #btn-selected-items {
+        border-right: 1px solid #ccc;
+    }
+
+    .navbar {
+        background-color: #fff;
+        display: block;
+        padding: 1em 0;
+    }
+
+    .hiddenStructure {
+        display: none;
+    }
+
+    .fc-breadcrumbs-container {
+        margin-bottom: 1em;
+    }
+
+    .dataTables_wrapper {
+        display: block !important;
+    }
+
+    table.dataTable {
+        border-collapse: collapse !important;
+    }
+
+    .popover {
+        min-width: 500px;
+        max-width: 500px;        
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    #popover-rename {
+        .item {
+            width: 100%;
+            .form-group {
+                width: 100%;
+            }
+        }
+    }
+
+    #popover-tags {
+        .select2-container {
+            width: 100% !important;
+        }
+    }
+}
