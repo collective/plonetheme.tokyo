@@ -18,11 +18,11 @@ label.required:after {
     }
     
     #btn-selected-items {
-        border-right: 1px solid #ccc;
+        border-right: 1px solid #ccc !important;
     }
 
     .navbar {
-        background-color: #fff;
+        background-color: #fff !important;
         display: block;
         padding: 1em 0;
     }
@@ -44,10 +44,10 @@ label.required:after {
     }
 
     .popover {
-        min-width: 500px;
-        max-width: 500px;        
-        max-height: 500px;
-        overflow-y: auto;
+        min-width: 500px !important;
+        max-width: 500px !important;        
+        max-height: 500px !important;
+        overflow-y: auto !important;
     }
 
     #popover-rename {
