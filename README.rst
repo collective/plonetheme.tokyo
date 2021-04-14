@@ -34,6 +34,12 @@ Mobile
     :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/mobile.png
 
 
+Demo
+----
+
+- https://plonetheme.tokyo/
+
+
 Features
 --------
 
@@ -59,6 +65,7 @@ Credits
 -------
 
 This theme is developed and maintained by `operun Digital Solutions <https://www.operun.de>`_. Check out other `projects <https://www.operun.de/projekte>`_ we developed based on the `Enterprise Content Management System <https://www.operun.de/produkte/enterprise-content-management-system>`_ Plone.
+
 
 Translations
 ------------
