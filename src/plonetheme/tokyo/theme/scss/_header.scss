@@ -1,11 +1,20 @@
 // Header Styling
 #portal-header {
   .navbar {
+    padding: 0.5rem 0;
     .navbar-brand {
       img {
         width: auto;
         height: 46px;
       }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  #portal-header {
+    .navbar {
+      padding: 0.5rem 1rem;
     }
   }
 }
