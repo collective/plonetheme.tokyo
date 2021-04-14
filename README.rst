@@ -12,25 +12,40 @@ Tokyo Theme for Plone (plonetheme.tokyo)
 
 Tokyo Theme for Plone implements Bootstrap 4 into Plone, with an emphasis on keeping things as close to "default" as possible.
 
-.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_login.png
-    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_login.png
 
-.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_addons.png
-    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/screenshot_addons.png
+Frontpage
+---------
+
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/frontpage.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/frontpage.png
+
+
+Sidebar
+-------
+
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/sidebar.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/sidebar.png
+
+
+Mobile
+------
+
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/mobile.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/mobile.png
 
 
 Features
 --------
 
-- Responsive Mobile First Theme for Plone 5.2
+- Responsive mobile first theme for Plone
 - No Dependencies to Barceloneta
 - No Diazo Rules
 - No Toolbar
 - No Portlets
-- Plone Patterns Still Persistent
-- Default Bootstrap 4 for Form Fields and Views
-- Bootstrap 4 Components and JavaScript Useable
-- Bootstrap Icons available 
+- Plone patterns still persistent
+- Default Bootstrap 4 for form fields and views
+- Bootstrap 4 components and JavaScript
+- Bootstrap icons available 
 - Uses https://github.com/collective/collective.sidebar
 
 
@@ -43,8 +58,7 @@ Full documentation for end users can be found in the "docs" folder.
 Credits
 -------
 
-This theme is developed and maintained by `operun Digital Solutions <https://www.operun.de>`_.
-
+This theme is developed and maintained by `operun Digital Solutions <https://www.operun.de>`_. Check out other `projects<https://www.operun.de/projekte>`_ we developed based on the `Enterprise Content Management System<https://www.operun.de/produkte/enterprise-content-management-system>`_ Plone.
 
 Translations
 ------------
@@ -61,8 +75,7 @@ Known Issues
 - Some missing view overrides
 - Some unstyled form widgets and fields
 
-Some views implement custom forms that do not use `z3c.form`. In these cases it's possible the form fields may be styled incorrectly.
-We encourage users to report missing, broken or incomplete views (see below).
+Some views implement custom forms that do not use `z3c.form`. In these cases it's possible the form fields may be styled incorrectly. We encourage users to report missing, broken or incomplete views (see below).
 
 
 Installation
@@ -79,6 +92,13 @@ Install plonetheme.tokyo by adding it to your buildout::
 
 
 and then running ``bin/buildout``...
+
+
+Versions
+--------
+
+- Version 0.x and 1.x works with Plone 5.2
+- Version 2.x works with Plone 6
 
 
 Contribute

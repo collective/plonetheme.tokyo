@@ -24,12 +24,18 @@ Changed:
 - Move logo viewlet logic to viewlet code.
   [santonelli]
 
-- Update buildout to Plone 5.2.3
+- Update buildout to Plone 5.2.4
   [santonelli]
 
 Fixed:
 
 - Update markup from p.a.z3cform. Fix checkbox/radio field widget.
+  [santonelli]
+
+- Fix navbar padding on mobile devices.
+  [santonelli]
+
+- Added styling fixes for folder_contents structure pattern.
   [santonelli]
 
 
