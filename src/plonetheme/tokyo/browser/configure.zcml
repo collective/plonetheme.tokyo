@@ -46,4 +46,12 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
+  <browser:viewlet
+      name="tokyo.scripts"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      permission="zope2.View"
+      template="templates/scripts.pt"
+      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
+      />
+
 </configure>
