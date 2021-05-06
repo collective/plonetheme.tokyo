@@ -3,8 +3,10 @@
 <script>
   var _old_define = define;
   var _old_require = require;
+  var _old_jquery = jQuery;
   define = undefined;
   require = undefined;
+  jQuery = undefined;
 </script>
 
 <script src="${portal_url}/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -13,6 +15,7 @@
 <script>
   define = _old_define;
   require = _old_require;
+  jQuery = _old_jquery;
 </script>
 
 </tal:scripts>
