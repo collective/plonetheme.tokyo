@@ -5,7 +5,21 @@ Changelog
 0.7.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Changed:
+
+- Added jQuery 3.5 required by Bootstrap
+  [santonelli]
+
+- Added scripts viewlet and moved Bootstrap JS to footer
+  [santonelli]
+
+Fixed:
+
+- Removed non existent custom.css from theme manifest.
+  [santonelli]
+
+- Added missing map files.
+  [santonelli]
 
 
 0.6.0 (2021-04-15)
