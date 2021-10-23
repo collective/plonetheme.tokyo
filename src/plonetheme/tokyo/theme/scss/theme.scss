@@ -4,6 +4,8 @@ $enable-rounded: false;
 $primary: #456990;
 $secondary: #49BEAA;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 // Option A: Include all of Bootstrap
 
 @import "bootstrap/scss/bootstrap";
@@ -29,3 +31,4 @@ $secondary: #49BEAA;
 // Import SASS files from your theme
 
 @import "base";
+@import "fonts";
