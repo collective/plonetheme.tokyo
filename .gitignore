@@ -30,6 +30,7 @@ local/
 parts/
 src/*
 var/
+venv/
 share/
 .idea/
 .vscode/
