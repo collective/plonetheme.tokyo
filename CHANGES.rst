@@ -5,7 +5,10 @@ Changelog
 0.8.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Fixed:
+
+- Fix postion of plone.header in @@manage-viewlets
+  [santonelli]
 
 
 0.7.0 (2021-05-06)

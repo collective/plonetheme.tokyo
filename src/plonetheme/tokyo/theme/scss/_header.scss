@@ -11,6 +11,14 @@
   }
 }
 
+.template-manage-viewlets {
+  #portal-header {
+    .navbar {
+      position: relative;
+    }
+  }
+}
+
 @include media-breakpoint-up(sm) {
   #portal-header {
     .navbar {
