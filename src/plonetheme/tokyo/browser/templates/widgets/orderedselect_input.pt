@@ -6,7 +6,7 @@
 <script type="text/javascript" src="++resource++orderedselect_input.js"></script>
 
 <div class="form-inline">
-  <div class="mb-3 d-block mr-2">
+  <div class="mb-3 d-block ms-2">
     <select id="from" name="from" class="" multiple="" size="5"
             tal:attributes="id string:${view/id}-from;
                             name string:${view/name}.from;
@@ -37,7 +37,7 @@
     </select>
   </div>
 
-  <div class="mb-3 d-block mr-2">
+  <div class="mb-3 d-block ms-2">
     <button class="btn btn-sm btn-primary m-2" onclick="javascript:from2to()" name="from2toButton" type="button" value=""
             tal:attributes="onClick string:javascript:from2to('${view/id}')">
       <i class="glyphicon glyphicon-chevron-right"></i>
@@ -48,7 +48,7 @@
     </button>
   </div>
 
-  <div class="mb-3 d-block mr-2">
+  <div class="mb-3 d-block ms-2">
     <select id="to" name="to" class="" multiple="" size="5"
             tal:attributes="id string:${view/id}-to;
                             name string:${view/name}.to;
@@ -79,7 +79,7 @@
     </select>
   </div>
 
-  <div class="mb-3 d-block mr-2">
+  <div class="mb-3 d-block ms-2">
     <button class="btn btn-sm btn-primary m-2" onclick="javascript:moveUp()" name="upButton" type="button" value=""
             tal:attributes="onClick string:javascript:moveUp('${view/id}')">
       <i class="glyphicon glyphicon-chevron-up"></i>
