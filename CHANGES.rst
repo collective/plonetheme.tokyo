@@ -10,6 +10,9 @@ Fixed:
 - Fix postion of plone.header in @@manage-viewlets
   [santonelli]
 
+- Update buildout to Plone 5.2.7
+  [santonelli]
+
 
 0.7.0 (2021-05-06)
 ------------------
