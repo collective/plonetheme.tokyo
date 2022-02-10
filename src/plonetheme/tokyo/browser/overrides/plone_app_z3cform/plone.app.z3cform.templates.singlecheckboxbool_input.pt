@@ -65,7 +65,7 @@
                                accesskey view/accesskey;
                                onselect view/onselect" />
 
-        <label class="custom-control-label" for="" tal:attributes="for item/id">
+        <label class="custom-control-label form-check-label" for="" tal:attributes="for item/id">
           <div class="label" tal:content="item/label">
             <span tal:content="item/label">Label</span>
             <span title="Required" tal:condition="item/required" i18n:attributes="title title_required">&nbsp;</span>

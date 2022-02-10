@@ -26,7 +26,7 @@
 
     <tal:condition tal:condition="not:is_opt">
 
-      <label for="${widget/id}" class="d-block ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
+      <label for="${widget/id}" class="d-block form-label ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
         ${widget/label}
       </label>
 
@@ -55,7 +55,7 @@
 
     <tal:condition tal:condition="is_opt">
 
-      <label for="${widget/id}" class="d-block ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
+      <label for="${widget/id}" class="d-block form-label ${python:'required' if required else ''}" tal:condition="python:not hidden and widget.label" i18n:translate="">
         ${widget/label}
       </label>
 
