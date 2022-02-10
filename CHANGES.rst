@@ -13,6 +13,9 @@ Fixed:
 - Update buildout to Plone 5.2.7
   [santonelli]
 
+- Update Bootstrap to 4.6.1
+  [santonelli]
+
 
 0.7.0 (2021-05-06)
 ------------------
