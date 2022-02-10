@@ -15,7 +15,7 @@
                  field_class python:'form-control' if not is_opt else 'form-check-input'"
      data-pat-inlinevalidation='{"type":"z3c.form"}'
      tal:attributes="id string:formfield-${widget/id};
-                     class string:form-group pat-inlinevalidation;
+                     class string:mb-3 pat-inlinevalidation;
                      data-fieldname widget_name;
                      ">
 

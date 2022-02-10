@@ -27,7 +27,7 @@
 
       <input type="hidden" name="randomstring" value="" tal:attributes="value options/randomstring|request/randomstring|nothing" />
 
-      <div class="form-group"
+      <div class="mb-3"
            tal:define="error errors/userid|nothing;
                        use_email_as_login python:context.portal_registry['plone.use_email_as_login']"
            tal:condition="here/portal_password_reset/checkUser|nothing">
@@ -60,7 +60,7 @@
 
       </div>
 
-      <div class="form-group" tal:define="error errors/password|nothing">
+      <div class="mb-3" tal:define="error errors/password|nothing">
 
         <label for="password" i18n:translate="label_new_password">New password</label>
 
@@ -76,7 +76,7 @@
 
       </div>
 
-      <div class="form-group" tal:define="error errors/password|nothing">
+      <div class="mb-3" tal:define="error errors/password|nothing">
 
         <label for="password2" i18n:translate="label_confirm_password">Confirm password</label>
 
@@ -92,7 +92,7 @@
 
       </div>
 
-      <div class="form-group">
+      <div class="mb-3">
 
         <div class="label">&nbsp;</div>
 

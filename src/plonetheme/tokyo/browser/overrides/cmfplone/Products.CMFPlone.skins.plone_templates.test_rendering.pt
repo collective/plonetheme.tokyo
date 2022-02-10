@@ -146,7 +146,7 @@
 
           <legend>Legend</legend>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label>Text-Field</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -157,7 +157,7 @@
 
           </div>
 
-          <div class="form-group error">
+          <div class="mb-3 error">
             <label>Text-Field + Error</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -168,7 +168,7 @@
 
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label>Checkbox</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -183,7 +183,7 @@
 
           </div>
 
-          <div class="form-group error">
+          <div class="mb-3 error">
             <label>Checkbox + Errors</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -208,7 +208,7 @@
 
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <label>Radio</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -233,7 +233,7 @@
 
           </div>
 
-          <div class="form-group error">
+          <div class="mb-3 error">
             <label>Radio + Errors</label>
             <span class="fieldRequired" title="Required"
                   i18n:attributes="title title_required"
@@ -258,13 +258,13 @@
 
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <input class="btn btn-secondary" type="submit" value="Context Submit" />
             <input class="btn btn-primary" type="submit" value="Standalone Submit" />
             <input class="btn btn-danger" type="submit" value="Destructive Submit" />
           </div>
 
-          <div class="form-group">
+          <div class="mb-3">
             <input class="btn btn-secondary" type="button" value="Context Button" />
             <input class="btn btn-primary" type="button" value="Standalone Button" />
             <input class="btn btn-danger" type="button" value="Destructive Button" />
