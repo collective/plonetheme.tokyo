@@ -17,7 +17,7 @@
 
   <tal:widgets repeat="widget view/widgets/values">
     <div tal:define="hidden python:widget.mode == 'hidden'" tal:omit-tag="hidden">
-      <div class="form-group"
+      <div class="mb-3"
            tal:define="error widget/error;
                        hidden python:widget.mode == 'hidden'">
 

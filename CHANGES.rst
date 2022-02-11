@@ -5,15 +5,25 @@ Changelog
 0.8.0 (unreleased)
 ------------------
 
-Fixed:
+Added:
 
-- Fix postion of plone.header in @@manage-viewlets
+- Nothing added yet.
   [santonelli]
+
+Changed:
 
 - Update buildout to Plone 5.2.7
   [santonelli]
 
-- Update Bootstrap to 4.6.1
+- Update Bootstrap to 5.1.3
+  [santonelli]
+
+- Drop jQuery dependency
+  [santonelli]
+
+Fixed:
+
+- Fix postion of plone.header in @@manage-viewlets
   [santonelli]
 
 

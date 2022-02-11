@@ -26,7 +26,7 @@
 
         <tal:define tal:define="selectedLayout view/selectedLayout">
 
-          <div class="form-group">
+          <div class="mb-3">
             <tal:item repeat="layout view/vocab">
               <tal:define define="value python:layout[0]; display python:layout[1]">
 

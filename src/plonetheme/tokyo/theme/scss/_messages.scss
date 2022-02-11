@@ -77,7 +77,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(md) {
   .portalMessage {
     padding: 20px;
     text-align: center;

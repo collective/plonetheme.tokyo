@@ -34,7 +34,7 @@
         <section class="d-flex justify-content-start align-items-center"
                  tal:define="products view/get_upgrades; num_products python:len(products)">
 
-          <div class="mr-5 addon-status-icon">
+          <div class="ms-5 addon-status-icon">
             <i class="text-success glyphicon glyphicon-ok-circle" tal:condition="not:products"></i>
             <i class="text-info glyphicon glyphicon-info-sign" tal:condition="products"></i>
           </div>

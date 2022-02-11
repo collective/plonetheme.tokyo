@@ -8,7 +8,7 @@
         <img src="${logo_url}" alt="${logo_title}" title="${logo_title}">
       </a>
 
-      <div id="burger-menu" class="navbar-menu ml-auto text-white">
+      <div id="burger-menu" class="navbar-menu ms-auto text-white">
         <i id="portaltab-burger-menu" class="glyphicon glyphicon-menu-hamburger m-0"></i>
       </div>
 

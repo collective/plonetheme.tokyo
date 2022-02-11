@@ -2,15 +2,35 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://travis-ci.com/collective/plonetheme.tokyo.svg?branch=master
-    :target: https://travis-ci.com/collective/plonetheme.tokyo
-
 
 ========================================
 Tokyo Theme for Plone (plonetheme.tokyo)
 ========================================
 
 Tokyo Theme for Plone implements Bootstrap 4 into Plone, with an emphasis on keeping things as close to "default" as possible.
+
+
+Mostly Harmless
+---------------
+
+.. image:: https://github.com/collective/plonetheme.tokyo/workflows/Plone%20package/badge.svg
+    :target: https://github.com/collective/plonetheme.tokyo/actions
+
+.. image:: https://img.shields.io/pypi/v/plonetheme.tokyo.svg
+    :target: https://pypi.python.org/pypi/plonetheme.tokyo/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/status/plonetheme.tokyo.svg
+    :target: https://pypi.python.org/pypi/plonetheme.tokyo/
+    :alt: Egg Status
+
+.. image:: https://img.shields.io/pypi/pyversions/plonetheme.tokyo.svg
+    :target: https://pypi.python.org/pypi/plonetheme.tokyo/
+    :alt: Supported - Python Versions
+
+.. image:: https://img.shields.io/pypi/l/plonetheme.tokyo.svg
+    :target: https://pypi.python.org/pypi/plonetheme.tokyo/
+    :alt: License
 
 
 Frontpage
@@ -49,9 +69,9 @@ Features
 - No Toolbar
 - No Portlets
 - Plone patterns still persistent
-- Default Bootstrap 4 for form fields and views
-- Bootstrap 4 components and JavaScript
-- Bootstrap icons available 
+- Default Bootstrap 5 for form fields and views
+- Bootstrap 5 components and JavaScript
+- Bootstrap Icons are available 
 - Uses https://github.com/collective/collective.sidebar
 
 
