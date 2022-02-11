@@ -53,7 +53,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   #list-items {
     .list-item {
       .list-item-image {
