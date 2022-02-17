@@ -49,11 +49,7 @@ jobs:
 
             - name: Bootstrap buildout
               run: |
-                ./bootstrap.sh develop.cfg
-
-            - name: Run buildout
-              run: |
-                  bin/buildout -c develop.cfg
+                ./bootstrap.sh
 
             - name: Run tests
               run: |
