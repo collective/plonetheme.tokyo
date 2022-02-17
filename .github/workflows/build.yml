@@ -38,7 +38,7 @@ jobs:
             - name: Setup buildout cache
               run: |
                   mkdir -p ~/buildout-cache/{eggs,downloads}
-                  mkdir ~/.buildout
+                  mkdir ~/.buildout -c develop.cfg
                   echo "[buildout]" > $HOME/.buildout/default.cfg
                   echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
                   echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
