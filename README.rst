@@ -13,22 +13,33 @@ Tokyo Theme for Plone implements Bootstrap 4 into Plone, with an emphasis on kee
 Mostly Harmless
 ---------------
 
-.. image:: https://github.com/collective/plonetheme.tokyo/workflows/Plone%20package/badge.svg
-    :target: https://github.com/collective/plonetheme.tokyo/actions
+.. build status
 
-.. image:: https://img.shields.io/pypi/v/plonetheme.tokyo.svg
+.. image:: https://img.shields.io/github/workflow/status/collective/plonetheme.tokyo/Build/master?label=Build
+   :target: https://github.com/collective/plonetheme.tokyo/actions/workflows/build.yml
+   :alt: Build Status
+
+.. coverage
+
+.. image:: https://coveralls.io/repos/github/collective/plonetheme.tokyo/badge.svg?branch=master
+    :target: https://coveralls.io/github/collective/plonetheme.tokyo?branch=master
+    :alt: Code Coverage
+
+.. pypi version
+
+.. image:: https://img.shields.io/pypi/v/plonetheme.tokyo.svglabel=PyPI
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/status/plonetheme.tokyo.svg
-    :target: https://pypi.python.org/pypi/plonetheme.tokyo/
-    :alt: Egg Status
+.. supported python versions
 
-.. image:: https://img.shields.io/pypi/pyversions/plonetheme.tokyo.svg
+.. image:: https://img.shields.io/pypi/pyversions/plonetheme.tokyo.svglabel=Python
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
-    :alt: Supported - Python Versions
+    :alt: Supported Python Versions
 
-.. image:: https://img.shields.io/pypi/l/plonetheme.tokyo.svg
+.. licence
+
+.. image:: https://img.shields.io/pypi/l/plonetheme.tokyo.svglabel=Licence
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
     :alt: License
 
