@@ -27,19 +27,19 @@ Mostly Harmless
 
 .. pypi version
 
-.. image:: https://img.shields.io/pypi/v/plonetheme.tokyo.svg
+.. image:: https://img.shields.io/pypi/v/plonetheme.tokyo.svglabel=PyPI
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
     :alt: Latest Version
 
 .. supported python versions
 
-.. image:: https://img.shields.io/pypi/pyversions/plonetheme.tokyo.svg
+.. image:: https://img.shields.io/pypi/pyversions/plonetheme.tokyo.svglabel=Python
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
     :alt: Supported Python Versions
 
 .. licence
 
-.. image:: https://img.shields.io/pypi/l/plonetheme.tokyo.svg
+.. image:: https://img.shields.io/pypi/l/plonetheme.tokyo.svglabel=Licence
     :target: https://pypi.python.org/pypi/plonetheme.tokyo/
     :alt: License
 
