@@ -38,7 +38,7 @@ jobs:
             - name: Setup buildout cache
               run: |
                   mkdir -p ~/buildout-cache/{eggs,downloads}
-                  mkdir ~/.buildout -c develop.cfg
+                  mkdir ~/.buildout
                   echo "[buildout]" > $HOME/.buildout/default.cfg
                   echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
                   echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
@@ -46,6 +46,9 @@ jobs:
               run: |
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
+            - name: Run buildout
+              run: |
+                  ./bin/buildout -c develop.cfg
             - name: Run tests
               run: |
                   ./bin/test-coverage
