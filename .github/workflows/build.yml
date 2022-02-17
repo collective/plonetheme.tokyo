@@ -48,10 +48,10 @@ jobs:
                   pip install -r requirements.txt
             - name: Run buildout
               run: |
-                  ./bin/buildout -c develop.cfg
+                  bin/buildout -c develop.cfg
             - name: Run tests
               run: |
-                  ./bin/test-coverage
+                  bin/test-coverage
             - name: "Upload coverage to Codecov"
               uses: "codecov/codecov-action@v1"
               with:
