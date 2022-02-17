@@ -47,18 +47,13 @@ jobs:
                   echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
                   echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
 
-            - name: Create venv
+            - name: Bootstrap buildout
               run: |
-                  python3 -m venv venv
-
-            - name: Install dependencies
-              run: |
-                  ./venv/pip install --upgrade pip
-                  ./venv/pip install -r requirements.txt
+                ./bootstrap.sh develop.cfg
 
             - name: Run buildout
               run: |
-                  ./venv/bin/buildout -c develop.cfg
+                  bin/buildout -c develop.cfg
 
             - name: Run tests
               run: |
