@@ -4,6 +4,7 @@
 .coverage
 *.egg
 *.egg-info
+*.lcov
 *.log
 *.mo
 *.py?
