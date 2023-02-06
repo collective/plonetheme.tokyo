@@ -60,3 +60,8 @@ class TestUninstall(unittest.TestCase):
             api.portal.get_registry_record('currentTheme', IThemeSettings),
             'barceloneta',
         )
+
+    def test_hidden_profiles(self):
+        from plonetheme.tokyo.setuphandlers import HiddenProfiles
+        hidden_profiles = HiddenProfiles.getNonInstallableProfiles(self)
+        self.assertIn('plonetheme.tokyo:uninstall', hidden_profiles)

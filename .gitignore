@@ -4,8 +4,8 @@
 .coverage
 *.egg
 *.egg-info
+*.lcov
 *.log
-*.map
 *.mo
 *.py?
 *.pyc
@@ -44,7 +44,6 @@ log.html
 output.xml
 pip-selfcheck.json
 report.html
-.python-version
 
 # Excludes
 
