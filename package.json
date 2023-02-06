@@ -18,8 +18,8 @@
     "theme"
   ],
   "dependencies": {
-    "bootstrap": "^4.5.2",
-    "bootstrap-icons": "^1.0.0"
+    "bootstrap": "^4.6.2",
+    "bootstrap-icons": "^1.10.3"
   },
   "scripts": {
     "css": "npm-run-all css-compile-main css-prefix-main css-minify-main",

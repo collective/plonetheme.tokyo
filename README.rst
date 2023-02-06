@@ -135,7 +135,8 @@ and then running ``bin/buildout``...
 Versions
 --------
 
-- Version 0.x and 1.x works with Plone 5.2
+- Version 0.x contains Bootstrap 4  and works with Plone 5.2
+- Version 1.x contains Bootstrap 5 works with Plone 5.2
 - Version 2.x works with Plone 6
 
 

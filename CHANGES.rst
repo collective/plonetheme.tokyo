@@ -10,10 +10,15 @@ Fixed:
 - Fix postion of plone.header in @@manage-viewlets
   [santonelli]
 
-- Update buildout to Plone 5.2.7
+Changed:
+
+- Update buildout to Plone 5.2.11
   [santonelli]
 
-- Update Bootstrap to 4.6.1
+- Update Bootstrap to 4.6.2
+  [santonelli]
+
+- Update Bootstrap Icons to 1.10.3
   [santonelli]
 
 
