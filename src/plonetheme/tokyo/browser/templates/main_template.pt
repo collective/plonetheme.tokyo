@@ -66,15 +66,9 @@
       The main navigation
     </div>
 
-    <section id="global_statusmessage">
-      <tal:message tal:content="structure provider:plone.globalstatusmessage"/>
-      <div metal:define-slot="global_statusmessage">
-      </div>
-    </section>
-
     <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
 
-    <article id="portal-column-content">
+    <div class="container">
 
       <metal:block define-slot="content">
 
@@ -83,6 +77,12 @@
         <metal:slot define-slot="body">
 
           <article id="content">
+
+            <section id="global_statusmessage">
+              <tal:message tal:content="structure provider:plone.globalstatusmessage"/>
+              <div metal:define-slot="global_statusmessage">
+              </div>
+            </section>
 
             <metal:bodytext define-slot="main">
 
@@ -123,23 +123,8 @@
       </metal:content>
 
       </metal:block>
-    </article>
 
-    <aside id="portal-column-one"
-           metal:define-slot="column_one_slot"
-           tal:condition="sl">
-      <metal:portlets define-slot="portlets_one_slot">
-        <tal:block replace="structure provider:plone.leftcolumn" />
-      </metal:portlets>
-    </aside>
-
-    <aside id="portal-column-two"
-           metal:define-slot="column_two_slot"
-           tal:condition="sr">
-      <metal:portlets define-slot="portlets_two_slot">
-        <tal:block replace="structure provider:plone.rightcolumn" />
-      </metal:portlets>
-    </aside>
+    </div>
 
     <footer id="portal-footer-wrapper" i18n:domain="plone">
       <div tal:replace="structure provider:plone.portalfooter" />
