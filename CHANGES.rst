@@ -7,6 +7,9 @@ Changelog
 
 Changed:
 
+- Update package buildout to Plone 5.2.11
+  [santonelli]
+
 - Update note packages.
   [santonelli]
 
