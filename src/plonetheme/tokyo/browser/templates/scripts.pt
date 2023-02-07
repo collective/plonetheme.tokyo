@@ -10,7 +10,7 @@
 </script>
 
 <script src="${portal_url}/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="${portal_url}/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.0" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="${portal_url}/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.2" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 <script>
   define = _old_define;
