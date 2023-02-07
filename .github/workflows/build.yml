@@ -5,9 +5,9 @@ name: Build
 
 on:
     push:
-        branches: [master]
+        branches: [1.x]
     pull_request:
-        branches: [master]
+        branches: [1.x]
 
 jobs:
     build:
@@ -17,7 +17,7 @@ jobs:
             matrix:
                 plone-version:
                   - 'Plone 5.2'
-                python-version: [3.7, 3.8, 3.9]
+                python-version: [3.7, 3.8]
         steps:
             - uses: actions/checkout@v2
             - name: Set up Python
