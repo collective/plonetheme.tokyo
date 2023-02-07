@@ -15,16 +15,17 @@ long_description = '\n\n'.join([
 
 setup(
     name='plonetheme.tokyo',
-    version='1.1.0.dev0',
+    version='2.0.0.dev0',
     description="An add-on for Plone",
     long_description=long_description,
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Plone :: 5.2",
+        "Framework :: Plone :: 6.0",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -41,7 +42,7 @@ setup(
     install_requires=[
         'collective.sidebar',
         'plone.api>=1.8.4',
-        'Products.GenericSetup>=1.8.2',
+        'plone.app.dexterity',
         'setuptools',
         'z3c.jbot',
     ],
