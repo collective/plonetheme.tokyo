@@ -24,6 +24,9 @@ Changed:
 - Update Bootstrap to 5.2.3
   [olda-a]
 
+- Added Czech translation
+  [olda-a]
+
 Fixed:
 
 - Fix postion of plone.header in @@manage-viewlets

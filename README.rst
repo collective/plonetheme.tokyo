@@ -105,6 +105,7 @@ This product has been translated into:
 
 - English (thanks, Netroxen)
 - German (thanks, santonelli)
+- Czech (thanks, olda-a)
 
 
 Known Issues
