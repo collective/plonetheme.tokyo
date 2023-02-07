@@ -1,10 +1,4 @@
-(function($) {
-  'use strict'; // Start of use strict
-
-  $(document).ready(function() {
-
-    // Custom JavaScript
-
-  });
-
-})(jQuery); // End of use strict
+window.onload = function(){
+  // Custom JavaScript
+  // console.log('window.onload');
+};
