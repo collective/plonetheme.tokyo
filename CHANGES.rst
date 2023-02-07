@@ -2,10 +2,13 @@ Changelog
 =========
 
 
-0.9.0 (unreleased)
+0.8.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Fixed:
+
+- Fix readme badges.
+  [santonelli]
 
 
 0.8.0 (2023-02-07)
