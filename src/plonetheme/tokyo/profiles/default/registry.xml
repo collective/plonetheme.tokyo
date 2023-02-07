@@ -1,39 +1,8 @@
 <?xml version="1.0"?>
-<registry>
+<registry
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plonetheme.magazine">
 
-  <!-- Tokyo Legacy Bundle -->
-
-  <records interface="Products.CMFPlone.interfaces.IResourceRegistry" prefix="plone.resources/tokyo-legacy">
-    <value key="css">
-      <element>++theme++plonetheme.tokyo/less/plone_logged_in.less</element>
-    </value>
-  </records>
-
-  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo-legacy">
-    <value key="resources">
-      <element>tokyo-legacy</element>
-    </value>
-    <value key="csscompilation">++theme++plonetheme.tokyo/less/tokyo-legacy-compiled.css</value>
-    <value key="enabled">False</value>
-    <value key="compile">True</value>
-    <value key="last_compilation">2019-07-25 15:10:00</value>
-    <value key="depends">plone-logged-in</value>
-  </records>
-
-  <!-- Tokyo Bundle -->
-
-  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/tokyo">
-    <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo.min.js</value>
-    <value key="csscompilation">++theme++plonetheme.tokyo/css/tokyo.min.css</value>
-    <value key="enabled">True</value>
-    <value key="compile">False</value>
-    <value key="last_compilation">2022-02-10 18:00:00</value>
-  </records>
-
-  <!-- Icon Font -->
-
-  <record name="collective.sidebar.icon_font">
-    <value>Bootstrap</value>
-  </record>
+<!-- -*- extra stuff goes here -*- -->
 
 </registry>

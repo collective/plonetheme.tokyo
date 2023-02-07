@@ -1,28 +1,3 @@
 // Header Styling
-#portal-header {
-  .navbar {
-    padding: 0.5rem 0;
-    .navbar-brand {
-      img {
-        width: auto;
-        height: 46px;
-      }
-    }
-  }
-}
 
-.template-manage-viewlets {
-  #portal-header {
-    .navbar {
-      position: relative;
-    }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  #portal-header {
-    .navbar {
-      padding: 0.5rem 1rem;
-    }
-  }
-}
+#portal-header {}

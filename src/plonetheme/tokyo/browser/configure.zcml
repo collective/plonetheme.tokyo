@@ -20,14 +20,6 @@
   <!-- Views -->
 
   <browser:page
-      name="listing_news"
-      for="*"
-      permission="zope2.View"
-      class=".listings.ListingNewsView"
-      template="templates/listing_news.pt"
-      />
-
-  <browser:page
       for="*"
       name="main_template"
       class=".main_template.MainTemplate"
@@ -43,14 +35,6 @@
       permission="zope2.View"
       class=".header.PortalHeader"
       template="templates/portal_header.pt"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
-  <browser:viewlet
-      name="tokyo.scripts"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-      permission="zope2.View"
-      template="templates/scripts.pt"
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
