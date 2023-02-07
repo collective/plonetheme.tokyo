@@ -7,7 +7,7 @@
 Tokyo Theme for Plone (plonetheme.tokyo)
 ========================================
 
-Tokyo Theme for Plone implements Bootstrap 4 into Plone, with an emphasis on keeping things as close to "default" as possible.
+Tokyo Theme for Plone implements Bootstrap into Plone, with an emphasis on keeping things as close to "default" as possible.
 
 
 Mostly Harmless
@@ -80,8 +80,8 @@ Features
 - No Toolbar
 - No Portlets
 - Plone patterns still persistent
-- Default Bootstrap 5 for form fields and views
-- Bootstrap 5 components and JavaScript
+- Default Bootstrap for form fields and views
+- Bootstrap components and JavaScript
 - Bootstrap Icons are available 
 - Uses https://github.com/collective/collective.sidebar
 
@@ -135,7 +135,7 @@ and then running ``bin/buildout``...
 Versions
 --------
 
-- Version 0.x contains Bootstrap 4  and works with Plone 5.2
+- Version 0.x contains Bootstrap 4 and works with Plone 5.2
 - Version 1.x contains Bootstrap 5 works with Plone 5.2
 - Version 2.x works with Plone 6
 
