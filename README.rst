@@ -15,14 +15,14 @@ Mostly Harmless
 
 .. build status
 
-.. image:: https://img.shields.io/github/workflow/status/collective/plonetheme.tokyo/Build/master?label=Build
+.. image:: https://img.shields.io/github/workflow/status/collective/plonetheme.tokyo/Build/1.x?label=Build
    :target: https://github.com/collective/plonetheme.tokyo/actions/workflows/build.yml
    :alt: Build Status
 
 .. coverage
 
-.. image:: https://coveralls.io/repos/github/collective/plonetheme.tokyo/badge.svg?branch=master
-    :target: https://coveralls.io/github/collective/plonetheme.tokyo?branch=master
+.. image:: https://coveralls.io/repos/github/collective/plonetheme.tokyo/badge.svg?branch=1.x
+    :target: https://coveralls.io/github/collective/plonetheme.tokyo?branch=1.x
     :alt: Code Coverage
 
 .. pypi version
@@ -47,22 +47,22 @@ Mostly Harmless
 Frontpage
 ---------
 
-.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/frontpage.png
-    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/frontpage.png
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/frontpage.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/frontpage.png
 
 
 Sidebar
 -------
 
-.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/sidebar.png
-    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/sidebar.png
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/sidebar.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/sidebar.png
 
 
 Mobile
 ------
 
-.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/mobile.png
-    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/master/docs/mobile.png
+.. image:: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/mobile.png
+    :target: https://raw.githubusercontent.com/collective/plonetheme.tokyo/1.x/docs/mobile.png
 
 
 Demo

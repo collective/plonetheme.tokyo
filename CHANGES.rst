@@ -2,20 +2,12 @@ Changelog
 =========
 
 
-0.8.0 (unreleased)
+1.0.0 (unreleased)
 ------------------
-
-Added:
-
-- Nothing added yet.
-  [santonelli]
 
 Changed:
 
-- Update buildout to Plone 5.2.7
-  [santonelli]
-
-- Update Bootstrap to 5.1.3
+- Update buildout to Plone 5.2.11
   [santonelli]
 
 - Drop jQuery dependency
