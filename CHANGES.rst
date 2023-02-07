@@ -2,10 +2,18 @@ Changelog
 =========
 
 
-0.9.0 (unreleased)
+0.8.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Changed:
+
+- Update note packages.
+  [santonelli]
+
+Fixed:
+
+- Fix readme badges.
+  [santonelli]
 
 
 0.8.1 (2023-02-07)
