@@ -21,6 +21,9 @@ Changed:
 - Drop jQuery dependency
   [santonelli]
 
+- Update Bootstrap to 5.2.3
+  [olda-a]
+
 Fixed:
 
 - Fix postion of plone.header in @@manage-viewlets
