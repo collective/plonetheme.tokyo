@@ -9,7 +9,7 @@
       </a>
 
       <div id="burger-menu" class="navbar-menu ms-auto text-white">
-        <tal:icon tal:replace="structure python:icons.tag('list')" />
+        <tal:icon tal:replace="structure python:icons.tag('list', tag_class='icon-x2')" />
       </div>
 
     </div>
