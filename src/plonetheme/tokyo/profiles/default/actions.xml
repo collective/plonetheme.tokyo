@@ -4,15 +4,15 @@
   <object name="sidebar_links" meta_type="CMF Action Category">
 
     <object name="home" meta_type="CMF Action" i18n:domain="collective.sidebar">
-      <property name="icon_expr">string:bi bi-house</property>
+      <property name="icon_expr">string:house</property>
     </object>
 
     <object name="login" meta_type="CMF Action" i18n:domain="collective.sidebar">
-      <property name="icon_expr">string:bi bi-box-arrow-in-right</property>
+      <property name="icon_expr">string:box-arrow-in-right</property>
     </object>
 
     <object name="logout" meta_type="CMF Action" i18n:domain="collective.sidebar">
-      <property name="icon_expr">string:bi bi-box-arrow-right</property>
+      <property name="icon_expr">string:box-arrow-right</property>
     </object>
 
   </object>
