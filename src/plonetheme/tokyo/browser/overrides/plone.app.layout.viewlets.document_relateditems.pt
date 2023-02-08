@@ -3,7 +3,8 @@
                 plone_layout nocall:context/@@plone_layout;
                 normalizeString nocall:plone_view/normalizeString;
                 context_state nocall:context/@@plone_context_state;
-                use_view_action python:context.portal_registry.get('types_use_view_action_in_listings', []);"
+                use_view_action python:context.portal_registry.get('types_use_view_action_in_listings', []);
+                portal_url context/@@plone_portal_state/portal_url;"
     tal:condition="related">
 
     <header class="section-heading h4 mb-3" i18n:translate="section_related_heading">
@@ -12,18 +13,19 @@
 
     <!-- section content -->
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-lg-3 g-4">
 
       <tal:items tal:repeat="item related">
 
       <div class="col">
 
         <div class="card h-100" tal:define="desc item/Description; item_type item/portal_type; item_type_class python:'contenttype-' + normalizeString(item_type); item_wf_state item/review_state|python: context_state.workflow_state(); item_wf_state_class python: 'state-' + normalizeString(item_wf_state); item_url item/getURL|item/absolute_url; item_url python:(item_type in use_view_action) and item_url+'/view' or item_url; item_has_image python:item.getIcon;">
-          <img src="" class="card-img-top" tal:define="getIcon python:item.getURL() +'/@@images/image/thumb'" tal:condition="item_has_image" tal:attributes="src string:$getIcon; alt item/Description">
+          <img src="" class="card-img-top" tal:define="getIcon python:item.getURL() +'/@@images/image/preview'" tal:condition="item_has_image" tal:attributes="src string:$getIcon; alt item/Description">
+          <img src="" class="card-img-top p-3" tal:define="getIcon string: ${portal_url}/++plone++plonetheme.tokyo/plone_logo.svg" tal:condition="not: item_has_image" tal:attributes="src string:$getIcon; alt item/Description">
           <div class="card-body">
             <div class="h5 card-title">${item/pretty_title_or_id}</div>
             <p class="card-text">${item/Description}</p>
-            <a href="${item_url}" class="btn btn-sm btn-outline-primary">Show</a>
+            <a href="${item_url}" class="btn btn-sm btn-outline-primary stretched-link">Show</a>
           </div>
         </div>
 
