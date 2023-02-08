@@ -1,6 +1,6 @@
 <section id="section-rights" class="mb-3" i18n:domain="plone" tal:define="rights context/Rights" tal:condition="rights">
 
-    <header class="section-heading h4 mb-2" i18n:translate="section_rights_heading">
+    <header class="section-heading h4 mb-3" i18n:translate="section_rights_heading">
       Rights
     </header>
 
