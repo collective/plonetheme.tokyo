@@ -12,6 +12,7 @@
 *.pyo
 *.swp
 *.tmp*
+.DS_Store
 
 # Dirs
 
