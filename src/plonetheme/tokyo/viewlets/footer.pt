@@ -1,0 +1,57 @@
+<div id="portal-footer" class="container" tal:define="icons python:context.restrictedTraverse('@@iconresolver')">
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <span class="mb-3 mb-md-0 text-muted">© ${view/year} Plone</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://github.com/plone">
+          <tal:icon tal:replace="structure python:icons.tag('github')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://www.youtube.com/@plonecms">
+          <tal:icon tal:replace="structure python:icons.tag('youtube')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://www.linkedin.com/company/plone-foundation/">
+          <tal:icon tal:replace="structure python:icons.tag('linkedin')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://twitter.com/plone">
+          <tal:icon tal:replace="structure python:icons.tag('twitter')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://plone.social/@plone">
+          <tal:icon tal:replace="structure python:icons.tag('mastodon')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://www.instagram.com/plonecms/">
+          <tal:icon tal:replace="structure python:icons.tag('instagram')" />
+        </a>
+      </li>
+
+      <li class="ms-3">
+        <a class="text-muted" href="https://www.facebook.com/plonecms">
+          <tal:icon tal:replace="structure python:icons.tag('facebook')" />
+        </a>
+      </li>
+
+    </ul>
+
+  </footer>
+
+</div>

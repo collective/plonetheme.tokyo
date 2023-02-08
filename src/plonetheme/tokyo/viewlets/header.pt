@@ -1,4 +1,4 @@
-<div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo_url view/logo_url; logo_title view/logo_title">
+<div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo_url view/logo_url; logo_title view/logo_title; icons python:context.restrictedTraverse('@@iconresolver');">
 
   <nav class="navbar fixed-top navbar-dark bg-primary">
 
@@ -9,7 +9,7 @@
       </a>
 
       <div id="burger-menu" class="navbar-menu ms-auto text-white">
-        <i id="portaltab-burger-menu" class="glyphicon glyphicon-menu-hamburger m-0"></i>
+        <tal:icon tal:replace="structure python:icons.tag('list')" />
       </div>
 
     </div>

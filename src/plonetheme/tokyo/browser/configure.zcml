@@ -27,15 +27,4 @@
       layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
       />
 
-  <!-- Viewlets -->
-
-  <browser:viewlet
-      name="plone.header"
-      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-      permission="zope2.View"
-      class=".header.PortalHeader"
-      template="templates/portal_header.pt"
-      layer="plonetheme.tokyo.interfaces.IPlonethemeTokyoLayer"
-      />
-
 </configure>

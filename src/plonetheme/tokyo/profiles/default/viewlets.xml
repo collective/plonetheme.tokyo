@@ -36,9 +36,19 @@
  </order>
  <hidden manager="plone.abovecontent" skinname="Plone Default">
   <viewlet name="plone.path_bar"/>
+  <viewlet name="plone.lockinfo"/>
+ </hidden>
+ <hidden manager="plone.abovecontentbody" skinname="Plone Default">
+  <viewlet name="plone.tableofcontents"/>
+ </hidden>
+ <hidden manager="plone.abovecontenttitle" skinname="Plone Default">
+  <viewlet name="plone.socialtags"/>
  </hidden>
  <hidden manager="plone.belowcontent" skinname="Plone Default">
   <viewlet name="plone.manage_portlets_fallback"/>
+ </hidden>
+ <hidden manager="plone.belowcontenttitle" skinname="Plone Default">
+  <viewlet name="plone.documentbyline"/>
  </hidden>
  <hidden manager="plone.mainnavigation" skinname="Plone Default">
   <viewlet name="plone.global_sections"/>
@@ -51,5 +61,9 @@
  <hidden manager="plone.portalheader" skinname="Plone Default">
   <viewlet name="plone.logo"/>
   <viewlet name="plone.searchbox"/>
+  <viewlet name="plone.anontools"/>
+  <viewlet name="plone.membertools"/>
+  <viewlet name="plone.app.i18n.locales.languageselector"/>
  </hidden>
+ <hidden manager="plone.portaltop" skinname="Plone Default"/>
 </object>
