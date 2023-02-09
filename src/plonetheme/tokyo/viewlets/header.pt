@@ -1,14 +1,43 @@
 <div id="portal-header" tal:define="navroot context/@@plone_portal_state/navigation_root_url; logo_url view/logo_url; logo_title view/logo_title; icons python:context.restrictedTraverse('@@iconresolver');">
 
-  <nav class="navbar fixed-top navbar-dark bg-primary">
-
+  <nav class="navbar fixed-top navbar-dark">
     <div class="container">
 
-      <a class="navbar-brand" href="${navroot}">
+      <a class="navbar-brand me-auto" href="${navroot}">
         <img src="${logo_url}" alt="${logo_title}" title="${logo_title}">
       </a>
 
-      <div id="burger-menu" class="navbar-menu ms-auto text-white">
+      <div class="dropdown me-1">
+
+          <button class="btn btn-link nav-link dropdown-toggle no-arrow d-flex align-items-center px-1" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+            <tal:icon tal:replace="structure python:icons.tag('sun-fill', tag_class='text-white')" />
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <tal:icon tal:replace="structure python:icons.tag('sun-fill', tag_class='me-2')" />
+                Light
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <tal:icon tal:replace="structure python:icons.tag('moon-stars-fill', tag_class='me-2')" />
+                Dark
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <tal:icon tal:replace="structure python:icons.tag('circle-half', tag_class='me-2')" />
+                Auto
+              </button>
+            </li>
+
+          </ul>
+
+      </div>
+
+      <div id="burger-menu" class="navbar-menu text-white">
         <tal:icon tal:replace="structure python:icons.tag('list', tag_class='icon-x2')" />
       </div>
 

@@ -2,11 +2,27 @@
 
 #portal-header {
     .navbar {
+        background-color: $primary;
+        padding: 0.75rem;
+
         .navbar-brand {
             img {
                 width: auto;
-                height: 45px;
+                height: 35px;
             }
+        }
+
+        .no-arrow::after {
+            content: none;
+        }
+
+    }
+}
+
+@include color-mode(dark) {
+    #portal-header {
+        .navbar {
+            background-color: $secondary;
         }
     }
 }

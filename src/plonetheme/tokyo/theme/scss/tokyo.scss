@@ -4,6 +4,9 @@ $enable-rounded: true;
 
 $blue: #0083be;
 
+$primary: $blue;
+$secondary: #111519;        
+
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 
 
@@ -28,6 +31,7 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 // Import Tokyo Plone Theme Styles
 
 @import "base";
+@import "bugfixes";
 @import "fonts";
 @import "footer";
 @import "header";
