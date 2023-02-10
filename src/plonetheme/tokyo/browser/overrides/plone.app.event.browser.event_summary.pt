@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="plone"
+      tal:define="icons python:context.restrictedTraverse('@@iconresolver')"
+      tal:omit-tag="">
+
+  <div class="container" tal:define="portal_url context/@@plone_portal_state/portal_url;">
+
+    <div class="row" tal:define="data python:view.data; excludes view/excludes">
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" condition="python:'date' not in excludes">
+        <tal:icon tal:replace="structure python:icons.tag('calendar-event')" />
+        <dt i18n:translate="event_when">When</dt>
+        <dd><tal:date replace="structure python:view.formatted_date(context)" /></dd>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:condition="python: data.location and 'location' not in excludes">
+        <tal:icon tal:replace="structure python:icons.tag('geo')" />
+        <dt i18n:translate="event_where">Where</dt>
+        <dd><span itemprop="location" tal:content="data/location">Location</span></dd>
+      </div>
+
+      <tal:cond condition="python:'contact' not in excludes">
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:define="mail data/contact_email; name data/contact_name;" tal:condition="python:name or mail">
+        <tal:icon tal:replace="structure python:icons.tag('person')" />
+        <dt i18n:translate="contact_name">Contact Name</dt>
+        <dd>
+          <a class="email stretched-link" tal:condition="mail" tal:attributes="href string:mailto:${mail}" tal:content="name" />
+          <span tal:condition="not:mail" tal:content="name" />
+        </dd>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:condition="data/contact_phone">
+        <tal:icon tal:replace="structure python:icons.tag('phone')" />
+        <dt i18n:translate="contact_phone">Contact Phone</dt>
+        <dd><a href="tel:${data/contact_phone}" class="stretched-link">${data/contact_phone}</a></dd>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:condition="data/attendees|nothing">
+        <tal:icon tal:replace="structure python:icons.tag('people')" />
+        <dt i18n:translate="contact_attendees">Attendees</dt>
+        <dd>
+          <tal:attendees tal:repeat="item data/attendees">
+          <span class="text-no-wrap" tal:content="item">Attendee</span><span tal:condition="not:repeat/item/end">, </span>
+          </tal:attendees>
+        </dd>
+      </div>
+
+      </tal:cond>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:condition="python: data.event_url and 'event_url' not in excludes">
+        <tal:icon tal:replace="structure python:icons.tag('laptop')" />
+        <dt i18n:translate="event_url">Web</dt>
+        <dd><a href="" class="stretched-link" tal:attributes="href data/event_url" i18n:translate="external_website">Visit external website</a></dd>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:condition="python:'ical' not in excludes">
+        <tal:icon tal:replace="structure python:icons.tag('download')" />
+        <dt i18n:translate="heading_add_to_calendar">Add event to calendar</dt>
+        <dd>
+        <tal:span tal:define="here_url context/@@plone_context_state/object_url">
+          <a href="#" rel="nofollow" class="stretched-link"
+             tal:attributes="href string:$here_url/ics_view"
+             title="Download this event in iCal format"
+             i18n:attributes="title title_add_to_ical;">
+            <span i18n:translate="label_add_to_ical">iCal</span></a>
+        </tal:span>
+        </dd>
+      </div>
+
+
+      <tal:comment tal:replace="nothing">
+      <tal:cond condition="python:'occurrences' not in excludes">
+      <tal:cond define="next_occs view/next_occurrences;
+                        all_occs view/num_more_occurrences"
+                condition="python:len(next_occs) > 1 or all_occs > 1">
+        <small class="text-muted" i18n:translate="">All dates</small>
+        <p>
+          <span tal:repeat="occ next_occs">
+          <tal:def define="this_is_occ python: occ.absolute_url() == context.absolute_url()">
+            <a tal:attributes="href occ/absolute_url" tal:omit-tag="this_is_occ">
+              <span tal:omit-tag="not: this_is_occ">
+                <tal:date replace="structure python:view.formatted_date(occ)"/>
+              </span>
+            </a>
+            <br/>
+          </tal:def>
+          </span>
+          <a tal:attributes="href string:${view/event_context/absolute_url}/@@event_listing"
+              tal:content="view/more_occurrences_text">
+            There are 12 more occurrences.
+          </a>
+        </p>
+      </tal:cond>
+      </tal:cond>
+      </tal:comment>
+
+    </div>
+
+  </div>
+
+</html>

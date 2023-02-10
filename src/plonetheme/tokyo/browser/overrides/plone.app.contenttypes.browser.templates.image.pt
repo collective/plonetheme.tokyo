@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.tokyo">
+
+<body>
+<metal:main fill-slot="main">
+
+  <div class="row"
+        tal:define="content_type python: context.image.contentType;
+                    size context/image/getSize;
+                    image_dimension context/image/getImageSize;
+                    use_MB python: size > 1024*1024;
+                    dimension python: str(image_dimension[0])+'x'+str(image_dimension[1]);
+                    filename python: context.image.filename;
+                    mimetype_icon python: 'mimetype-' + content_type;
+                    download_url python: '{}/@@download/image/{}'.format(context.absolute_url(), filename);
+                    ">
+
+    <div class="col-12">
+
+      <header tal:define="alttitle python:getattr(context, 'alttitle', '')">
+
+        <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
+
+        <h1>${context/title}</h1>
+
+        <p class="lead" tal:condition="context/description">
+          ${context/description}
+        </p>
+
+        <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
+
+      </header>
+
+      <section id="section-image" tal:condition="context/image|nothing">
+
+        <figure class="figure">
+          <a tal:attributes="href string:${context/@@plone_context_state/object_url}/image_view_fullscreen"
+            tal:define="scale context/@@images; img_tag python:scale.tag('image', scale='large', css_class='figure-img img-fluid')"
+            tal:on-error="string: Image cannot be displayed">
+            <img tal:replace="structure img_tag" />
+          </a>
+        </figure>
+
+      </section>
+
+      <section id="section-details" tal:condition="context/image|nothing">
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('info')" />
+              <dt i18n:translate="image_filename_label">Filename</dt>
+              <dd>
+                ${context/image/filename}
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:define="icon python: 'mimetype-' + context.image.contentType">
+              <tal:icon tal:replace="structure python:icons.tag(icon)" />
+              <dt i18n:translate="image_contenttype_label">Contenttype</dt>
+              <dd>
+                ${context/image/contentType}
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('aspect-ratio')" />
+              <dt i18n:translate="image_dimension_label">Dimension</dt>
+              <dd>
+                ${python: str(image_dimension[0])+'x'+str(image_dimension[1])}
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('file-binary')" />
+              <dt i18n:translate="image_size_label">File size</dt>
+              <dd tal:define="mb python: size > 1024*1024">
+                <tal:MB condition="mb">${python:round(size/1024/1024, 1)} MB</tal:MB>
+                <tal:KB condition="not: mb">${python:round(size/1024, 1)} KB</tal:KB>
+              </dd>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
+
+      <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+
+    </div>
+
+  </div>
+
+</metal:main>
+</body>
+
+</html>

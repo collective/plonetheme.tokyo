@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plonetheme.tokyo">
+
+<body>
+<metal:main fill-slot="main">
+
+  <div class="row" tal:define="navroot context/@@plone_portal_state/navigation_root_url;">
+
+    <div class="col-12">
+
+      <header tal:define="alttitle python:getattr(context, 'alttitle', '')">
+
+        <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
+
+        <h1>${context/title}</h1>
+
+        <p class="lead" tal:condition="context/description">
+          ${context/description}
+        </p>
+
+        <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
+
+      </header>
+
+      <section id="section-details" tal:condition="context/file|nothing">
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('download')" />
+              <dt i18n:translate="file_download_label">Download</dt>
+              <dd>
+                <a class="stretched-link" href="${context/absolute_url}/@@download/file/${context/file/filename}">${context/file/filename}</a>
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('info')" />
+              <dt i18n:translate="file_filename_label">Filename</dt>
+              <dd>
+                ${context/file/filename}
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail" tal:define="icon python: 'mimetype-' + context.file.contentType">
+              <tal:icon tal:replace="structure python:icons.tag(icon)" />
+              <dt i18n:translate="file_contenttype_label">Contenttype</dt>
+              <dd>
+                ${context/file/contentType}
+              </dd>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 detail">
+              <tal:icon tal:replace="structure python:icons.tag('file-binary')" />
+              <dt i18n:translate="file_size_label">Size</dt>
+              <dd>
+                ${view/human_readable_size}
+              </dd>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
+
+      <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+
+    </div>
+
+  </div>
+
+</metal:main>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+// Document Styling
+
+#section-image {
+  margin: 2em 0;
+  text-align: center;
+}
+
+#section-details {
+
+  margin-top: 3em;
+  margin-bottom: 1em;
+
+  .detail {
+    position: relative;
+    margin-bottom: 2em;
+    text-align: center;
+
+    svg {
+      width: 1.5em;
+      height: auto;
+      margin-bottom: 0.75em;
+    }
+
+    abbr[title] {
+      text-decoration: none;
+      cursor: unset;
+      text-decoration-skip-ink: unset;
+    }
+
+  }
+
+}
