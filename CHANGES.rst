@@ -5,7 +5,11 @@ Changelog
 1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix icons (control panel, link view)
+  [olda-a]
+
+- Use cards (Search results, related items)
+  [olda-a]
 
 
 1.0.0 (2023-02-07)
