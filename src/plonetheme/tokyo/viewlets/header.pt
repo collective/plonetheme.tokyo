@@ -10,7 +10,9 @@
       <div class="dropdown me-1">
 
           <button class="btn btn-link nav-link dropdown-toggle no-arrow d-flex align-items-center px-1" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
-            <tal:icon tal:replace="structure python:icons.tag('sun-fill', tag_class='text-white')" />
+            <tal:icon tal:replace="structure python:icons.tag('sun-fill', tag_class='text-white bs-theme-light')" />
+            <tal:icon tal:replace="structure python:icons.tag('moon-stars-fill', tag_class='text-white bs-theme-dark')" />
+            <tal:icon tal:replace="structure python:icons.tag('circle-half', tag_class='text-white bs-theme-auto')" />
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">

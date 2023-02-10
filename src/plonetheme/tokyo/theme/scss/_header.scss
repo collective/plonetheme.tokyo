@@ -26,3 +26,19 @@
         }
     }
 }
+
+[data-bs-theme='light'] {
+    .bs-theme-dark, .bs-theme-auto {
+        display:none
+    }
+}
+[data-bs-theme='dark'] {
+    .bs-theme-light, .bs-theme-auto {
+        display:none
+    }
+}
+[data-bs-theme='auto'] {
+    .bs-theme-dark, .bs-theme-light {
+        display:none
+    }
+}
