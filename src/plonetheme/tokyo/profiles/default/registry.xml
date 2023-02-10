@@ -3,6 +3,13 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="plonetheme.magazine">
 
-<!-- -*- extra stuff goes here -*- -->
+  <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/tokyo">
+    <value key="enabled">True</value>
+    <value key="csscompilation">++theme++plonetheme.tokyo/css/tokyo.min.css</value>
+    <value key="jscompilation">++theme++plonetheme.tokyo/js/tokyo.min.js</value>
+    <value key="load_async">False</value> 
+    <value key="load_defer">False</value>
+    <value key="depends">plone</value>
+  </records>
 
 </registry>
