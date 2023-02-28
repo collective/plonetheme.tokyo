@@ -11,6 +11,9 @@ Changelog
 - Use cards (Search results, related items)
   [olda-a]
 
+- Add Mosaic support (add rules.xml with diazo namespace)
+  [toalba]
+
 
 1.0.0 (2023-02-07)
 ------------------
