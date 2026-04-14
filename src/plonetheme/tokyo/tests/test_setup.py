@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*-
 
 from plone import api
 from plonetheme.tokyo.testing import PLONETHEME_TOKYO_INTEGRATION_TESTING
+from Products.CMFPlone.utils import get_installer
 
 import unittest
 
@@ -14,11 +14,11 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        self.installer = get_installer(self.portal)
 
     def test_product_installed(self):
         """Test if plonetheme.tokyo is installed."""
-        self.assertTrue(self.installer.isProductInstalled('plonetheme.tokyo'))
+        self.assertTrue(self.installer.is_product_installed('plonetheme.tokyo'))
 
     def test_browserlayer(self):
         """Test that IPlonethemeTokyoLayer is registered."""
@@ -40,13 +40,13 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        self.installer = get_installer(self.portal)
         with api.env.adopt_roles(['Manager']):
-            self.installer.uninstallProducts(['plonetheme.tokyo'])
+            self.installer.uninstall_product('plonetheme.tokyo')
 
     def test_product_uninstalled(self):
         """Test if plonetheme.tokyo is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled('plonetheme.tokyo'))
+        self.assertFalse(self.installer.is_product_installed('plonetheme.tokyo'))
 
     def test_browserlayer_removed(self):
         """ Test that IPlonethemeTokyoLayer is removed."""

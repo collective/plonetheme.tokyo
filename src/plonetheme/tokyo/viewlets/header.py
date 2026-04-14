@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
@@ -7,7 +6,7 @@ from Products.CMFPlone import utils
 
 class PortalHeader(ViewletBase):
     def update(self):
-        super(PortalHeader, self).update()
+        super().update()
         if api.portal.get_registry_record('plone.site_logo'):
             self.logo_url = utils.getSiteLogo()
         else:

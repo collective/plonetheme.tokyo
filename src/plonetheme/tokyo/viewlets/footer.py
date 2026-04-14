@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from datetime import date
 from plone.app.layout.viewlets import ViewletBase
@@ -17,4 +16,4 @@ class Footer(ViewletBase):
         return year
 
     def index(self):
-        return super(Footer, self).render()
+        return super().render()

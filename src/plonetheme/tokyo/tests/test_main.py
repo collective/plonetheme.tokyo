@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from plone.testing.z2 import Browser
 from plonetheme.tokyo.browser.main_template import MainTemplate

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 """Installer for the plonetheme.tokyo package."""
 
